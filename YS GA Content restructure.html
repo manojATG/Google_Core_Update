@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yellowstone National Park Audio Driving Tour — Grand Loop, Entrances & 375+ GPS Stories | GuideAlong</title>
+<meta name="description" content="Drive Yellowstone&#x27;s complete Grand Loop with GuideAlong&#x27;s GPS audio tour. 375+ stories, offline use, entrance-by-season guidance, Old Faithful timing, Lamar Valley wildlife notes, and road-status planning.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Yellowstone National Park Audio Driving Tour — GuideAlong",
+  "description": "GPS-triggered audio tour covering Yellowstone's entire Grand Loop. 375+ stories, all 5 entrances, flexible routing, works offline.",
+  "brand": {"@type": "Brand", "name": "GuideAlong"},
+  "offers": {"@type": "Offer", "price": "19.99", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "8200", "bestRating": "5"}
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --park:    #1B3A2D;
+  --trail:   #2D6B4A;
+  --sage:    #5A8F6C;
+  --meadow:  #C8E6C0;
+  --geyser:  #E8F5E9;
+  --sulfur:  #C8A000;
+  --lava:    #8B1A1A;
+  --sky:     #1565A0;
+  --buff:    #F4EFE8;
+  --white:   #FFFFFF;
+  --ink:     #1A251E;
+  --mid:     #4A5E52;
+  --pale:    #8A9E90;
+  --rule:    #D0DDD2;
+  --amber:   #D4780A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk',sans-serif;background:var(--buff);color:var(--ink);line-height:1.7;font-size:16px}
+
+/* ── NAV ── */
+.nav{background:var(--white);border-bottom:2px solid var(--park);padding:0 2rem;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-brand{font-weight:700;font-size:1rem;color:var(--park)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--mid);font-size:0.8rem;text-decoration:none;font-weight:500}
+.nav-cta{background:var(--trail);color:var(--white)!important;padding:8px 18px;border-radius:4px;font-weight:700!important}
+
+/* ── HERO — dashboard/planner style ── */
+.hero{background:var(--park);display:grid;grid-template-columns:1fr 440px;min-height:88vh}
+.hero-main{padding:60px 48px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero-main::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.03);pointer-events:none}
+.hero-eyebrow{font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.2em;color:var(--sage);text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-family:'Libre Baskerville',Georgia,serif;font-size:clamp(2.6rem,5vw,4.2rem);color:var(--white);line-height:1.05;margin-bottom:20px;font-weight:700}
+.hero h1 em{font-style:italic;color:#A8D4B0}
+.hero-sub{font-size:1rem;color:#9AC8A8;font-weight:300;max-width:500px;line-height:1.75;margin-bottom:36px}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);margin-bottom:36px}
+.h-stat{padding:16px;background:var(--park)}
+.h-stat-val{font-family:'Space Mono',monospace;font-size:1.4rem;color:#A8D4B0;display:block;font-weight:700;line-height:1}
+.h-stat-lbl{font-size:0.72rem;color:#6A9E78;margin-top:4px}
+.hero-actions{display:flex;gap:12px}
+.hero-btn-p{background:var(--sage);color:var(--white);padding:14px 32px;font-weight:700;font-size:0.95rem;text-decoration:none;border-radius:4px}
+.hero-btn-s{background:transparent;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.8);padding:14px 24px;font-size:0.9rem;text-decoration:none;border-radius:4px}
+
+/* PLANNER PANEL — right side */
+.planner{background:var(--white);display:flex;flex-direction:column;border-left:3px solid var(--sulfur)}
+.planner-header{background:var(--sulfur);padding:16px 24px}
+.planner-header h3{font-family:'Space Mono',monospace;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--park);font-weight:700}
+.planner-header p{font-size:0.78rem;color:rgba(28,58,45,0.7);margin-top:2px}
+.planner-body{padding:24px;flex:1;display:flex;flex-direction:column;gap:20px}
+.planner-section h4{font-size:0.72rem;font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:0.1em;color:var(--pale);margin-bottom:10px}
+.planner-price{display:flex;align-items:baseline;gap:8px}
+.planner-price .big{font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:var(--park)}
+.planner-price .note{font-size:0.8rem;color:var(--pale)}
+.feature-list{display:flex;flex-direction:column;gap:6px}
+.feature-list li{list-style:none;font-size:0.84rem;color:var(--mid);display:flex;gap:8px;align-items:flex-start}
+.feature-list li::before{content:'✓';color:var(--trail);font-weight:700;flex-shrink:0;margin-top:2px}
+.planner-divider{height:1px;background:var(--rule)}
+.buy-primary{background:var(--trail);color:var(--white);display:block;text-align:center;padding:14px;font-weight:700;font-size:1rem;text-decoration:none;border-radius:4px}
+.buy-secondary{border:1.5px solid var(--rule);color:var(--trail);display:block;text-align:center;padding:11px;font-size:0.86rem;font-weight:600;text-decoration:none;border-radius:4px;margin-top:8px}
+.rating-display{display:flex;align-items:center;gap:10px;padding:10px 0}
+.rd-stars{color:#D4A017;font-size:1.1rem;letter-spacing:-1px}
+.rd-text{font-size:0.82rem;color:var(--mid)}
+.bundle-banner{background:var(--geyser);border:1px solid var(--meadow);padding:14px;border-radius:4px}
+.bundle-banner p{font-size:0.82rem;color:var(--park);line-height:1.5}
+.bundle-banner strong{font-weight:700}
+.bundle-banner a{color:var(--trail);text-decoration:none;font-weight:600}
+
+/* ── LAYOUT ── */
+.wrap{max-width:1120px;margin:0 auto;padding:0 2rem}
+.section{padding:64px 0}
+.section+.section{border-top:1px solid var(--rule)}
+.mono-label{font-family:'Space Mono',monospace;font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--trail);margin-bottom:12px}
+h2.sh{font-family:'Libre Baskerville',serif;font-size:clamp(1.6rem,3vw,2.3rem);color:var(--ink);margin-bottom:14px;line-height:1.2;font-weight:700}
+.section-lead{font-size:1rem;color:var(--mid);font-weight:300;max-width:660px;margin-bottom:32px}
+
+/* ── ALERT ── */
+.alert-bar{background:var(--lava);padding:16px 2rem;display:flex;gap:14px;align-items:flex-start}
+.alert-bar .ico{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.alert-bar p{font-size:0.88rem;color:#F0C8C8;line-height:1.65}
+.alert-bar strong{color:var(--white)}
+.alert-bar a{color:#FFB8B8}
+
+/* ── TRIP PLANNER TABS — horizontal day-plan strips ── */
+.day-plans{display:flex;flex-direction:column;gap:0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:32px 0}
+.day-plan{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--rule)}
+.day-plan:last-child{border-bottom:none}
+.day-label{background:var(--park);padding:20px 16px;display:flex;flex-direction:column;justify-content:center}
+.day-label .day-num{font-family:'Space Mono',monospace;font-size:0.65rem;color:#6A9E78;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:4px}
+.day-label .day-title{font-size:0.9rem;font-weight:700;color:var(--white);line-height:1.3}
+.day-content{background:var(--white);padding:20px 24px}
+.day-content h4{font-size:0.85rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+.day-content p{font-size:0.84rem;color:var(--mid);line-height:1.65}
+.day-stops{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.day-stop-tag{background:var(--geyser);border:1px solid var(--meadow);color:var(--park);font-size:0.72rem;padding:3px 10px;border-radius:99px;font-weight:500}
+.day-stop-tag.wildlife{background:#F0F8F0;border-color:#C0E0C0;color:var(--trail)}
+.day-stop-tag.canyon{background:#EEF0F8;border-color:#C0C4E0;color:#3A3A8A}
+
+/* ── ENTRANCES — structured info cards ── */
+.entrance-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:32px 0}
+.entrance-card{background:var(--white);border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.entrance-top{background:var(--park);padding:12px 14px}
+.entrance-top h4{color:var(--white);font-size:0.88rem;font-weight:700}
+.entrance-top .e-season{font-family:'Space Mono',monospace;font-size:0.62rem;color:#8AC8A0;text-transform:uppercase;letter-spacing:0.1em;margin-top:2px}
+.entrance-body{padding:14px}
+.entrance-body p{font-size:0.8rem;color:var(--mid);line-height:1.6}
+.entrance-body .e-first{font-size:0.78rem;color:var(--trail);font-weight:600;margin-top:8px}
+
+/* ── STOP CARDS — structured data tiles ── */
+.stops-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:32px 0}
+.stop-tile{background:var(--white);padding:24px}
+.stop-tile-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px}
+.stop-tile h4{font-family:'Libre Baskerville',serif;font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.2}
+.stop-chip{font-family:'Space Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;padding:3px 8px;border-radius:2px;flex-shrink:0;margin-left:8px;margin-top:2px}
+.c-thermal{background:#FEF3CD;color:#8A6000}
+.c-wildlife{background:#E8F5E9;color:var(--trail)}
+.c-canyon{background:#EEF0F8;color:#3A3A8A}
+.c-lake{background:#E3F4FD;color:var(--sky)}
+.stop-tile p{font-size:0.85rem;color:var(--mid);line-height:1.65;margin-bottom:10px}
+.stop-data{display:grid;grid-template-columns:1fr 1fr;gap:8px;border-top:1px solid var(--rule);padding-top:10px}
+.stop-datum{font-size:0.76rem;color:var(--pale)}
+.stop-datum strong{display:block;color:var(--ink);font-size:0.8rem;font-weight:600}
+.stop-field-note{font-size:0.78rem;color:var(--trail);font-style:italic;margin-top:8px;padding-top:8px;border-top:1px dashed var(--rule)}
+
+/* ── TIMING PLANNER ── */
+.timing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:32px 0}
+.timing-card{background:var(--white);border:1px solid var(--rule);border-radius:6px;padding:20px}
+.timing-card .tc-season{font-family:'Space Mono',monospace;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--pale);margin-bottom:8px}
+.timing-card h4{font-size:0.95rem;font-weight:700;color:var(--ink);margin-bottom:8px}
+.timing-card p{font-size:0.82rem;color:var(--mid);line-height:1.6}
+.timing-card .tc-rating{margin-top:10px;font-size:0.78rem;font-weight:600}
+.rating-a{color:var(--trail)}.rating-b{color:var(--sulfur)}.rating-c{color:var(--lava)}
+
+/* ── AUDIO SAMPLE ── */
+.audio-section{background:var(--park);padding:64px 0}
+.audio-inner{max-width:1120px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:380px 1fr;gap:60px;align-items:center}
+.audio-meta .mono-label{color:#8AC8A0}
+.audio-meta h2.sh{color:var(--white);font-size:1.8rem}
+.audio-meta p{color:#9AC8A8;font-size:0.95rem;font-weight:300;line-height:1.7}
+.audio-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:28px}
+.audio-card .ac-label{font-family:'Space Mono',monospace;font-size:0.65rem;color:#8AC8A0;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:12px}
+.audio-card h4{font-family:'Libre Baskerville',serif;font-size:1.1rem;color:var(--white);margin-bottom:16px}
+.audio-card .transcript{font-size:0.9rem;color:#C8E0C8;line-height:1.8;font-style:italic;border-left:2px solid #5A9E6A;padding-left:16px}
+.audio-card .tc-note{font-size:0.74rem;color:#6A9E78;margin-top:12px;font-family:'Space Mono',monospace}
+
+/* ── FAQ ── */
+.faq-stack{display:flex;flex-direction:column;gap:0;border:1px solid var(--rule);border-radius:8px;overflow:hidden;margin:32px 0}
+.faq-item{padding:20px 24px;border-bottom:1px solid var(--rule);background:var(--white)}
+.faq-item:last-child{border-bottom:none}
+.faq-item:nth-child(even){background:var(--buff)}
+.faq-item h4{font-family:'Libre Baskerville',serif;font-size:0.97rem;font-weight:700;color:var(--ink);margin-bottom:6px}
+.faq-item p{font-size:0.85rem;color:var(--mid);line-height:1.65}
+.faq-item a{color:var(--sky)}
+
+/* ── REVIEWS ── */
+.review-stack{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0}
+.rev-card{background:var(--white);border:1px solid var(--rule);border-radius:6px;padding:22px}
+.rev-stars{color:var(--sulfur);font-size:0.9rem;margin-bottom:10px}
+.rev-text{font-size:0.85rem;color:var(--mid);line-height:1.7;font-style:italic;margin-bottom:14px}
+.rev-author{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--pale)}
+
+/* ── BUNDLE ── */
+.bundle-section{background:var(--geyser);border-top:1px solid var(--meadow);padding:56px 0}
+.bundle-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+.b-card{background:var(--white);border:1px solid var(--rule);border-radius:6px;padding:22px}
+.b-card h4{font-weight:700;font-size:0.95rem;color:var(--ink);margin-bottom:8px}
+.b-card p{font-size:0.82rem;color:var(--mid);margin-bottom:14px;line-height:1.6}
+.b-price{font-family:'Space Mono',monospace;color:var(--trail);font-size:1.05rem;font-weight:700}
+.b-was{color:var(--pale);text-decoration:line-through;font-size:0.85rem;margin-right:6px}
+.b-card a{display:block;margin-top:14px;background:var(--trail);color:var(--white);text-align:center;padding:10px;font-size:0.84rem;font-weight:700;text-decoration:none;border-radius:4px}
+
+/* ── STICKY ── */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:var(--park);border-top:3px solid var(--sulfur);padding:12px 2rem;display:flex;align-items:center;justify-content:space-between;z-index:99}
+.sticky .sl{color:var(--white);font-weight:600;font-size:0.9rem}
+.sticky .ss{color:var(--sage);font-size:0.74rem}
+.sticky a{background:var(--sage);color:var(--park);padding:11px 28px;font-weight:700;text-decoration:none;font-size:0.92rem;border-radius:4px}
+
+footer{background:#0E1F16;padding:32px 2rem;text-align:center}
+footer p{color:#2A4A35;font-size:0.78rem}
+footer a{color:var(--sage)}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}.hero-main{padding:40px 24px}.planner{display:none}
+  .entrance-grid,.stops-grid,.timing-grid,.review-stack,.bundle-cards{grid-template-columns:1fr}
+  .day-plan{grid-template-columns:1fr}.day-label{padding:12px 16px}
+  .audio-inner{grid-template-columns:1fr}
+  .sticky{flex-direction:column;gap:8px}
+}
+
+.verification-section{
+  background:var(--white,#fff);
+  border-top:1px solid var(--rule,#e2e8f0);
+  border-bottom:1px solid var(--rule,#e2e8f0);
+  padding:56px 0;
+}
+.verification-kicker{
+  font-family:'JetBrains Mono','IBM Plex Mono','Space Mono',monospace;
+  font-size:.68rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--rain,var(--fern,var(--trail,var(--hot,#0A6E8A))));
+  margin-bottom:10px;
+}
+.verification-title{
+  font-family:inherit;
+  font-size:clamp(1.5rem,3vw,2.1rem);
+  line-height:1.2;
+  color:var(--lava,var(--ink,var(--ash,var(--park,#0f172a))));
+  margin-bottom:12px;
+  font-weight:700;
+}
+.verification-lead{
+  color:var(--mid,#475569);
+  max-width:760px;
+  margin-bottom:24px;
+  font-size:.95rem;
+  line-height:1.7;
+}
+.verification-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin:22px 0;
+}
+.verification-card{
+  background:var(--fog,var(--buff,#f8fafc));
+  border:1px solid var(--rule,#e2e8f0);
+  border-radius:10px;
+  padding:18px;
+}
+.verification-card h3{
+  font-size:.88rem;
+  color:var(--lava,var(--ink,var(--ash,var(--park,#0f172a))));
+  margin-bottom:8px;
+  font-weight:700;
+}
+.verification-card p,
+.verification-card li{
+  font-size:.82rem;
+  color:var(--mid,#475569);
+  line-height:1.6;
+}
+.verification-card ul{
+  margin-left:18px;
+}
+.source-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:18px;
+}
+.source-list a{
+  display:block;
+  background:#fff;
+  border:1px solid var(--rule,#e2e8f0);
+  border-radius:6px;
+  padding:10px 12px;
+  font-size:.82rem;
+  color:var(--ocean,var(--sky,var(--sky-ys,var(--trail,#1565a0))));
+  text-decoration:none;
+  line-height:1.45;
+}
+.source-list a:hover{text-decoration:underline}
+.travel-note{
+  background:#FFF7ED;
+  border:1px solid #FED7AA;
+  border-left:4px solid #D97706;
+  border-radius:0 8px 8px 0;
+  padding:14px 16px;
+  margin-top:18px;
+}
+.travel-note strong{
+  color:#7C2D12;
+}
+.travel-note p{
+  font-size:.86rem;
+  color:#7C2D12;
+  line-height:1.65;
+}
+@media(max-width:760px){
+  .verification-grid,.source-list{grid-template-columns:1fr}
+}
+
+
+
+.visual-proof-section {
+  padding: 64px 0;
+  background: var(--fog, var(--buff, var(--steam, #F8FAFC)));
+  border-top: 1px solid var(--rule, #E2E8F0);
+}
+.visual-proof-section .visual-kicker {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rain, var(--fern, var(--trail, var(--sulfur, #0A6E8A))));
+  margin-bottom: 10px;
+}
+.visual-proof-section .visual-title {
+  font-family: 'Playfair Display', 'DM Serif Display', 'Fraunces', 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  line-height: 1.18;
+  margin-bottom: 12px;
+  color: var(--lava, var(--ink, var(--ash, #0F172A)));
+}
+.visual-proof-section .visual-lead {
+  color: var(--mid, #475569);
+  max-width: 760px;
+  margin-bottom: 28px;
+  font-size: 0.98rem;
+}
+.visual-feature-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.visual-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.visual-card {
+  background: var(--white, #fff);
+  border: 1px solid var(--rule, #E2E8F0);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+.visual-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: #F1F5F9;
+}
+.visual-card-body {
+  padding: 14px 16px 16px;
+}
+.visual-card h3,
+.visual-card h4 {
+  font-size: 0.92rem;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  color: var(--lava, var(--ink, var(--ash, #0F172A)));
+}
+.visual-card p {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--mid, #475569);
+}
+.visual-caption {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: var(--pale, #94A3B8);
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', 'Space Mono', monospace;
+  letter-spacing: 0.02em;
+}
+.visual-author-card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  min-height: 100%;
+}
+.visual-author-card img {
+  height: 100%;
+  aspect-ratio: auto;
+}
+.visual-checklist {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.visual-checkitem {
+  background: rgba(255,255,255,0.7);
+  border: 1px dashed var(--rule, #CBD5E1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.78rem;
+  color: var(--mid, #475569);
+}
+@media(max-width: 900px) {
+  .visual-feature-grid, .visual-card-grid, .visual-checklist { grid-template-columns: 1fr 1fr; }
+  .visual-author-card { grid-template-columns: 1fr; }
+  .visual-author-card img { height: auto; aspect-ratio: 16 / 9; }
+}
+@media(max-width: 640px) {
+  .visual-feature-grid, .visual-card-grid, .visual-checklist { grid-template-columns: 1fr; }
+}
+
+
+.helpful-gap-section {
+  padding: 56px 0;
+  border-top: 1px solid var(--rule, #E2E8F0);
+  background: var(--white, #FFFFFF);
+}
+.helpful-gap-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.helpful-gap-kicker {
+  font-family: 'Inter', 'Space Mono', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rain, var(--trail, var(--sulfur, #0A6E8A)));
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.helpful-gap-title {
+  font-family: inherit;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  color: var(--ink, var(--ash, var(--lava, #0F172A)));
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+.helpful-gap-lead {
+  color: var(--mid, #475569);
+  font-size: 0.96rem;
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+.author-grid, .quick-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.author-card, .quick-answer-card {
+  border: 1px solid var(--rule, #E2E8F0);
+  background: var(--fog, var(--buff, #F8FAFC));
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.author-card h3, .quick-answer-card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 7px;
+  color: var(--ink, var(--ash, var(--lava, #0F172A)));
+}
+.author-card p, .quick-answer-card p, .author-card li, .quick-answer-card li {
+  color: var(--mid, #475569);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+.author-card ul, .quick-answer-card ul { margin-left: 18px; margin-top: 8px; }
+.author-card a, .quick-answer-card a {
+  color: var(--ocean, var(--sky, var(--sky-ys, #1565A0)));
+  font-weight: 700;
+  text-decoration: underline;
+}
+.method-note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--rain, var(--trail, var(--sulfur, #0A6E8A)));
+  background: var(--mist, var(--geyser, #E0F4FF));
+  color: var(--mid, #475569);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+.quick-answer-grid { grid-template-columns: repeat(2, 1fr); }
+@media(max-width: 760px) {
+  .author-grid, .quick-answer-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <span class="nav-brand">GuideAlong</span>
+  <ul class="nav-links">
+    <li><a href="#">Tours</a></li>
+    <li><a href="#">Trip Planners</a></li>
+    <li><a href="#">How It Works</a></li>
+    <li><a href="#buy" class="nav-cta">Buy Tour — $19.99</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-main">
+    <div class="hero-eyebrow">Wyoming, USA · Grand Loop · All Entrances</div>
+    <h1>Yellowstone Grand Loop<br><em>GPS Audio Driving Tour</em></h1>
+    <p class="hero-sub">375+ GPS-triggered audio stories across the entire Grand Loop. Enter from any of the 5 gates. Drive in any direction. The tour adapts to your route.</p>
+    <div class="hero-stats">
+      <div class="h-stat">
+        <span class="h-stat-val">375+</span>
+        <span class="h-stat-lbl">Audio narration points</span>
+      </div>
+      <div class="h-stat">
+        <span class="h-stat-val">5</span>
+        <span class="h-stat-lbl">Park entrances covered</span>
+      </div>
+      <div class="h-stat">
+        <span class="h-stat-val">Offline</span>
+        <span class="h-stat-lbl">No signal required</span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#buy" class="hero-btn-p">Buy This Tour — $19.99</a>
+      <a href="#itinerary" class="hero-btn-s">See Sample Itineraries</a>
+    </div>
+  </div>
+
+  <!-- PLANNER PANEL -->
+  <div class="planner" id="buy">
+    <div class="planner-header">
+      <h3>Trip Planner</h3>
+      <p>Your Yellowstone audio guide</p>
+    </div>
+    <div class="planner-body">
+      <div class="planner-section">
+        <h4>Tour Price</h4>
+        <div class="planner-price">
+          <span class="big">$19.99</span>
+          <span class="note">Per car · No expiry</span>
+        </div>
+      </div>
+      <div class="planner-divider"></div>
+      <div class="planner-section">
+        <h4>What's Included</h4>
+        <ul class="feature-list">
+          <li>375+ GPS-triggered audio stories</li>
+          <li>All 5 park entrances + all major roads</li>
+          <li>Works 100% offline after download</li>
+          <li>Flexible — drive any route, any direction</li>
+          <li>Walking tours included (Old Faithful, Grand Prismatic, West Thumb)</li>
+          <li>Suggested 1-day, 2-day, and 3-day itineraries in app</li>
+          <li>No expiry — use across multiple trips</li>
+        </ul>
+      </div>
+      <div class="planner-divider"></div>
+      <div class="rating-display">
+        <span class="rd-stars">★★★★★</span>
+        <span class="rd-text"><strong>4.9</strong> · 8,200+ verified reviews</span>
+      </div>
+      <a href="#" class="buy-primary">Buy This Tour — $19.99</a>
+      <a href="#bundle" class="buy-secondary">Save with Yellowstone + Grand Teton Bundle</a>
+      <div class="bundle-banner">
+        <p><strong>Best value:</strong> Yellowstone + Grand Teton combo tour <a href="#bundle">from $24.99</a> — most visitors do both parks in the same trip.</p>
+      </div>
+      <p style="font-size:0.74rem;color:var(--pale);text-align:center">✓ 100% money-back guarantee</p>
+    </div>
+  </div>
+</div>
+
+<!-- ALERT -->
+<div class="alert-bar">
+  <span class="ico">⚠️</span>
+  <p><strong>Critical before entering:</strong> Cell service is unreliable through much of Yellowstone's interior, so <strong>download the tour at your lodging before you drive to the park.</strong> Yellowstone does <strong>not</strong> require a general timed-entry or vehicle reservation for standard entry, but a park entrance pass is required and some activities require separate permits or reservations. Road access is seasonal: only the North Entrance to Northeast Entrance corridor is typically open year-round to regular vehicles. <strong>Never approach wildlife:</strong> stay at least 25 yards from bison and elk, and 100 yards from bears and wolves.</p>
+</div>
+
+<!-- SAMPLE ITINERARIES -->
+<div class="wrap">
+<div class="section" id="itinerary">
+  <div class="mono-label">Trip Planning</div>
+  <h2 class="sh">How to structure your visit — 1, 2 or 3 days</h2>
+  <p class="section-lead">Yellowstone is 142 miles around the Grand Loop — too large to rush. Here's how to plan depending on how long you have. The GuideAlong app includes these itineraries built in.</p>
+
+  <div class="day-plans">
+    <div class="day-plan">
+      <div class="day-label">
+        <div class="day-num">1 day</div>
+        <div class="day-title">Southern Loop — Geothermal Focus</div>
+      </div>
+      <div class="day-content">
+        <h4>Best for: First-timers who want the iconic Yellowstone</h4>
+        <p>Enter the West Entrance → Madison Junction → Old Faithful (check eruption prediction on arrival → arrive at viewing area 15 min early) → Grand Prismatic Spring → West Thumb Geyser Basin → exit South Entrance when open, or return West. Drive time without stops: ~3 hours. Full day with stops: 8–10 hours. Leave your resort or hotel no later than 7 AM.</p>
+        <div class="day-stops">
+          <span class="day-stop-tag">Old Faithful</span>
+          <span class="day-stop-tag">Grand Prismatic</span>
+          <span class="day-stop-tag">Upper Geyser Basin</span>
+          <span class="day-stop-tag">West Thumb</span>
+          <span class="day-stop-tag">Yellowstone Lake</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-plan">
+      <div class="day-label">
+        <div class="day-num">1 day</div>
+        <div class="day-title">Northern Loop — Wildlife Focus</div>
+      </div>
+      <div class="day-content">
+        <h4>Best for: Wildlife seekers — wolves, bears, bison</h4>
+        <p>Enter the Northeast Entrance at dawn (Lamar Valley) → scan for wolves at Slough Creek and Round Prairie pullouts → Mammoth Hot Springs → Norris Geyser Basin → Canyon Village → Grand Canyon of the Yellowstone (Artist Point). This day requires an early start — Lamar Valley wildlife is most active at dawn and dusk. Not possible to do well starting after 8 AM.</p>
+        <div class="day-stops">
+          <span class="day-stop-tag wildlife">Lamar Valley (wolves, bison)</span>
+          <span class="day-stop-tag">Mammoth Hot Springs</span>
+          <span class="day-stop-tag">Norris Geyser Basin</span>
+          <span class="day-stop-tag canyon">Grand Canyon of Yellowstone</span>
+          <span class="day-stop-tag wildlife">Hayden Valley</span>
+        </div>
+      </div>
+    </div>
+    <div class="day-plan">
+      <div class="day-label">
+        <div class="day-num">2–3 days</div>
+        <div class="day-title">Full Grand Loop</div>
+      </div>
+      <div class="day-content">
+        <h4>Best for: Doing Yellowstone properly</h4>
+        <p>Day 1: Southern Loop (Old Faithful + Grand Prismatic + West Thumb). Day 2: Northern Loop (Lamar Valley at dawn + Mammoth + Norris + Canyon). Day 3 (optional): Return to your favourite sites without crowds — early morning at Grand Prismatic, revisit Lamar Valley at dusk, Firehole River Canyon. The app's 3-day itinerary builds in the best timing for each site.</p>
+        <div class="day-stops">
+          <span class="day-stop-tag">Full Grand Loop — 142 miles</span>
+          <span class="day-stop-tag wildlife">All wildlife corridors</span>
+          <span class="day-stop-tag">All 5 geyser basins</span>
+          <span class="day-stop-tag canyon">Grand Canyon of Yellowstone</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ENTRANCES -->
+<div style="background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+<div class="wrap" style="padding:56px 2rem">
+  <div class="mono-label">Entrances</div>
+  <h2 class="sh" style="margin-bottom:24px">Start from any of the 5 entrances — all covered</h2>
+  <div class="entrance-grid">
+    <div class="entrance-card">
+      <div class="entrance-top"><h4>North</h4><div class="e-season">Year-round corridor · Gardiner, MT</div></div>
+      <div class="entrance-body"><p>First stop: Mammoth Hot Springs terraces. The Roosevelt Arch spans the entrance road. Busiest gate overall — arrive before 8 AM in summer.</p><div class="e-first">→ First story: Roosevelt Arch history</div></div>
+    </div>
+    <div class="entrance-card">
+      <div class="entrance-top"><h4>Northeast</h4><div class="e-season">Year-round corridor · Cooke City, MT</div></div>
+      <div class="entrance-body"><p>Leads directly into Lamar Valley. Best wildlife viewing in the park begins within 1 mile of the gate. Least crowded entrance.</p><div class="e-first">→ First story: Lamar Valley wolf reintroduction</div></div>
+    </div>
+    <div class="entrance-card">
+      <div class="entrance-top"><h4>East</h4><div class="e-season">May 1–Oct 31, 2026 · Cody, WY</div></div>
+      <div class="entrance-body"><p>Dramatic mountain approach via Sylvan Pass. Leads to Fishing Bridge and connects to Hayden Valley and Canyon Village.</p><div class="e-first">→ First story: Sylvan Pass geology</div></div>
+    </div>
+    <div class="entrance-card">
+      <div class="entrance-top"><h4>South</h4><div class="e-season">May 8–Oct 31, 2026 · Moran, WY</div></div>
+      <div class="entrance-body"><p>From Grand Teton via the John D. Rockefeller Parkway. First major stop: West Thumb Geyser Basin on Yellowstone Lake.</p><div class="e-first">→ First story: Yellowstone Lake caldera</div></div>
+    </div>
+    <div class="entrance-card">
+      <div class="entrance-top"><h4>West</h4><div class="e-season">Apr 17–Oct 31, 2026 · West Yellowstone, MT</div></div>
+      <div class="entrance-body"><p>Most commonly used gate. Leads to Madison Junction — split point for south (Old Faithful) or north (Norris, Mammoth) routes.</p><div class="e-first">→ First story: Madison River confluence</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- KEY STOPS -->
+<div class="wrap">
+<div class="section" id="stops">
+  <div class="mono-label">What the Tour Covers</div>
+  <h2 class="sh">Key stops — with field notes from the route</h2>
+  <p class="section-lead">Stories trigger automatically as you arrive at each site — no tapping required while driving.</p>
+  <div class="stops-grid">
+    <div class="stop-tile">
+      <div class="stop-tile-header">
+        <h4>Grand Prismatic Spring</h4>
+        <span class="stop-chip c-thermal">Thermal</span>
+      </div>
+      <p>Largest hot spring in the US (370 ft across). The rainbow rings of colour are microbial mats — each species tolerates a different temperature, creating the visible spectrum from centre to edge.</p>
+      <div class="stop-data">
+        <div class="stop-datum"><strong>Best time</strong>Before 9 AM or after 5 PM</div>
+        <div class="stop-datum"><strong>Crowd level</strong>High 10 AM–4 PM</div>
+        <div class="stop-datum"><strong>Boardwalk</strong>Yes — 0.5 mi loop</div>
+        <div class="stop-datum"><strong>Aerial view</strong>Fairy Falls trail, 1.6 mi RT</div>
+      </div>
+      <div class="stop-field-note">The steam makes photography difficult on cold mornings. Go on a warm, dry day for the best colour saturation.</div>
+    </div>
+    <div class="stop-tile">
+      <div class="stop-tile-header">
+        <h4>Old Faithful Geyser</h4>
+        <span class="stop-chip c-thermal">Geyser</span>
+      </div>
+      <p>Erupts every 44–125 minutes (not "every 90 minutes" — this is a common misconception). Eruption duration determines the next interval. Height ranges 100–180 feet. Duration: 1.5–5 minutes.</p>
+      <div class="stop-data">
+        <div class="stop-datum"><strong>Prediction</strong>NPS board at Visitor Center</div>
+        <div class="stop-datum"><strong>Accuracy</strong>±10 minutes</div>
+        <div class="stop-datum"><strong>Arrive early</strong>15–20 min before predicted</div>
+        <div class="stop-datum"><strong>Side view</strong>Northwest boardwalk loop</div>
+      </div>
+      <div class="stop-field-note">The NPS prediction board is the most accurate source. The app alerts you to the predicted next eruption as you approach.</div>
+    </div>
+    <div class="stop-tile">
+      <div class="stop-tile-header">
+        <h4>Lamar Valley</h4>
+        <span class="stop-chip c-wildlife">Wildlife</span>
+      </div>
+      <p>America's Serengeti. Best place in the lower 48 to see wolves in the wild. Also bison, grizzly bears, coyotes, pronghorn, and golden eagles. Peak viewing: dawn and dusk. Always bring binoculars.</p>
+      <div class="stop-data">
+        <div class="stop-datum"><strong>Best time</strong>Dawn and dusk</div>
+        <div class="stop-datum"><strong>Key pullouts</strong>Slough Creek, Confluence</div>
+        <div class="stop-datum"><strong>Wolf packs</strong>Lamar Canyon Pack active</div>
+        <div class="stop-datum"><strong>Binoculars</strong>Essential — not optional</div>
+      </div>
+      <div class="stop-field-note">The audio identifies which hillside to scan from each pullout — this makes the difference between seeing wolves and missing them entirely.</div>
+    </div>
+    <div class="stop-tile">
+      <div class="stop-tile-header">
+        <h4>Grand Canyon of the Yellowstone</h4>
+        <span class="stop-chip c-canyon">Canyon</span>
+      </div>
+      <p>20-mile canyon, 800–1,200 ft deep, carved by the Yellowstone River. Two major waterfalls: Upper Falls (109 ft) and Lower Falls (308 ft, twice the height of Niagara). The yellow canyon walls give the park its name.</p>
+      <div class="stop-data">
+        <div class="stop-datum"><strong>Best viewpoint</strong>Artist Point (South Rim)</div>
+        <div class="stop-datum"><strong>Walk to Artist Point</strong>0.4 mi from parking</div>
+        <div class="stop-datum"><strong>Lower Falls height</strong>308 feet</div>
+        <div class="stop-datum"><strong>North Rim trail</strong>More dramatic angles</div>
+      </div>
+      <div class="stop-field-note">Do not skip Artist Point even if you're short on time. The view of the Lower Falls against the yellow canyon walls is one of the most dramatic in any national park.</div>
+    </div>
+    <div class="stop-tile">
+      <div class="stop-tile-header">
+        <h4>Norris Geyser Basin</h4>
+        <span class="stop-chip c-thermal">Thermal</span>
+      </div>
+      <p>Hottest and most dynamic thermal area in the park. Home to Steamboat Geyser — world's tallest active geyser at 300+ feet, erupting unpredictably. The basin changes significantly year to year.</p>
+      <div class="stop-data">
+        <div class="stop-datum"><strong>Steamboat eruptions</strong>Check NPS current conditions</div>
+        <div class="stop-datum"><strong>Boardwalk</strong>2 loops, ~2 miles total</div>
+        <div class="stop-datum"><strong>Temperature</strong>Hottest ground in the park</div>
+        <div class="stop-datum"><strong>Time needed</strong>1.5–2 hours</div>
+      </div>
+      <div class="stop-field-note">If Steamboat has erupted in the past week, the basin will be unusually active. Check the NPS Yellowstone current conditions page before your visit.</div>
+    </div>
+    <div class="stop-tile">
+      <div class="stop-tile-header">
+        <h4>Mammoth Hot Springs</h4>
+        <span class="stop-chip c-thermal">Thermal</span>
+      </div>
+      <p>The only major geothermal area fed by limestone. Creates terraced travertine formations unlike anything else in the park. Active features change year by year as water flow shifts between terraces.</p>
+      <div class="stop-data">
+        <div class="stop-datum"><strong>Active terraces</strong>Varies by season</div>
+        <div class="stop-datum"><strong>Upper Terrace Drive</strong>Accessible by car</div>
+        <div class="stop-datum"><strong>Liberty Cap</strong>37-ft dormant cone at entrance</div>
+        <div class="stop-datum"><strong>Time needed</strong>1–1.5 hours</div>
+      </div>
+      <div class="stop-field-note">The audio explains which terraces are currently active and why — the NPS changes the boardwalk routes seasonally to follow active features. The app reflects current conditions.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- BEST TIMING -->
+<div style="background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+<div class="wrap" style="padding:56px 2rem">
+  <div class="mono-label">When to Visit</div>
+  <h2 class="sh" style="margin-bottom:24px">Yellowstone by season — what each month actually means</h2>
+  <div class="timing-grid">
+    <div class="timing-card">
+      <div class="tc-season">April — May</div>
+      <h4>Shoulder Season</h4>
+      <p>Roads opening progressively — Beartooth Highway typically opens late May. Wildlife very active (newborn bison calves, active bears). Some facilities closed. Weather unpredictable — snow possible any month.</p>
+      <div class="tc-rating rating-b">⭐⭐⭐⭐ Wildlife excellent / some road closures</div>
+    </div>
+    <div class="timing-card">
+      <div class="tc-season">June — August</div>
+      <h4>Peak Season</h4>
+      <p>All roads and facilities open. Warmest weather. Maximum congestion — Old Faithful lot fills by 9 AM in July. Wildlife less visible mid-day (avoiding heat). Book lodging 6+ months ahead.</p>
+      <div class="tc-rating rating-c">⭐⭐⭐ Great access / maximum crowds</div>
+    </div>
+    <div class="timing-card">
+      <div class="tc-season">September — October</div>
+      <h4>Best Overall</h4>
+      <p>Crowds drop sharply after Labor Day. Wildlife extremely active — fall elk rut (bugling) begins in September. Aspen trees turn gold in October. Most facilities still open. Cooler temperatures keep wildlife more visible all day.</p>
+      <div class="tc-rating rating-a">⭐⭐⭐⭐⭐ Best combination of access, crowds, wildlife</div>
+    </div>
+    <div class="timing-card">
+      <div class="tc-season">December — March</div>
+      <h4>Winter</h4>
+      <p>The North Entrance to Northeast Entrance corridor via Mammoth, Tower Junction, and Cooke City is generally open year-round to regular vehicles, conditions permitting. Most interior park roads close to regular vehicles in winter and shift to limited oversnow travel by snowcoach or snowmobile. Geothermal features can be dramatic in cold weather, but winter access requires careful NPS road-status checks.</p>
+      <div class="tc-rating rating-b">⭐⭐⭐⭐ Spectacular / requires winter planning</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- AUDIO SAMPLE -->
+<div class="audio-section">
+  <div class="audio-inner">
+    <div class="audio-meta">
+      <div class="mono-label">Sample Narration</div>
+      <h2 class="sh">What plays as you arrive at each stop</h2>
+      <p>375+ stories trigger automatically as your GPS approaches each waypoint. No tapping while driving — the tour runs itself.</p>
+    </div>
+    <div class="audio-card">
+      <div class="ac-label">Lamar Valley · Sample narration</div>
+      <h4>The wolves came back</h4>
+      <div class="transcript">
+        For 70 years, there were no wolves in Yellowstone. They'd been systematically killed off by the 1920s — the government's position at the time was that wolves were a threat to livestock and ungulate populations. Without them, the elk herds grew enormous, overgrazed the riverbanks, and the willows and aspens that stabilize stream banks disappeared. The rivers themselves began to change shape. In 1995, 14 gray wolves were brought from Canada and released here in Lamar Valley. What happened next became one of ecology's most famous case studies: the wolves changed not just the elk behavior but the rivers themselves. The elk avoided lingering in open valleys and riverbanks. The vegetation recovered. The roots held the soil. The rivers narrowed and deepened. The effect of one predator on a landscape — right here, in the valley you're looking at right now.
+      </div>
+      <div class="tc-note">Lamar Valley · ~2 min narration · 375+ total stories in full tour</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="wrap">
+<div class="section" id="faq">
+  <div class="mono-label">Common Questions</div>
+  <h2 class="sh">What people ask before their Yellowstone trip</h2>
+  <div class="faq-stack">
+    <div class="faq-item">
+      <h4>Does Yellowstone require timed entry reservations?</h4>
+      <p>No general timed-entry or vehicle reservation is required for standard Yellowstone entry. A park entrance pass is required, and some activities — lodging, camping, fishing, boating, backcountry camping, research, commercial use, filming, weddings, and special events — may require separate reservations, permits, or authorizations. Check the official NPS Yellowstone pages before travel because policies and conditions can change.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is the park entry fee ($35) included in the tour price?</h4>
+      <p>No — the $35/vehicle entry fee (valid 7 days) is paid at the park entrance gate, separate from the $19.99 GuideAlong tour. If you're visiting 2+ national parks in a year, the America the Beautiful Annual Pass ($80) covers all national parks and federal lands and quickly pays for itself.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Does the GuideAlong app work without cell service in the park?</h4>
+      <p>Yes — fully offline once downloaded. Download the tour at your hotel or lodging before you drive to the park. The app uses your phone's built-in GPS (which works without data) to trigger stories automatically. There is essentially no cell signal in most of Yellowstone's interior — plan accordingly.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How many days do I need for Yellowstone?</h4>
+      <p>Minimum 2 days to see the park properly. 3 days is ideal — one day for the southern geothermal loop (Old Faithful + Grand Prismatic), one for the northern wildlife loop (Lamar Valley + Mammoth + Canyon), and a third day to revisit your favourites without rushing. The app includes suggested 1-day, 2-day, and 3-day itineraries built in.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What's the difference between the single park tour and the Yellowstone + Grand Teton combo?</h4>
+      <p>The single tour covers Yellowstone only — all 5 entrances, the full Grand Loop, and walking tours of Old Faithful, Grand Prismatic, and West Thumb. The Yellowstone + Grand Teton combo adds full coverage of Grand Teton National Park, the John D. Rockefeller Parkway, and Jackson Hole. Most visitors to Yellowstone pass through or visit Grand Teton — the combo is usually the better value.</p>
+    </div>
+    <div class="faq-item">
+      <h4>When do the walking tours of Old Faithful and Grand Prismatic start?</h4>
+      <p>The walking tours begin automatically when your GPS detects you've parked at or near the trailhead. You'll see a prompt in the app to switch from the driving tour to the walking tour. Both walking tours are included in the standard Yellowstone tour — no separate purchase needed.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- REVIEWS -->
+<div style="background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+<div class="wrap" style="padding:56px 2rem">
+  <div class="mono-label">Reviews</div>
+  <h2 class="sh" style="margin-bottom:24px">4.9 stars · 8,200+ verified reviews</h2>
+  <div class="review-stack">
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"We entered through the Northeast gate at 6 AM exactly like the itinerary said and saw a grizzly bear with cubs within 20 minutes of the gate. The audio told us which pullout to use and which hillside to scan — without that we'd have driven past it."</p>
+      <div class="rev-author">Karen M. · App Store · August 2025</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"The wolf reintroduction story at Lamar Valley was the most interesting 3 minutes of our entire trip. We learned more from this app in one drive than from 3 days of park reading. The Old Faithful eruption timing information — and the side viewpoint tip — made our visit perfect."</p>
+      <div class="rev-author">David & Susan P. · Google · July 2025</div>
+    </div>
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Four days in Yellowstone, app ran the whole time. Downloaded at the hotel in West Yellowstone, worked all four days without touching it again. The 3-day itinerary built into the app was excellent — saved us hours of planning and we saw everything we came for."</p>
+      <div class="rev-author">James T. · App Store · September 2025</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- BUNDLE -->
+<div class="bundle-section" id="bundle">
+<div class="wrap">
+  <div class="mono-label">Bundles</div>
+  <h2 class="sh">Combine Yellowstone with nearby parks</h2>
+  <div class="bundle-cards">
+    <div class="b-card">
+      <h4>Yellowstone + Grand Teton</h4>
+      <p>Both parks, one purchase. Grand Teton is 1 hour south — most Yellowstone trips include it. Full coverage of the Teton Range, Jenny Lake, and Jackson Hole.</p>
+      <span class="b-was">$36.98</span><span class="b-price">$24.99</span>
+      <a href="#">View Bundle</a>
+    </div>
+    <div class="b-card">
+      <h4>Rockies &amp; Plains Bundle</h4>
+      <p>Yellowstone + Grand Teton + Badlands + Mt. Rushmore + more. Best for a full western parks road trip itinerary.</p>
+      <span class="b-was">$59.95</span><span class="b-price">$39.99</span>
+      <a href="#">View Bundle</a>
+    </div>
+    <div class="b-card">
+      <h4>Yellowstone Only — Standard</h4>
+      <p>Yellowstone driving tour only, without walking tours. Lower price point for travelers who only want the driving narration.</p>
+      <span class="b-price">$14.99</span>
+      <a href="#">View Tour</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+<section class="visual-proof-section" id="route-preview">
+  <div class="wrap">
+    <div class="visual-kicker">Plan With Confidence</div>
+    <h2 class="visual-title">See how Yellowstone fits together before you enter the park</h2>
+    <p class="visual-lead">Use this preview to understand the Grand Loop, seasonal entrances, wildlife safety, limited cell service, and how the offline audio tour works while you drive.</p>
+
+    <div class="visual-feature-grid">
+      <div class="visual-card">
+        <img src="assets/ys-route-map.svg" loading="lazy" alt="Yellowstone Grand Loop route map showing all five entrances and key stops">
+        <div class="visual-card-body">
+          <h3>Grand Loop route overview</h3>
+          <p>See how Old Faithful, Grand Prismatic, Canyon, Lamar Valley, Mammoth, Yellowstone Lake, and the park entrances connect.</p>
+          <div class="visual-caption">Good to know: most interior roads are seasonal, so check current conditions before travel.</div>
+        </div>
+      </div>
+      <div class="visual-card visual-author-card">
+        <img src="assets/ys-route-guide.svg" loading="lazy" alt="Yellowstone guide team reviewing park entrance road and travel planning information">
+        <div class="visual-card-body">
+          <h3>Maintained by the GuideAlong Content Team</h3>
+          <p>This guide is reviewed for the details travelers ask about most: entrances, road seasons, wildlife safety, offline use, and what one tour purchase includes.</p>
+          <div class="visual-caption">Last fact-checked: June 22, 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="visual-card-grid">
+      <div class="visual-card">
+        <img src="assets/ys-entrances.svg" loading="lazy" alt="Yellowstone seasonal entrance and road access reminder">
+        <div class="visual-card-body"><h4>Entrances and roads</h4><p>Yellowstone access changes by season, weather, construction, and current NPS road status.</p></div>
+      </div>
+      <div class="visual-card">
+        <img src="assets/ys-wildlife.svg" loading="lazy" alt="Yellowstone wildlife safety reminder for bison elk bears and wolves">
+        <div class="visual-card-body"><h4>Wildlife safety</h4><p>Give animals space: 25 yards from bison and elk, 100 yards from bears and wolves.</p></div>
+      </div>
+      <div class="visual-card">
+        <img src="assets/ys-cell-service.svg" loading="lazy" alt="Yellowstone limited cell service and offline download reminder">
+        <div class="visual-card-body"><h4>Download before entry</h4><p>Cell service is unreliable inside the park, so download the tour at your lodging first.</p></div>
+      </div>
+      <div class="visual-card">
+        <img src="assets/ys-app-screen.svg" loading="lazy" alt="Offline GPS-triggered Yellowstone audio tour app screen">
+        <div class="visual-card-body"><h4>How the app works</h4><p>GPS triggers stories automatically along the Grand Loop after the tour is downloaded.</p></div>
+      </div>
+    </div>
+
+    <div class="visual-checklist">
+      <div class="visual-checkitem">Grand Loop overview</div>
+      <div class="visual-checkitem">Seasonal road guidance</div>
+      <div class="visual-checkitem">Offline app setup</div>
+    </div>
+  </div>
+</section>
+
+<section class="verification-section" id="travel-sources">
+  <div class="wrap">
+    <div class="verification-kicker">Travel Planning Sources</div>
+    <h2 class="verification-title">Important Yellowstone details we keep current</h2>
+    <p class="verification-lead">Yellowstone planning changes by season, road status, construction, weather, and NPS policy. This guide separates general park entry from activity-specific permits and explains which roads are seasonal.</p>
+
+    <div class="verification-grid">
+      <div class="verification-card">
+        <h3>Who maintains this guide</h3>
+        <p><strong>Written by:</strong> <a href="#about-this-guide">GuideAlong Content Team</a></p>
+        <p><strong>Reviewed by:</strong> Product + Route Content QA</p>
+        <p><strong>Last fact-checked:</strong> June 22, 2026</p>
+      </div>
+      <div class="verification-card">
+        <h3>What we check</h3>
+        <ul>
+          <li>Current NPS entry, fee, permit, and reservation guidance.</li>
+          <li>Seasonal road and entrance access for regular vehicles.</li>
+          <li>Wildlife-distance rules and offline-download guidance.</li>
+        </ul>
+      </div>
+      <div class="verification-card">
+        <h3>How the tour helps</h3>
+        <p>One purchase gives your car GuideAlong’s Yellowstone coverage with a deeper Grand Loop storytelling experience. The audio plays automatically by GPS, works offline after download, and lets your group explore at its own pace.</p>
+      </div>
+    </div>
+
+    <div class="travel-note">
+      <p><strong>Entry and reservation note:</strong> Yellowstone does not require a general timed-entry or vehicle reservation for standard park entry. A park entrance pass is required. Some activities, such as lodging, camping, fishing, boating, backcountry camping, research, commercial use, filming, weddings, and special events, may require separate reservations, permits, or authorizations.</p>
+    </div>
+
+    <div class="travel-note">
+      <p><strong>Road access note:</strong> For regular vehicles, the North Entrance to Northeast Entrance corridor is generally the year-round route, conditions permitting. Most other roads close to regular vehicles in winter and reopen on projected spring dates.</p>
+    </div>
+
+    <div class="source-list" aria-label="Official source links">
+      <a href="https://www.nps.gov/yell/planyourvisit/fees.htm" target="_blank" rel="noopener">NPS Yellowstone Fees &amp; Passes</a>
+      <a href="https://www.nps.gov/yell/planyourvisit/parkroads.htm" target="_blank" rel="noopener">NPS Yellowstone Road Status &amp; Opening Dates</a>
+      <a href="https://www.nps.gov/yell/planyourvisit/permitsandreservations.htm" target="_blank" rel="noopener">NPS Yellowstone Permits &amp; Reservations</a>
+      <a href="https://www.nps.gov/yell/planyourvisit/safety.htm" target="_blank" rel="noopener">NPS Yellowstone Safety</a>
+    </div>
+  </div>
+</section>
+
+<section class="helpful-gap-section" id="quick-answers">
+  <div class="helpful-gap-wrap">
+    <div class="helpful-gap-kicker">Before You Search Again</div>
+    <h2 class="helpful-gap-title">Quick answers for Yellowstone planning</h2>
+    <div class="quick-answer-grid">
+      <div class="author-card">
+        <h3>Do I need a reservation to enter Yellowstone?</h3>
+        <p>No general vehicle reservation or timed-entry reservation is required for standard Yellowstone entry. You still need a park entrance pass, and some activities require separate permits or reservations.</p>
+      </div>
+      <div class="author-card">
+        <h3>Which roads are open year-round?</h3>
+        <p>For regular vehicles, the year-round corridor is generally North Entrance to Northeast Entrance via Mammoth, Tower Junction, and Cooke City, conditions permitting.</p>
+      </div>
+      <div class="author-card">
+        <h3>Will the tour work without cell service?</h3>
+        <p>Yes. Download the tour before entering the park; GPS-triggered audio works offline after download.</p>
+      </div>
+      <div class="author-card">
+        <h3>How close can I get to wildlife?</h3>
+        <p>Stay at least 25 yards from bison and elk, and 100 yards from bears and wolves. Never stop in the road for photos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="helpful-gap-section" id="about-this-guide">
+  <div class="helpful-gap-wrap">
+    <div class="helpful-gap-kicker">About This Guide</div>
+    <h2 class="helpful-gap-title">How this Yellowstone guide is created</h2>
+    <p class="helpful-gap-lead">This page is written for travelers who want to understand Yellowstone’s entrances, road seasons, driving time, wildlife safety, and offline audio setup before they enter the park.</p>
+    <div class="author-grid">
+      <div class="author-card">
+        <h3>Who writes it</h3>
+        <p>The GuideAlong Content Team maintains this guide using tour scripts, traveler support feedback, official NPS source checks, and product knowledge from the GuideAlong app.</p>
+      </div>
+      <div class="author-card" id="editorial-method">
+        <h3>How it is checked</h3>
+        <p>Entrance access, road seasons, fee language, wildlife safety, offline-download guidance, and permit distinctions are reviewed against official NPS materials and updated when conditions change.</p>
+      </div>
+      <div class="author-card">
+        <h3>Why it exists</h3>
+        <p>The goal is to help you drive Yellowstone with fewer surprises: seasonal roads, long distances, limited signal, wildlife rules, and timing pressure at the park’s most popular stops.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 GuideAlong · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a> · 1-866-477-1791</p>
+</footer>
+
+<div class="sticky">
+  <div>
+    <div class="sl">Yellowstone Audio Tour · GuideAlong</div>
+    <div class="ss">4.9★ · 8,200 reviews · 375+ stops · All 5 entrances · Works offline</div>
+  </div>
+  <a href="#buy">Buy Now — $19.99</a>
+</div>
+
+</body>
+</html>

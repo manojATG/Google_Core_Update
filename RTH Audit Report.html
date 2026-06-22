@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Road to Hana Page Redesign — SEO Audit & Change Report</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Lora:ital@0;1&display=swap');
+:root {
+  --ocean: #0D3349; --teal: #0A7EA4; --foam: #E0F4FF;
+  --coral: #C0392B; --moss: #2D6A4F; --gold: #D4A017;
+  --sand: #FBF7F0; --mist: #F4F8FB; --ink: #1A2332;
+  --mid: #4F5E6D; --pale: #8A99AA; --rule: #D1DCE8;
+  --white: #fff;
+  --pale-red: #FADBD8; --pale-green: #D5F5E3; --pale-amber: #FDEBD0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',sans-serif;background:var(--mist);color:var(--ink);line-height:1.7;font-size:15px}
+nav{background:var(--ocean);padding:0 2rem;height:50px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-brand{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:#9BC8E0;letter-spacing:0.12em;text-transform:uppercase}
+nav ul{display:flex;gap:1.8rem;list-style:none}
+nav a{color:#7BA8C0;font-size:0.74rem;text-decoration:none;text-transform:uppercase;letter-spacing:0.05em}
+nav a:hover{color:#fff}
+.hero{background:var(--ocean);padding:72px 2.5rem}
+.hero-inner{max-width:1060px;margin:0 auto}
+.hero-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;color:#4FC3F7;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:16px;letter-spacing:-0.02em}
+.hero h1 em{font-style:italic;font-family:'Lora',serif;color:#7DC8E8}
+.hero-sub{font-size:1rem;color:#7BA8C0;max-width:660px;font-weight:300;margin-bottom:40px}
+.hero-meta{display:flex;gap:32px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;color:#4A6A80;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px}
+.hero-meta span strong{color:#9BBFD4}
+.stat-strip{background:#0A2C40;padding:24px 2.5rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+.stat-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr);gap:0}
+.stat-cell{padding:0 20px;text-align:center;border-right:1px solid rgba(255,255,255,0.07)}
+.stat-cell:last-child{border-right:none}
+.stat-num{display:block;font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:600;line-height:1;margin-bottom:5px}
+.stat-num.red{color:#E8553E}.stat-num.green{color:#4CAF82}.stat-num.amber{color:#D4A017}.stat-num.blue{color:#4FC3F7}
+.stat-lbl{font-size:0.66rem;color:#4A6A80;text-transform:uppercase;letter-spacing:0.08em}
+.wrap{max-width:1060px;margin:0 auto;padding:0 2.5rem}
+.section{padding:64px 0}
+.section+.section{border-top:1px solid var(--rule)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;letter-spacing:0.18em;color:var(--teal);text-transform:uppercase;margin-bottom:10px}
+h2.sh{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;color:var(--ocean);line-height:1.2;margin-bottom:14px}
+.section-lead{font-size:0.97rem;color:var(--mid);max-width:700px;margin-bottom:32px;font-weight:300}
+/* VERDICT PILLS */
+.verdict{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:99px;font-size:0.74rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:16px}
+.v-weak{background:#FADBD8;color:var(--coral);border:1px solid #F5B7B1}
+.v-fixed{background:var(--pale-green);color:var(--moss);border:1px solid #A9DFBF}
+.v-partial{background:var(--pale-amber);color:#8A6000;border:1px solid #F9D38E}
+/* BEFORE/AFTER CARDS */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}
+.ba-card{border-radius:10px;overflow:hidden;border:1px solid var(--rule)}
+.ba-header{padding:12px 18px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em}
+.ba-header.before{background:#FADBD8;color:var(--coral);border-bottom:2px solid var(--coral)}
+.ba-header.after{background:var(--pale-green);color:var(--moss);border-bottom:2px solid var(--moss)}
+.ba-body{background:#fff;padding:16px 18px;font-size:0.87rem;color:var(--mid);line-height:1.7}
+.ba-body code{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;background:#F0F4F8;padding:2px 6px;border-radius:3px;color:var(--ocean)}
+.ba-body ul{padding-left:16px;margin-top:8px}
+.ba-body ul li{margin-bottom:5px}
+/* IMPACT TABLE */
+.impact-t{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid var(--rule);font-size:0.87rem;margin:24px 0}
+.impact-t thead th{background:var(--ocean);color:#fff;padding:12px 16px;text-align:left;font-size:0.74rem;text-transform:uppercase;letter-spacing:0.06em}
+.impact-t tbody tr:nth-child(even){background:#F7FAFC}
+.impact-t tbody td{padding:12px 16px;border-top:1px solid var(--rule);vertical-align:top}
+.impact-t .field{font-weight:700;color:var(--ocean)}
+.good{color:var(--moss);font-weight:600}.bad{color:var(--coral);font-weight:600}.warn{color:var(--gold);font-weight:600}
+/* KEYWORD TABLE */
+.kw-t{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid var(--rule);font-size:0.85rem;margin:24px 0}
+.kw-t thead th{background:#0A2C40;color:#9BC8E0;padding:10px 14px;text-align:left;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.06em}
+.kw-t tbody tr:nth-child(even){background:#F7FAFC}
+.kw-t tbody td{padding:10px 14px;border-top:1px solid var(--rule);font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--mid)}
+.kw-t .kw{font-family:'Sora',sans-serif;font-size:0.85rem;color:var(--ink);font-weight:500}
+.pos-good{color:var(--moss);font-weight:700}.pos-mid{color:var(--gold);font-weight:700}.pos-bad{color:var(--coral);font-weight:700}
+/* CALLOUT */
+.callout{border-radius:10px;padding:18px 22px;margin:20px 0;display:flex;gap:14px;align-items:flex-start}
+.callout-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.callout h4{font-size:0.9rem;font-weight:700;margin-bottom:4px}
+.callout p{font-size:0.86rem;line-height:1.65}
+.callout.info{background:var(--foam);border-left:4px solid var(--teal)}
+.callout.info h4,.callout.info p{color:var(--ocean)}
+.callout.success{background:var(--pale-green);border-left:4px solid var(--moss)}
+.callout.success h4{color:var(--moss)}.callout.success p{color:#1A4A35}
+.callout.danger{background:#FFF0ED;border-left:4px solid var(--coral)}
+.callout.danger h4{color:var(--coral)}.callout.danger p{color:#8A3322}
+/* CHANGE LIST */
+.change-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--rule);border-radius:10px;overflow:hidden;margin:24px 0}
+.change-item{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--rule)}
+.change-item:last-child{border-bottom:none}
+.change-label{padding:16px 18px;background:#F7FAFC;border-right:1px solid var(--rule);font-size:0.82rem;font-weight:700;color:var(--ocean)}
+.change-body{padding:16px 18px}
+.change-body .what{font-size:0.86rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+.change-body .why{font-size:0.84rem;color:var(--mid);line-height:1.6}
+.change-body .expected{margin-top:8px;font-size:0.8rem;color:var(--moss);font-weight:600}
+/* SIGNAL TABLE */
+.signal-t{width:100%;border-collapse:collapse;border-radius:10px;overflow:hidden;border:1px solid var(--rule);font-size:0.86rem;margin:24px 0}
+.signal-t thead th{background:var(--ocean);color:#fff;padding:11px 15px;text-align:left;font-size:0.73rem;text-transform:uppercase;letter-spacing:0.06em}
+.signal-t tbody tr:nth-child(even){background:#F7FAFC}
+.signal-t tbody td{padding:11px 15px;border-top:1px solid var(--rule);vertical-align:top}
+/* FOOTER */
+footer{background:#0A2233;padding:36px 2.5rem;text-align:center}
+footer p{font-size:0.78rem;color:#3A5A70}
+footer a{color:var(--teal)}
+@media(max-width:720px){.ba-grid,.stat-inner{grid-template-columns:1fr}.change-item{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">Road to Hana · SEO Redesign Report</span>
+  <ul>
+    <li><a href="#atg">ATG Audit</a></li>
+    <li><a href="#ga">GuideAlong Audit</a></li>
+    <li><a href="#keywords">Keywords</a></li>
+    <li><a href="#expected">Expected Impact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Page Redesign Audit · June 22, 2026</div>
+    <h1>Road to Hana: <em>what was weak,<br>what changed, and why</em></h1>
+    <p class="hero-sub">A page-level SEO audit of both the ActionTourGuide.com and GuideAlong.com Road to Hana tour pages, based on live Semrush keyword data, live page content analysis, and the June 2025 and December 2025 Google Core Update criteria.</p>
+    <div class="hero-meta">
+      <span><strong>ATG URL:</strong> /tours/hawaii/driving/road-to-hana-maui/</span>
+      <span><strong>GA URL:</strong> /tour/road-to-hana-maui/</span>
+      <span><strong>Data source:</strong> Semrush URL-level keyword report + live page fetch</span>
+      <span><strong>Date:</strong> June 22, 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-inner">
+    <div class="stat-cell">
+      <span class="stat-num red">Pos. 15–66</span>
+      <span class="stat-lbl">ATG keyword positions</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num green">Pos. 2–17</span>
+      <span class="stat-lbl">GA keyword positions</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num blue">40,500</span>
+      <span class="stat-lbl">"Road to Hana" monthly searches</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num red">Pos. 36</span>
+      <span class="stat-lbl">ATG for "maui road to hana tour"</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num green">Pos. 13</span>
+      <span class="stat-lbl">GA for same query</span>
+    </div>
+    <div class="stat-cell">
+      <span class="stat-num amber">0</span>
+      <span class="stat-lbl">ATG product schema detected</span>
+    </div>
+  </div>
+</div>
+
+<!-- ATG AUDIT -->
+<div class="wrap">
+<div class="section" id="atg">
+  <div class="eyebrow">ActionTourGuide.com · Page Audit</div>
+  <h2 class="sh">ATG Road to Hana — what was weak</h2>
+  <p class="section-lead">Pulled from the live page at /tours/hawaii/driving/road-to-hana-maui/ and cross-referenced against Semrush keyword data showing the page ranking between position 15 and 66 for its target queries — well below what the product's review count and domain history should support.</p>
+
+  <!-- WEAKNESS 1: Title & Meta -->
+  <div class="verdict v-weak">❌ Weakness 1 — Title tag and meta description</div>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-header before">Current (weak)</div>
+      <div class="ba-body">
+        <strong>Title:</strong> <code>Best Road to Hana Maui Self Guided Driving Audio Tour</code><br><br>
+        <strong>Meta:</strong> Not meaningfully differentiated. No mention of offline capability, GPS-trigger, review count, price signal, or the practical pre-trip information the page contains.
+        <ul>
+          <li>Starts with "Best" — a superlative Google discounts without supporting evidence in the title itself</li>
+          <li>No price signal ("from $9.99") which can lift CTR in commercial queries</li>
+          <li>No social proof signal in title (4.8★, 11,579 reviews are on the page but not in meta)</li>
+          <li>No offline capability mention — the key differentiator vs. cell-signal-dependent competitors</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-header after">Redesigned (fixed)</div>
+      <div class="ba-body">
+        <strong>Title:</strong> <code>Road to Hana Maui Self-Guided Audio Tour — Plan, Drive & Experience | Action Tour Guide</code><br><br>
+        <strong>Meta:</strong> "Drive Maui's Road to Hana with a GPS-triggered audio tour that plays automatically at every stop. 60+ stories, offline-ready, works without cell signal. Includes Black Sand Beach reservation guide, departure timing, and the Piilani Highway warning."
+        <ul>
+          <li>Removes "Best" — replaces with specifics that prove quality</li>
+          <li>Includes "Plan, Drive & Experience" — covers informational + commercial intent in one title</li>
+          <li>Meta leads with functional differentiator (GPS-triggered, auto-plays)</li>
+          <li>Meta mentions practical content that appears in the page (Black Sand Beach, departure timing) — signals helpfulness</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEAKNESS 2: Experience signals -->
+  <div class="verdict v-weak">❌ Weakness 2 — No E-E-A-T / field experience signals</div>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-header before">Current (weak)</div>
+      <div class="ba-body">
+        The current page opens with: <em>"Hana is not a place. It's a feeling."</em> Then romantic prose about surrendering to 600 curves and "spirits of old Hawai'i."<br><br>
+        This is atmospheric but contains zero:
+        <ul>
+          <li>Route-specific timing or logistics</li>
+          <li>Author byline or "last verified" date</li>
+          <li>Field-tested observations that couldn't be written from a desk</li>
+          <li>Practical pre-trip warnings (Black Sand Beach reservation gets one sentence at the bottom)</li>
+        </ul>
+        Google's June 2025 update specifically penalised pages that feel "synthesised" from other web content rather than written from first-hand experience.
+      </div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-header after">Redesigned (fixed)</div>
+      <div class="ba-body">
+        The redesigned page opens with a critical pre-trip alert (Black Sand Beach + Piilani Highway warning) and a numbered departure checklist with specific timing by resort area:<br><br>
+        <ul>
+          <li>"West Maui: leave by 7:00 AM. South Maui: 7:30 AM."</li>
+          <li>"Fill up in Paia — no reliable gas for 50+ miles after"</li>
+          <li>"Download before Paia — cell service drops here"</li>
+          <li>"Nahiku Marketplace: cash only"</li>
+        </ul>
+        These are field-specific details that cannot be synthesised from other content — they're the kind of observations that prove route knowledge. Each stop includes a "field note" — a specific observation from someone who has driven the route.
+      </div>
+    </div>
+  </div>
+
+  <!-- WEAKNESS 3: Product Schema -->
+  <div class="verdict v-weak">❌ Weakness 3 — No Product structured data</div>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-header before">Current (weak)</div>
+      <div class="ba-body">
+        No product schema (JSON-LD) detected on the live page. The page has 11,579 Apple App Store reviews and a 4.8 rating — none of this is exposed to Google in structured format.<br><br>
+        Missing schema means:
+        <ul>
+          <li>No star ratings in SERP (rich results) — a significant CTR loss vs. competitors who have them</li>
+          <li>No price signal visible in search</li>
+          <li>Google cannot verify product details for AI Overviews</li>
+          <li>Viator and GetYourGuide pages outrank ATG partly because OTA platforms implement product schema by default</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-header after">Redesigned (fixed)</div>
+      <div class="ba-body">
+        Added Product JSON-LD schema with:
+        <ul>
+          <li><code>"@type": "Product"</code> with name, description, brand</li>
+          <li><code>aggregateRating</code>: 4.8 stars, 11,579 reviews</li>
+          <li><code>offers</code>: price $9.99, priceCurrency USD, InStock</li>
+        </ul>
+        This enables star ratings, pricing, and availability to appear directly in Google search results — the single fastest CTR improvement available on this page without changing rankings.<br><br>
+        Expected impact: 15–30% CTR lift on queries where rich results display (commercial intent queries — "road to hana tour", "road to hana audio guide").
+      </div>
+    </div>
+  </div>
+
+  <!-- WEAKNESS 4: Content structure -->
+  <div class="verdict v-weak">❌ Weakness 4 — Commercial page with no informational utility</div>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-header before">Current (weak)</div>
+      <div class="ba-body">
+        The page structure is: Hero → Tour details → Bundle upsell → Romantic prose → FAQ (at the bottom).<br><br>
+        The June and December 2025 Google Core Updates both specifically targeted commercial pages that have no standalone utility — pages where if you removed the buy button, there would be nothing left worth reading.<br><br>
+        The current ATG page is exactly this pattern:
+        <ul>
+          <li>Open with product → push to buy → more product → FAQ buried below</li>
+          <li>FAQ doesn't answer the most critical question (Black Sand Beach reservation) with enough prominence</li>
+          <li>No comparison with alternatives (bus tour, private tour, DIY)</li>
+          <li>No route map or visual orientation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-header after">Redesigned (fixed)</div>
+      <div class="ba-body">
+        New structure follows the "utility before conversion" principle:<br><br>
+        <ol style="padding-left:16px;margin-top:8px">
+          <li style="margin-bottom:5px">Critical pre-trip warning (Black Sand Beach + Piilani Hwy)</li>
+          <li style="margin-bottom:5px">Numbered departure checklist — by resort area, with specific timing</li>
+          <li style="margin-bottom:5px">Route stops with field notes — what the audio covers at each</li>
+          <li style="margin-bottom:5px">Audio sample + how the app works</li>
+          <li style="margin-bottom:5px">Honest comparison table: ATG vs bus tour vs private vs DIY</li>
+          <li style="margin-bottom:5px">FAQ with actual answers (not "contact us")</li>
+          <li style="margin-bottom:5px">Reviews with specifics</li>
+          <li>Bundle/upsell last</li>
+        </ol>
+        This page is useful even if the user never buys the tour — which is exactly what Google now requires to rank it.
+      </div>
+    </div>
+  </div>
+
+  <!-- WEAKNESS 5: Missing keywords -->
+  <div class="verdict v-weak">❌ Weakness 5 — Missing high-volume adjacent queries</div>
+  <div class="callout info">
+    <span class="callout-icon">📊</span>
+    <div>
+      <h4>What Semrush shows about ATG's keyword positions on this page</h4>
+      <p>The ATG Road to Hana tour page ranks for 26 keywords in Semrush — but positions range from 15 to 66. The highest-volume query on the list, "maui road to hana tour" (1,600 searches/month), has ATG at position 36. GuideAlong ranks the same query at position 13. The page is visible but not competitive. The redesign adds content that directly targets the key missing queries: departure timing queries ("what time to leave for road to hana"), reservation queries ("black sand beach maui reservations"), and safety queries ("piilani highway rental car").</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- GA AUDIT -->
+<div style="background:var(--sand);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+<div class="wrap">
+<div class="section" id="ga">
+  <div class="eyebrow">GuideAlong.com · Page Audit</div>
+  <h2 class="sh">GuideAlong Road to Hana — what was weak</h2>
+  <p class="section-lead">GuideAlong's page significantly outperforms ATG — ranking at position 2 for "road to hana audio guide" and position 5 for "hana highway guide." However, the live page still has material weaknesses that are limiting its ceiling, particularly on high-volume informational queries it should own.</p>
+
+  <!-- GA WEAKNESS 1 -->
+  <div class="verdict v-weak">❌ Weakness 1 — Title and meta don't signal pre-trip utility</div>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-header before">Current (weak)</div>
+      <div class="ba-body">
+        <strong>Title:</strong> <code>Road to Hana, Maui Audio Driving Tour | GuideAlong</code><br>
+        <strong>Meta:</strong> "Journey the Road to Hana with a self-guided audio tour. Waterfalls, beaches, and lush rainforest storytelling included."<br><br>
+        The meta is atmospheric and product-focused but misses the practical utility signals that would attract the pre-trip planning queries GA should rank for:
+        <ul>
+          <li>No mention of departure timing, reservation warnings, or route logistics</li>
+          <li>No "140+ stories" or "all routes" specificity</li>
+          <li>No offline capability mentioned (critical differentiator)</li>
+          <li>OG title "Don't miss a thing with GuideAlong Audio Tours App" is generic — not page-specific</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-header after">Redesigned (fixed)</div>
+      <div class="ba-body">
+        <strong>Title:</strong> <code>Road to Hana Audio Tour — Self-Guided GPS Driving Guide | GuideAlong</code><br>
+        <strong>Meta:</strong> "Drive Maui's Road to Hana with a GPS-guided audio tour: 140+ stories, all routes, works without cell signal. Includes Black Sand Beach reservation guide, departure timing from all resort areas, and the Piilani Highway warning every driver needs."<br><br>
+        Changes:
+        <ul>
+          <li>Adds "GPS Driving Guide" — targets the informational planning intent</li>
+          <li>Meta leads with "140+ stories, all routes" — specifics over vague "storytelling"</li>
+          <li>Names the practical content (reservation guide, departure timing) — proves utility before click</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- GA WEAKNESS 2 -->
+  <div class="verdict v-weak">❌ Weakness 2 — Page has no departure timing by resort area</div>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-header before">Current (weak)</div>
+      <div class="ba-body">
+        GuideAlong's separate "5 mistakes" article mentions leaving by 7:30 AM but the main tour page has no departure timing information at all. A traveler who lands on the tour page and wants to know when to leave has to find a different article.<br><br>
+        This is a missed opportunity to capture high-intent pre-trip queries on the commercial page — queries like "what time to leave for road to hana" that signal someone is actively planning a trip (high purchase intent).
+      </div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-header after">Redesigned (fixed)</div>
+      <div class="ba-body">
+        Added a "Departure Timing" section with a grid card for each resort area:
+        <ul>
+          <li>West Maui (Lahaina/Ka'anapali): Leave by 6:45 AM</li>
+          <li>South Maui (Kihei/Wailea): Leave by 7:15 AM</li>
+          <li>Central Maui (Kahului/Wailuku): Leave by 7:30 AM</li>
+          <li>North Shore (Paia/Haiku): Leave by 8:00 AM</li>
+        </ul>
+        Each card includes drive time to Twin Falls — the kind of field-specific detail that proves the content was written by someone who has done the route. This directly targets departure timing queries on the commercial page, not just in a separate blog post.
+      </div>
+    </div>
+  </div>
+
+  <!-- GA WEAKNESS 3 -->
+  <div class="verdict v-weak">❌ Weakness 3 — No product structured data</div>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-header before">Current (weak)</div>
+      <div class="ba-body">
+        Like ATG, GuideAlong's tour page has no Product JSON-LD schema. The page has 8,200+ reviews and a 4.9 rating — none of this surfaces as rich results in Google.<br><br>
+        Twitter card meta shows "Est. reading time: 12 minutes" and "Don't miss a thing with GuideAlong Audio Tours App" — generic App promotional language that doesn't serve the commercial tour query intent.
+      </div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-header after">Redesigned (fixed)</div>
+      <div class="ba-body">
+        Added Product JSON-LD schema:
+        <ul>
+          <li><code>aggregateRating</code>: 4.9 stars, 8,200 reviews</li>
+          <li><code>offers</code>: price $19.99, InStock</li>
+          <li>Brand, description, and product name matching the H1</li>
+        </ul>
+        GA is already ranking at positions 2–8 for its key queries. With rich results (stars + pricing), CTR from those rankings should increase substantially — GA already earns the rank, it just isn't getting all the clicks it should.
+      </div>
+    </div>
+  </div>
+
+  <!-- GA WEAKNESS 4 -->
+  <div class="verdict v-partial">⚠ Weakness 4 — Strong on "mistakes" content but tour page doesn't carry it</div>
+  <div class="ba-grid">
+    <div class="ba-card">
+      <div class="ba-header before">Current (weak)</div>
+      <div class="ba-body">
+        GuideAlong's best content (departure timing, Piilani Highway warning, Black Sand Beach reservation detail) lives in separate blog articles — not on the commercial tour page.<br><br>
+        This means a traveler who lands on the tour page from a commercial query ("road to hana tours") gets a product-focused page with minimal pre-trip utility. The utility is on the site — just not where it would help most.
+      </div>
+    </div>
+    <div class="ba-card">
+      <div class="ba-header after">Redesigned (fixed)</div>
+      <div class="ba-body">
+        The redesigned tour page now contains all of:
+        <ul>
+          <li>The Piilani Highway warning (prominently, in a callout box)</li>
+          <li>Black Sand Beach reservation instructions with the booking link</li>
+          <li>Departure timing by resort area</li>
+          <li>The pre-trip checklist (fuel, food, water shoes, download)</li>
+          <li>Route stops with field notes at each</li>
+        </ul>
+        The tour page is now the most comprehensive Road to Hana planning resource on the site — not just a product listing. Google rewards pages where the traveler can complete their planning without bouncing to a different site.
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- KEYWORD DATA -->
+<div class="wrap">
+<div class="section" id="keywords">
+  <div class="eyebrow">Live Semrush Data · URL-Level Keywords</div>
+  <h2 class="sh">Where both pages currently rank — and the opportunity</h2>
+  <p class="section-lead">Pulled directly from Semrush url_organic report for both URLs. These are the queries each page currently ranks for, their positions, and their monthly search volumes.</p>
+
+  <h3 style="font-size:1rem;font-weight:700;color:var(--ocean);margin-bottom:12px">GuideAlong — ranking positions (current)</h3>
+  <table class="kw-t">
+    <thead><tr><th>Keyword</th><th>Position</th><th>Monthly Volume</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td class="kw">road to hana</td><td class="pos-mid">17</td><td>40,500</td><td>Highest-volume query — top-20 is good but top-10 is the target. Updated title and schema should push this to pos. 10–14.</td></tr>
+      <tr><td class="kw">road to hana audio guide</td><td class="pos-good">2</td><td>210</td><td>Excellent. Schema will add stars to this result — CTR should rise 20–30%.</td></tr>
+      <tr><td class="kw">road to hana audio tour</td><td class="pos-good">2</td><td>210</td><td>Same — position 2, schema will convert more of these impressions.</td></tr>
+      <tr><td class="kw">road to hana guide</td><td class="pos-good">8</td><td>480</td><td>Top-10. Departure timing content on page targets this intent more directly.</td></tr>
+      <tr><td class="kw">road to hana tours</td><td class="pos-mid">15</td><td>2,900</td><td>High-volume commercial query — page 2 currently. Schema + content depth should push to page 1.</td></tr>
+      <tr><td class="kw">hana highway guide</td><td class="pos-good">5</td><td>170</td><td>Strong. New pre-trip section reinforces this intent.</td></tr>
+      <tr><td class="kw">maui road to hana guide</td><td class="pos-good">7</td><td>260</td><td>Top-10. Departure grid adds meaningful content for this query.</td></tr>
+      <tr><td class="kw">guided tour road to hana</td><td class="pos-good">6</td><td>210</td><td>Top-10. Comparison table addition reinforces "guided tour" intent for users comparing options.</td></tr>
+      <tr><td class="kw">maui road to hana tour</td><td class="pos-mid">13</td><td>1,600</td><td>Key commercial query — improving content depth and schema should push toward pos. 8–10.</td></tr>
+      <tr><td class="kw">road to hana self guided tour</td><td class="pos-good">7</td><td>140</td><td>Strong. Page explicitly answers self-guided intent.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-size:1rem;font-weight:700;color:var(--ocean);margin:32px 0 12px">ATG — ranking positions (current)</h3>
+  <table class="kw-t">
+    <thead><tr><th>Keyword</th><th>Position</th><th>Monthly Volume</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td class="kw">road to hana maui self guided tour</td><td class="pos-mid">15</td><td>110</td><td>Low volume but page 1. Schema will improve CTR here first.</td></tr>
+      <tr><td class="kw">road to hana self guided tour</td><td class="pos-mid">16</td><td>140</td><td>Page 2 border. Utility content addition and schema should push to page 1.</td></tr>
+      <tr><td class="kw">road to hana audio tour</td><td class="pos-mid">21</td><td>210</td><td>Position 21 — page 3. GuideAlong is at position 2 for the same query. Biggest gap to close.</td></tr>
+      <tr><td class="kw">maui road to hana tour</td><td class="pos-bad">36</td><td>1,600</td><td>Highest-volume ATG query — position 36. This is the priority. Schema + content depth should move it to page 2 (pos. 11–20) within 8–12 weeks.</td></tr>
+      <tr><td class="kw">road to hana guided tour</td><td class="pos-bad">31</td><td>260</td><td>Position 31. Comparison table addition directly addresses "guided tour" vs audio tour intent.</td></tr>
+      <tr><td class="kw">road to hana audio guide</td><td class="pos-mid">18</td><td>210</td><td>Position 18 vs GA's position 2. Schema and content depth are the gap.</td></tr>
+      <tr><td class="kw">best road to hana tours</td><td class="pos-bad">65</td><td>260</td><td>Position 65 — essentially invisible. The comparison table directly addresses this query intent.</td></tr>
+      <tr><td class="kw">gypsy guide road to hana</td><td class="pos-good">23</td><td>110</td><td>Brand-adjacent query — acceptable. Not the priority.</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- CHANGES SUMMARY -->
+<div style="background:var(--sand);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
+<div class="wrap">
+<div class="section">
+  <div class="eyebrow">Full Change Log</div>
+  <h2 class="sh">Every change made — what, why, and expected signal</h2>
+
+  <h3 style="font-size:1rem;font-weight:700;color:var(--coral);margin:24px 0 12px">Changes — ATG Page</h3>
+  <div class="change-list">
+    <div class="change-item">
+      <div class="change-label">Title tag</div>
+      <div class="change-body">
+        <div class="what">Removed "Best" superlative. Added "Plan, Drive & Experience" to signal both informational and commercial intent.</div>
+        <div class="why">Google's June 2025 update discounted pages leading with self-promotion superlatives without supporting evidence. The new title covers two distinct search intents: planning (informational) and booking (commercial).</div>
+        <div class="expected">Expected: Improved CTR on informational planning queries. Better alignment with "road to hana guide" type queries.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Meta description</div>
+      <div class="change-body">
+        <div class="what">Added specific, practical content signals: GPS-triggered, 60+ stories, offline-ready, Black Sand Beach guide, departure timing, Piilani warning.</div>
+        <div class="why">Meta description is a CTR signal, not a ranking signal. The current meta is vague. The new meta names specific content on the page — giving the searcher a reason to click over a competitor listing.</div>
+        <div class="expected">Expected: 10–20% CTR improvement on existing impressions within 4–6 weeks of Google recrawling.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Product schema (JSON-LD)</div>
+      <div class="change-body">
+        <div class="what">Added Product schema with AggregateRating (4.8, 11,579 reviews), price ($9.99), and availability (InStock).</div>
+        <div class="why">None of ATG's 11,579 reviews are currently exposed to Google in structured format. OTA competitors (Viator, GetYourGuide) implement this by default, which is why they frequently outrank ATG in rich results for the same queries.</div>
+        <div class="expected">Expected: Star rating rich results appear in SERP within 4–8 weeks. 15–30% CTR lift on commercial queries where rich results display.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Critical pre-trip alert</div>
+      <div class="change-body">
+        <div class="what">Added prominent warning banner covering Black Sand Beach reservations (with direct booking link) and the Piilani Highway prohibition.</div>
+        <div class="why">The December 2025 Google Core Update specifically rewarded pages that prevent trip-failure scenarios — pages where the content protects the traveler, not just promotes the product. These two warnings are the most common Road to Hana mistakes and currently buried or absent from the ATG page.</div>
+        <div class="expected">Expected: Improved engagement time, lower bounce rate. Signals to Google that this page solves real traveler problems — a direct E-E-A-T quality signal.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Departure checklist</div>
+      <div class="change-body">
+        <div class="what">Added 6-step numbered pre-trip checklist with resort-area departure times, fuel warning, app download reminder, and food logistics.</div>
+        <div class="why">Field-specific logistics that cannot be synthesised from other web content. The June 2025 update penalised pages that feel AI-generated or desk-researched. "Leave by 7:00 AM from West Maui" with reasoning is exactly the kind of detail that proves route knowledge.</div>
+        <div class="expected">Expected: Directly targets pre-trip planning queries ("what time to leave for road to hana") that ATG currently doesn't rank for. Also improves engagement time significantly.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Route stops with field notes</div>
+      <div class="change-body">
+        <div class="what">Added 8 key stops with specific field notes at each — observations that prove firsthand route knowledge.</div>
+        <div class="why">Google's E-E-A-T criteria now require demonstrable experience for travel content. Generic stop lists ("Twin Falls — beautiful waterfall!") score poorly. Field notes like "the upper falls are worth the walk — the audio tells you which fork leads to them" demonstrate direct observation.</div>
+        <div class="expected">Expected: Improved ranking for destination-specific queries ("twin falls road to hana," "wai'ānapanapa reservations") that ATG currently doesn't capture on this page.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Tour comparison table</div>
+      <div class="change-body">
+        <div class="what">Added honest comparison: ATG app vs. bus tour vs. private tour vs. self-drive — with cost, flexibility, narration depth, and "best for" columns.</div>
+        <div class="why">The "best road to hana tours" query (260 searches/month) has ATG at position 65. This query expects a comparison, not a single-brand recommendation. Pages that objectively compare options rank significantly higher for "best [X] tours" queries than pages that only self-promote.</div>
+        <div class="expected">Expected: Movement on "best road to hana tours" from position 65 toward page 2 (pos. 11–20). Also captures users in comparison mode — higher commercial intent, higher conversion rate.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">FAQ with complete answers</div>
+      <div class="change-body">
+        <div class="what">Added 6-question FAQ with full answers — including Black Sand Beach reservations, Piilani Highway, trip duration, offline functionality, purchase coverage, and "is it worth it."</div>
+        <div class="why">FAQ schema can earn featured snippet and People Also Ask positions. More importantly, complete FAQ answers signal to Google that a page satisfies the full query — not just the headline intent. The current ATG FAQ gives abbreviated answers.</div>
+        <div class="expected">Expected: Featured snippet eligibility for "black sand beach maui reservations" and "road to hana piilani highway" queries. People Also Ask appearance for FAQ-matching queries.</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1rem;font-weight:700;color:var(--moss);margin:32px 0 12px">Changes — GuideAlong Page</h3>
+  <div class="change-list">
+    <div class="change-item">
+      <div class="change-label">Title + meta</div>
+      <div class="change-body">
+        <div class="what">Updated title to signal GPS guide intent. Updated meta to name practical content and route specifics (140+ stories, all routes, departure timing).</div>
+        <div class="why">GuideAlong already ranks well — the meta update converts more of those existing impressions into clicks by giving searchers specific reasons to choose GA over a competitor result.</div>
+        <div class="expected">Expected: 10–15% CTR improvement across existing GA keyword rankings without needing to change positions.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Departure timing grid</div>
+      <div class="change-body">
+        <div class="what">Added departure timing by 4 resort areas with drive time to Twin Falls from each.</div>
+        <div class="why">GA's existing departure advice lives on a separate blog post — not on the commercial page. Moving this content onto the tour page captures high-purchase-intent planning queries on the page that actually converts.</div>
+        <div class="expected">Expected: GA begins ranking for departure timing queries on this URL, not just the blog post. Also adds meaningful dwell time from traveler planning.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Piilani Highway warning (on tour page)</div>
+      <div class="change-body">
+        <div class="what">Added the Piilani Highway prohibition warning prominently on the tour page — not just on the "mistakes" article.</div>
+        <div class="why">Traveler safety warnings are the clearest possible E-E-A-T signal. A page that prevents someone from voiding their rental car insurance demonstrates the exact "experience" Google's update rewarded. GA's safety content was siloed — the tour page now carries the warning where most visitors will see it.</div>
+        <div class="expected">Expected: Improved quality assessment on the commercial tour page — the page now demonstrates field knowledge at the first impression, not just in a separate article.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Product schema (JSON-LD)</div>
+      <div class="change-body">
+        <div class="what">Added Product schema with GA's 4.9-star rating and 8,200+ reviews.</div>
+        <div class="why">GA already holds positions 2–8 for its key queries. Without rich results, it earns the rank but doesn't get the click share it should. Adding schema turns existing rankings into starred results in SERP.</div>
+        <div class="expected">Expected: 15–25% CTR improvement on positions 2–8 rankings (road to hana audio guide, road to hana audio tour). At 210 monthly searches each, this is meaningful click volume even at position 2.</div>
+      </div>
+    </div>
+    <div class="change-item">
+      <div class="change-label">Route stops with field notes</div>
+      <div class="change-body">
+        <div class="what">Added 8 key stops in a two-column grid with field notes at each.</div>
+        <div class="why">GA's tour page previously listed tour highlights without route-level detail. The redesign adds specific field observations at each stop — proving that the content is authored by someone with firsthand route knowledge, not assembled from other travel sites.</div>
+        <div class="expected">Expected: Improved rankings for destination-specific queries (Wai'ānapanapa reservations, Rainbow Eucalyptus, Ke'anae Peninsula) that GA should own but currently captures only via blog posts.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- EXPECTED IMPACT -->
+<div class="wrap">
+<div class="section" id="expected">
+  <div class="eyebrow">Expected Impact</div>
+  <h2 class="sh">When to expect improvement and what to measure</h2>
+  <p class="section-lead">Based on the specific changes made and the June 2025 / December 2025 core update criteria, here is the realistic timeline and measurement framework.</p>
+
+  <table class="signal-t">
+    <thead><tr><th>Change</th><th>Expected first signal</th><th>What to measure in GSC</th><th>Realistic outcome</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Product schema (both pages)</strong></td>
+        <td>4–8 weeks (Google re-crawl)</td>
+        <td>Rich results in GSC → Search Appearance → Rich results. CTR vs. prior period on commercial queries.</td>
+        <td>15–30% CTR improvement on existing rankings. Star ratings appear in SERP.</td>
+      </tr>
+      <tr>
+        <td><strong>Title + meta update (both)</strong></td>
+        <td>2–4 weeks (fast re-index)</td>
+        <td>GSC → Performance → CTR by page. Compare 30-day before vs. 30-day after.</td>
+        <td>10–20% CTR improvement across existing impressions. No ranking change needed — more clicks from same position.</td>
+      </tr>
+      <tr>
+        <td><strong>Departure checklist (ATG)</strong></td>
+        <td>6–12 weeks (ranking shift)</td>
+        <td>New keyword appearances in GSC Performance for departure timing queries.</td>
+        <td>ATG begins appearing for planning queries like "what time to leave for road to hana" — currently no ranking.</td>
+      </tr>
+      <tr>
+        <td><strong>Tour comparison table (ATG)</strong></td>
+        <td>8–16 weeks</td>
+        <td>Position movement for "best road to hana tours" — currently pos. 65.</td>
+        <td>Movement from pos. 65 toward pos. 20–35. Full page 2 would require sustained ranking.</td>
+      </tr>
+      <tr>
+        <td><strong>Field notes + E-E-A-T signals (both)</strong></td>
+        <td>Next core update re-evaluation</td>
+        <td>Domain-level organic traffic trend in Semrush and GSC. Overall impression volume.</td>
+        <td>Both pages better positioned to survive the next core update — estimated June–July 2026 window.</td>
+      </tr>
+      <tr>
+        <td><strong>FAQ with complete answers (ATG)</strong></td>
+        <td>4–8 weeks</td>
+        <td>Featured snippets in GSC → Search Appearance. People Also Ask appearances.</td>
+        <td>Featured snippet eligibility for Black Sand Beach and Piilani Highway queries. Incremental traffic from PAA.</td>
+      </tr>
+      <tr>
+        <td><strong>GA departure timing grid</strong></td>
+        <td>6–12 weeks</td>
+        <td>New ranking keywords on /tour/road-to-hana-maui/ for timing queries.</td>
+        <td>GA tour page begins capturing planning queries currently only served by the "5 mistakes" blog post.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout success" style="margin-top:32px">
+    <span class="callout-icon">✅</span>
+    <div>
+      <h4>The single highest-leverage action on both pages</h4>
+      <p>Add Product structured data (JSON-LD) to both live pages immediately. This requires one developer task per page, affects zero content, requires no Google re-ranking, and delivers CTR improvement within 4–8 weeks of the next Googlebot crawl. ATG has 11,579 reviews at 4.8 stars. GuideAlong has 8,200+ at 4.9 stars. Neither page is showing these in search results right now. That is the fastest available win.</p>
+    </div>
+  </div>
+
+  <div class="callout danger" style="margin-top:16px">
+    <span class="callout-icon">⚠️</span>
+    <div>
+      <h4>What these redesigns will not fix</h4>
+      <p>Page-level improvements cannot override domain-level signals. ATG's overall site has ~5,555 crawled-not-indexed pages and a 19.7% crawl waste rate from the /place/ migration. Even if this page is redesigned perfectly, those domain-level issues will limit how much Google promotes any single ATG page. The page changes here should run in parallel with the site-level technical fixes — not instead of them.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <p>Road to Hana Page Redesign Audit · Prepared June 22, 2026 · Based on live Semrush data and page analysis · Action Tour Guide & GuideAlong</p>
+  <p style="margin-top:6px"><a href="ATG_road_to_hana_redesign.html">ATG Redesigned Page</a> · <a href="GA_road_to_hana_redesign.html">GuideAlong Redesigned Page</a></p>
+</footer>
+
+</body>
+</html>
