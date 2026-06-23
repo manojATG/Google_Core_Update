@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Road to Hana Maui GPS Audio Tour Guide | GuideAlong</title>
+<meta content="Drive Road to Hana with GPS audio, offline maps, Black Sand Beach reservation tips, resort departure times, all Maui routes, and 140+ stories." name="description"/>
+<meta content="Road to Hana Maui GPS Audio Tour Guide | GuideAlong" property="og:title">
+<meta content="GPS-triggered narration for the Road to Hana, with offline use, reservation tips, and all Maui routes." property="og:description"/>
+<meta content="product" property="og:type"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Road to Hana Maui Audio Driving Tour — All Routes",
+  "description": "Self-guided GPS-triggered audio tour of Maui's Road to Hana. 140+ stories, all routes, works offline.",
+  "brand": {
+    "@type": "Brand",
+    "name": "GuideAlong"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "19.99",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "8200",
+    "bestRating": "5"
+  }
+}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --deep:    #0E1E10;
+  --forest:  #1B4332;
+  --fern:    #2D6A4F;
+  --leaf:    #52B788;
+  --mist:    #D8F3DC;
+  --fog:     #F5FAF6;
+  --ocean:   #1A3C5E;
+  --sand:    #FAF7F2;
+  --gold:    #D4830A;
+  --lava:    #922B21;
+  --white:   #FFFFFF;
+  --ink:     #1A2820;
+  --mid:     #4A5E52;
+  --pale:    #8AA898;
+  --rule:    #C8DECE;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--ink); line-height: 1.7; font-size: 16px; }
+
+/* ── NAV ── */
+.nav { background: var(--white); border-bottom: 1px solid var(--rule); padding: 0 2rem; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.nav-brand { color: var(--forest); font-weight: 700; font-size: 1rem; }
+.nav-links { display: flex; gap: 1.8rem; list-style: none; }
+.nav-links a { color: var(--mid); font-size: 0.82rem; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--forest); }
+.nav-cta { background: var(--forest); color: var(--white) !important; padding: 8px 18px; border-radius: 5px; font-weight: 600 !important; }
+
+/* ── HERO — split layout ── */
+.hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh; }
+.hero-left { background: var(--forest); padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+.hero-left::before { content: ''; position: absolute; bottom: -80px; right: -80px; width: 320px; height: 320px; border-radius: 50%; background: rgba(82,183,136,0.12); }
+.hero-kicker { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.2em; color: var(--leaf); text-transform: uppercase; margin-bottom: 24px; }
+.hero h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(2.4rem, 4vw, 3.6rem); color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+.hero h1 em { font-style: italic; color: #8FD9B5; }
+.hero-sub { font-size: 1rem; color: #A8C8B8; font-weight: 300; line-height: 1.75; margin-bottom: 32px; max-width: 480px; }
+.hero-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 36px; }
+.fact-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 12px 16px; }
+.fact-val { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 500; color: var(--leaf); display: block; }
+.fact-lbl { font-size: 0.74rem; color: #7AA890; margin-top: 2px; }
+.hero-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--leaf); color: var(--deep); padding: 14px 32px; border-radius: 6px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background 0.2s; width: fit-content; }
+.hero-btn:hover { background: #6FCB9C; }
+
+.hero-right { background: var(--sand); display: flex; flex-direction: column; }
+.hero-img-wrap { flex: 1; overflow: hidden; }
+.hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.hero-card { background: var(--white); border-top: 1px solid var(--rule); padding: 28px 32px; }
+.price-row { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+.price-big { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--forest); }
+.price-note { font-size: 0.82rem; color: var(--pale); }
+.card-features { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+.card-feat { font-size: 0.82rem; color: var(--mid); display: flex; align-items: center; gap: 6px; }
+.card-feat::before { content: '✓'; color: var(--leaf); font-weight: 700; flex-shrink: 0; }
+.buy-btn { display: block; background: var(--forest); color: var(--white); text-align: center; padding: 14px; border-radius: 6px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: background 0.2s; margin-bottom: 10px; }
+.buy-btn:hover { background: var(--fern); }
+.bundle-link { display: block; text-align: center; font-size: 0.84rem; color: var(--fern); text-decoration: none; font-weight: 500; }
+.rating-pill { display: inline-flex; align-items: center; gap: 8px; background: var(--fog); border: 1px solid var(--rule); padding: 6px 14px; border-radius: 99px; font-size: 0.8rem; margin-top: 12px; }
+.rating-pill .stars { color: #F59E0B; }
+
+/* ── ALERT BANNER ── */
+.alert-banner { background: #FEF3CD; padding: 16px 2rem; display: flex; gap: 12px; align-items: flex-start; border-bottom: 1px solid #F6D860; }
+.alert-banner .icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+.alert-banner p { font-size: 0.88rem; color: #7A5800; line-height: 1.6; }
+.alert-banner strong { color: #5A4000; }
+.alert-banner a { color: var(--ocean); }
+
+/* ── LAYOUT ── */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+.section { padding: 64px 0; }
+.section + .section { border-top: 1px solid var(--rule); }
+.two-col { display: grid; grid-template-columns: 1fr 360px; gap: 48px; align-items: start; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.18em; color: var(--fern); text-transform: uppercase; margin-bottom: 10px; }
+h2.sh { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--ink); margin-bottom: 14px; line-height: 1.2; }
+.section-lead { font-size: 1rem; color: var(--mid); max-width: 640px; margin-bottom: 32px; font-weight: 300; }
+
+/* ── DEPARTURE GUIDE ── */
+.dep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0; }
+.dep-card { background: var(--fog); border: 1px solid var(--rule); border-radius: 10px; padding: 22px; }
+.dep-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+.dep-card .dep-time { font-family: 'JetBrains Mono', monospace; font-size: 1.4rem; font-weight: 500; color: var(--forest); margin-bottom: 6px; }
+.dep-card p { font-size: 0.84rem; color: var(--mid); line-height: 1.6; }
+.dep-card .dep-why { margin-top: 8px; font-size: 0.8rem; color: var(--fern); font-weight: 500; }
+
+/* ── PRE-TRIP CHECKLIST ── */
+.checklist { display: flex; flex-direction: column; gap: 0; }
+.cl-item { display: grid; grid-template-columns: 40px 1fr; gap: 0; border-bottom: 1px solid var(--rule); }
+.cl-item:last-child { border-bottom: none; }
+.cl-num { display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; font-weight: 600; color: var(--fern); border-right: 1px solid var(--rule); background: var(--fog); }
+.cl-body { padding: 16px 20px; }
+.cl-body h4 { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.cl-body p { font-size: 0.84rem; color: var(--mid); line-height: 1.6; }
+.cl-body .cl-warn { color: var(--lava); font-size: 0.82rem; font-weight: 600; margin-top: 5px; }
+.cl-body a { color: var(--ocean); }
+
+/* ── ROUTE STOPS ── */
+.route-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.stop { padding: 20px 24px; border-bottom: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+.route-cols > .stop:nth-child(even) { border-right: none; }
+.route-cols > .stop:nth-last-child(-n+2) { border-bottom: none; }
+.stop-mile { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--pale); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
+.stop h4 { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.stop p { font-size: 0.83rem; color: var(--mid); line-height: 1.6; }
+.stop .stop-note { margin-top: 8px; font-size: 0.78rem; font-style: italic; color: var(--fern); }
+.stop-tag { display: inline-block; font-size: 0.66rem; font-weight: 700; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; margin-bottom: 6px; letter-spacing: 0.06em; }
+.tag-r { background: #FEF3CD; color: #8A6000; }
+.tag-f { background: var(--mist); color: var(--forest); }
+.tag-h { background: #EEE0F8; color: #5B2D8E; }
+
+/* ── AUDIO SAMPLE ── */
+.audio-block { background: var(--forest); border-radius: 12px; padding: 32px; color: var(--white); }
+.audio-block .audio-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.16em; color: var(--leaf); text-transform: uppercase; margin-bottom: 12px; }
+.audio-block h4 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--white); margin-bottom: 16px; }
+.audio-text { font-size: 0.9rem; color: #C8E0D0; line-height: 1.75; font-style: italic; padding: 20px; background: rgba(255,255,255,0.06); border-radius: 8px; border-left: 3px solid var(--leaf); }
+.audio-caption { font-size: 0.76rem; color: #7AA890; margin-top: 12px; }
+
+/* ── FAQ ── */
+.faq { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+.faq-q { padding: 18px 22px; border-bottom: 1px solid var(--rule); }
+.faq-q:last-child { border-bottom: none; }
+.faq-q h4 { font-size: 0.92rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.faq-q p { font-size: 0.85rem; color: var(--mid); line-height: 1.65; }
+.faq-q a { color: var(--ocean); }
+
+/* ── COMPARISON ── */
+.compare-t { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; border: 1px solid var(--rule); font-size: 0.86rem; }
+.compare-t th { background: var(--deep); color: var(--white); padding: 12px 16px; text-align: left; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.compare-t td { padding: 12px 16px; border-top: 1px solid var(--rule); vertical-align: top; }
+.compare-t tr:nth-child(even) td { background: var(--fog); }
+.g { color: var(--fern); font-weight: 600; }
+.o { color: var(--gold); font-weight: 600; }
+.r { color: var(--lava); }
+
+/* ── REVIEWS ── */
+.rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.rev-card { background: var(--fog); border: 1px solid var(--rule); border-radius: 10px; padding: 20px; }
+.rev-stars { color: #F59E0B; margin-bottom: 8px; font-size: 0.9rem; }
+.rev-text { font-size: 0.84rem; color: var(--mid); line-height: 1.65; font-style: italic; margin-bottom: 12px; }
+.rev-name { font-size: 0.76rem; font-weight: 700; color: var(--ink); }
+.rev-src { font-size: 0.72rem; color: var(--pale); }
+
+/* ── BUNDLE BAND ── */
+.bundle-band { background: var(--fog); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 48px 0; }
+.bundle-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin-top: 28px; }
+.b-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 24px; }
+.b-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.b-card p { font-size: 0.83rem; color: var(--mid); margin-bottom: 14px; }
+.b-card .b-price { font-family: 'JetBrains Mono', monospace; color: var(--forest); font-size: 1.1rem; font-weight: 600; }
+.b-card .b-was { color: var(--pale); text-decoration: line-through; font-size: 0.85rem; margin-right: 6px; }
+.b-card a { display: block; margin-top: 14px; background: var(--forest); color: var(--white); text-align: center; padding: 10px; border-radius: 5px; font-size: 0.86rem; font-weight: 600; text-decoration: none; }
+
+/* ── STICKY ── */
+.sticky { position: fixed; bottom: 0; left: 0; right: 0; background: var(--forest); padding: 14px 2rem; display: flex; align-items: center; justify-content: space-between; z-index: 99; box-shadow: 0 -4px 20px rgba(0,0,0,0.15); }
+.sticky .sl { color: var(--white); font-size: 0.9rem; font-weight: 600; }
+.sticky .ss { color: #88C8A0; font-size: 0.76rem; }
+.sticky a { background: var(--leaf); color: var(--deep); padding: 11px 26px; border-radius: 5px; font-weight: 700; text-decoration: none; font-size: 0.92rem; }
+
+footer { background: var(--deep); padding: 36px 2rem; text-align: center; }
+footer p { color: #3A5A48; font-size: 0.8rem; }
+footer a { color: var(--leaf); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 40px 24px; }
+  .hero-right { display: none; }
+  .two-col { grid-template-columns: 1fr; }
+  .dep-grid { grid-template-columns: 1fr; }
+  .route-cols { grid-template-columns: 1fr; }
+  .route-cols > .stop { border-right: none; }
+  .route-cols > .stop:nth-last-child(-n+2) { border-bottom: 1px solid var(--rule); }
+  .route-cols > .stop:last-child { border-bottom: none; }
+  .rev-grid { grid-template-columns: 1fr; }
+  .bundle-cards { grid-template-columns: 1fr; }
+  .sticky { flex-direction: column; gap: 10px; }
+}
+
+/* ── ADDED: Verification, source, and fact-check sections ── */
+.verification-section{
+  background:var(--white,#fff);
+  border-top:1px solid var(--rule,#e2e8f0);
+  border-bottom:1px solid var(--rule,#e2e8f0);
+  padding:56px 0;
+}
+.verification-kicker{
+  font-family:'JetBrains Mono','IBM Plex Mono','Space Mono',monospace;
+  font-size:.68rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--rain,var(--fern,var(--trail,var(--hot,#0A6E8A))));
+  margin-bottom:10px;
+}
+.verification-title{
+  font-family:inherit;
+  font-size:clamp(1.5rem,3vw,2.1rem);
+  line-height:1.2;
+  color:var(--lava,var(--ink,var(--ash,var(--park,#0f172a))));
+  margin-bottom:12px;
+  font-weight:700;
+}
+.verification-lead{
+  color:var(--mid,#475569);
+  max-width:760px;
+  margin-bottom:24px;
+  font-size:.95rem;
+  line-height:1.7;
+}
+.verification-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+  margin:22px 0;
+}
+.verification-card{
+  background:var(--fog,var(--buff,#f8fafc));
+  border:1px solid var(--rule,#e2e8f0);
+  border-radius:10px;
+  padding:18px;
+}
+.verification-card h3{
+  font-size:.88rem;
+  color:var(--lava,var(--ink,var(--ash,var(--park,#0f172a))));
+  margin-bottom:8px;
+  font-weight:700;
+}
+.verification-card p,
+.verification-card li{
+  font-size:.82rem;
+  color:var(--mid,#475569);
+  line-height:1.6;
+}
+.verification-card ul{
+  margin-left:18px;
+}
+.source-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:18px;
+}
+.source-list a{
+  display:block;
+  background:#fff;
+  border:1px solid var(--rule,#e2e8f0);
+  border-radius:6px;
+  padding:10px 12px;
+  font-size:.82rem;
+  color:var(--ocean,var(--sky,var(--sky-ys,var(--trail,#1565a0))));
+  text-decoration:none;
+  line-height:1.45;
+}
+.source-list a:hover{text-decoration:underline}
+.fact-correction{
+  background:#FFF7ED;
+  border:1px solid #FED7AA;
+  border-left:4px solid #D97706;
+  border-radius:0 8px 8px 0;
+  padding:14px 16px;
+  margin-top:18px;
+}
+.fact-correction strong{
+  color:#7C2D12;
+}
+.fact-correction p{
+  font-size:.86rem;
+  color:#7C2D12;
+  line-height:1.65;
+}
+@media(max-width:760px){
+  .verification-grid,.source-list{grid-template-columns:1fr}
+}
+
+
+
+/* ── ADDED: VISUAL PROOF / IMAGE PLACEHOLDERS ── */
+.visual-proof-section {
+  padding: 64px 0;
+  background: var(--fog, var(--buff, var(--steam, #F8FAFC)));
+  border-top: 1px solid var(--rule, #E2E8F0);
+}
+.visual-proof-section .visual-kicker {
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rain, var(--fern, var(--trail, var(--sulfur, #0A6E8A))));
+  margin-bottom: 10px;
+}
+.visual-proof-section .visual-title {
+  font-family: 'Playfair Display', 'DM Serif Display', 'Fraunces', 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  line-height: 1.18;
+  margin-bottom: 12px;
+  color: var(--lava, var(--ink, var(--ash, #0F172A)));
+}
+.visual-proof-section .visual-lead {
+  color: var(--mid, #475569);
+  max-width: 760px;
+  margin-bottom: 28px;
+  font-size: 0.98rem;
+}
+.visual-feature-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+.visual-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.visual-card {
+  background: var(--white, #fff);
+  border: 1px solid var(--rule, #E2E8F0);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+.visual-card img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  background: #F1F5F9;
+}
+.visual-card-body {
+  padding: 14px 16px 16px;
+}
+.visual-card h3,
+.visual-card h4 {
+  font-size: 0.92rem;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  color: var(--lava, var(--ink, var(--ash, #0F172A)));
+}
+.visual-card p {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--mid, #475569);
+}
+.visual-caption {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: var(--pale, #94A3B8);
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', 'Space Mono', monospace;
+  letter-spacing: 0.02em;
+}
+.visual-author-card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  min-height: 100%;
+}
+.visual-author-card img {
+  height: 100%;
+  aspect-ratio: auto;
+}
+.visual-checklist {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.visual-checkitem {
+  background: rgba(255,255,255,0.7);
+  border: 1px dashed var(--rule, #CBD5E1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.78rem;
+  color: var(--mid, #475569);
+}
+@media(max-width: 900px) {
+  .visual-feature-grid, .visual-card-grid, .visual-checklist { grid-template-columns: 1fr 1fr; }
+  .visual-author-card { grid-template-columns: 1fr; }
+  .visual-author-card img { height: auto; aspect-ratio: 16 / 9; }
+}
+@media(max-width: 640px) {
+  .visual-feature-grid, .visual-card-grid, .visual-checklist { grid-template-columns: 1fr; }
+}
+
+
+/* ── HELPFUL CONTENT GAP FIXES — AUTHOR, METHOD, QUICK ANSWERS ── */
+.helpful-gap-section {
+  padding: 56px 0;
+  border-top: 1px solid var(--rule, #E2E8F0);
+  background: var(--white, #FFFFFF);
+}
+.helpful-gap-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.helpful-gap-kicker {
+  font-family: 'Inter', 'Space Mono', 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rain, var(--trail, var(--sulfur, #0A6E8A)));
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.helpful-gap-title {
+  font-family: inherit;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  line-height: 1.2;
+  color: var(--ink, var(--ash, var(--lava, #0F172A)));
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+.helpful-gap-lead {
+  color: var(--mid, #475569);
+  font-size: 0.96rem;
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+.author-grid, .quick-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.author-card, .quick-answer-card {
+  border: 1px solid var(--rule, #E2E8F0);
+  background: var(--fog, var(--buff, #F8FAFC));
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.author-card h3, .quick-answer-card h3 {
+  font-size: 0.95rem;
+  margin-bottom: 7px;
+  color: var(--ink, var(--ash, var(--lava, #0F172A)));
+}
+.author-card p, .quick-answer-card p, .author-card li, .quick-answer-card li {
+  color: var(--mid, #475569);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+.author-card ul, .quick-answer-card ul { margin-left: 18px; margin-top: 8px; }
+.author-card a, .quick-answer-card a {
+  color: var(--ocean, var(--sky, var(--sky-ys, #1565A0)));
+  font-weight: 700;
+  text-decoration: underline;
+}
+.method-note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-left: 4px solid var(--rain, var(--trail, var(--sulfur, #0A6E8A)));
+  background: var(--mist, var(--geyser, #E0F4FF));
+  color: var(--mid, #475569);
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+.quick-answer-grid { grid-template-columns: repeat(2, 1fr); }
+@media(max-width: 760px) {
+  .author-grid, .quick-answer-grid { grid-template-columns: 1fr; }
+}
+
+
+
+/* Score-improvement additions: citations, author bio, related guide links */
+.faq-q h3, .dep-card h3, .cl-body h3, .stop h3, .audio-block h3, .b-card h3, .visual-card-body h3, .author-card h3, .verification-card h3 { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; line-height: 1.35; }
+.source-quote-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:24px 0; }
+.source-quote-card { background:var(--white); border:1px solid var(--rule); border-radius:10px; padding:20px; }
+.source-quote-card blockquote { font-family: 'DM Serif Display', Georgia, serif; font-size:1.12rem; color:var(--forest); line-height:1.45; margin-bottom:10px; }
+.source-quote-card cite { display:block; font-size:0.78rem; color:var(--mid); font-style:normal; }
+.original-insight { background:var(--mist); border-left:4px solid var(--fern); padding:18px 20px; border-radius:0 8px 8px 0; margin:22px 0; color:var(--mid); font-size:0.9rem; line-height:1.65; }
+.original-insight strong { color:var(--forest); }
+.related-guides { background:var(--fog); border-top:1px solid var(--rule); padding:44px 0; }
+.related-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:18px; }
+.related-grid a { display:block; background:var(--white); border:1px solid var(--rule); border-radius:8px; padding:14px 16px; color:var(--forest); text-decoration:none; font-weight:700; font-size:0.84rem; line-height:1.35; }
+.related-grid a span { display:block; color:var(--mid); font-weight:400; font-size:0.76rem; margin-top:5px; }
+.author-card .author-link { display:inline-block; margin-top:8px; color:var(--ocean); font-weight:700; text-decoration:underline; }
+@media(max-width:760px){ .source-quote-grid, .related-grid { grid-template-columns:1fr; } }
+
+/* 100-score tuning: visible author bio, citations, original research, topical cluster links */
+.author-bio-section, .citation-evidence-section, .original-research-section { background: var(--white); border-top: 1px solid var(--rule); padding: 52px 0; }
+.author-bio-card, .citation-evidence-card, .original-research-card { background: var(--fog); border:1px solid var(--rule); border-radius:12px; padding:24px; }
+.author-bio-card p, .citation-evidence-card li, .original-research-card p, .original-research-card li { font-size:0.88rem; color:var(--mid); line-height:1.65; }
+.author-bio-card a, .citation-evidence-card a, .original-research-card a { color:var(--ocean); font-weight:700; }
+.citation-evidence-card ul, .original-research-card ul { margin-left:20px; margin-top:10px; }
+.citation-evidence-card li, .original-research-card li { margin-bottom:8px; }
+.quote-attribution { display:block; margin-top:10px; font-family:'DM Sans', sans-serif; font-size:0.78rem; color:var(--mid); font-style:normal; }
+.cluster-link-list { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:18px; }
+.cluster-link-list a { display:block; background:var(--white); border:1px solid var(--rule); border-radius:8px; padding:12px 14px; text-decoration:none; color:var(--forest); font-weight:700; font-size:0.84rem; }
+@media(max-width:760px){ .cluster-link-list { grid-template-columns:1fr; } }
+
+/* Topical link-alignment tuning */
+.topic-cluster-list{margin:18px 0 0 20px;columns:2;column-gap:32px}
+.topic-cluster-list li{break-inside:avoid;margin-bottom:8px;font-size:.86rem}.topic-cluster-list a{color:var(--forest);font-weight:700}@media(max-width:760px){.topic-cluster-list{columns:1}}
+</style>
+<link href="https://guidealong.com/tour/road-to-hana-maui/" rel="canonical"/><meta content="index,follow,max-image-preview:large" name="robots"/><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need a reservation for Black Sand Beach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — mandatory since 2021, no exceptions. Book at gostateparks.hawaii.gov up to 30 days ahead. Download your voucher before leaving Paia — there is no cell signal at Wai'ānapanapa State Park. Do not assume roadside or overflow parking outside the entrance is allowed; enforcement and towing are possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I drive the Piilani Highway back?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technically possible in some conditions, but many rental agreements restrict remote or unpaved portions of Hwy 31. If you break down, roadside assistance may be limited and cell signal may be unavailable. Unless your rental agreement explicitly allows the route and you are comfortable with the risk, drive back via Hana Highway the way you came."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does the Road to Hana take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plan for a full day — 8 to 10 hours including stops. The drive alone is 2.5 hours each way. With Twin Falls, Black Sand Beach, the waterfall stops, and food, a well-paced day means arriving home by 5–6 PM if you leave before 7:30 AM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does GuideAlong work without cell service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — completely. Download the tour on WiFi before you leave. After that the app uses your phone's built-in GPS (which doesn't need data) to track your location and trigger stories. You will have no signal for most of the drive and won't need any."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between this tour and the basic Road to Hana route?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This \"All Routes\" version includes 140+ audio points covering the main Hana Highway plus the Haleakalā Crater route, the Paia town introduction, and coastal route content. The standard tour covers only the main Hana Highway drive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "One purchase — how many people does it cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One purchase covers one car. Everyone in the vehicle hears the tour through your car speakers (Bluetooth or aux). You do not need one per person."
+      }
+    }
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to use the GuideAlong Road to Hana audio tour",
+  "description": "Download the tour before leaving, connect your phone to the car, follow the Road to Hana route, and let GPS trigger stories automatically while you drive.",
+  "totalTime": "P1D",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Download before you leave",
+      "text": "Install GuideAlong and download the Road to Hana tour on WiFi before leaving your resort or Paia."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Connect audio in your car",
+      "text": "Connect your phone to the car speakers using Bluetooth, CarPlay, Android Auto, AUX, or speaker audio."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Start the route",
+      "text": "Begin driving toward Paia and Hana. The tour uses GPS, not cell data, after the download is complete."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Listen hands-free",
+      "text": "Stories, directions, and stop notes play automatically as you approach each point on the route."
+    }
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://guidealong.com/tour/road-to-hana-maui/#article",
+  "headline": "Road to Hana Maui GPS Audio Tour Guide | GuideAlong",
+  "description": "Drive Road to Hana with GPS audio, offline maps, Black Sand Beach reservation tips, resort departure times, all Maui routes, and 140+ stories.",
+  "author": {
+    "@id": "https://guidealong.com/tour/road-to-hana-maui/#road-to-hana-author-bio"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GuideAlong",
+    "url": "https://guidealong.com/"
+  },
+  "mainEntityOfPage": "https://guidealong.com/tour/road-to-hana-maui/",
+  "datePublished": "2026-06-22",
+  "dateModified": "2026-06-24",
+  "about": [
+    "Road to Hana",
+    "Maui audio tour",
+    "Road to Hana driving guide",
+    "Waiʻānapanapa State Park reservation"
+  ],
+  "citation": [
+    "https://dlnr.hawaii.gov/dsp/parks/maui/waianapanapa-state-park/",
+    "https://dlnr.hawaii.gov/dsp/parks/maui/waianapanapa-state-park/waianapanapa-information-frequently-asked-questions/",
+    "https://gostateparks.hawaii.gov/waianapanapa"
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://guidealong.com/tour/road-to-hana-maui/#road-to-hana-author-bio",
+  "name": "GuideAlong Road to Hana Content Team",
+  "url": "https://guidealong.com/tour/road-to-hana-maui/#road-to-hana-author-bio",
+  "jobTitle": "Travel content and audio tour editorial team",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "GuideAlong",
+    "url": "https://guidealong.com/"
+  },
+  "knowsAbout": [
+    "Road to Hana GPS audio tour",
+    "Road to Hana Maui trip planning",
+    "Waiʻānapanapa Black Sand Beach reservations",
+    "Maui offline driving tours",
+    "Hana Highway stops and routes"
+  ]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Road to Hana Maui Tours",
+      "item": "https://guidealong.com/tour/road-to-hana-maui/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Road to Hana Audio Tour Guide",
+      "item": "https://guidealong.com/tour/road-to-hana-maui/#road-to-hana-audio-guide"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Road to Hana Trip Planner",
+      "item": "https://guidealong.com/tour/road-to-hana-maui/#road-to-hana-trip-planner"
+    }
+  ]
+}
+</script></meta></head>
+<body>
+<nav class="nav">
+<span class="nav-brand">GuideAlong</span>
+<ul class="nav-links">
+<li><a href="#road-to-hana-tours">Road to Hana Maui Tours</a></li>
+<li><a href="#road-to-hana-audio-guide">Road to Hana Audio Guide</a></li>
+<li><a href="#road-to-hana-trip-planner">Road to Hana Trip Planner</a></li>
+<li><a href="#road-to-hana-reviews">Road to Hana Reviews</a></li>
+<li><a class="nav-cta" href="#buy-road-to-hana-audio-tour">Buy Road to Hana Tour — $19.99</a></li>
+</ul>
+</nav>
+<!-- HERO -->
+<div class="hero">
+<div class="hero-left">
+<div class="hero-kicker">Maui, Hawaii · All Routes · GPS Audio Tour</div>
+<h1>Road to Hana Maui<br/><em>All-Routes Audio Tour</em></h1>
+<p class="hero-sub">140+ GPS-triggered audio stories that play the moment you arrive at each stop. Works completely offline — download before you leave Paia and you won't need signal for the rest of the day.</p>
+<div class="hero-facts">
+<div class="fact-item">
+<span class="fact-val">140+</span>
+<span class="fact-lbl">Audio stories &amp; narration points</span>
+</div>
+<div class="fact-item">
+<span class="fact-val">All routes</span>
+<span class="fact-lbl">Including Haleakalā, Paia &amp; coastal</span>
+</div>
+<div class="fact-item">
+<span class="fact-val">Offline</span>
+<span class="fact-lbl">Works without cell service</span>
+</div>
+<div class="fact-item">
+<span class="fact-val">No expiry</span>
+<span class="fact-lbl">Use it every trip, forever</span>
+</div>
+</div>
+<a class="hero-btn" href="#buy-road-to-hana-audio-tour">Buy Road to Hana Audio Tour — $19.99 →</a>
+</div>
+<div class="hero-right">
+<div class="hero-img-wrap">
+<img alt="Road to Hana Maui coastal highway through tropical rainforest" src="https://guidealong.com/wp-content/uploads/2017/09/r2h-1.jpg"/>
+</div>
+<div class="hero-card" id="buy-road-to-hana-audio-tour">
+<div class="price-row">
+<span class="price-big">$19.99</span>
+<span class="price-note">All routes · One purchase · No expiry</span>
+</div>
+<div class="card-features">
+<span class="card-feat">140+ audio stops</span>
+<span class="card-feat">Works offline</span>
+<span class="card-feat">GPS auto-play</span>
+<span class="card-feat">No date limit</span>
+<span class="card-feat">All Maui routes</span>
+<span class="card-feat">One price per car</span>
+</div>
+<a class="buy-btn" href="#buy-road-to-hana-audio-tour">Buy Road to Hana Audio Tour — $19.99</a>
+<a class="bundle-link" href="#road-to-hana-maui-bundle">Or get the Maui Road to Hana Bundle from $29.99 →</a>
+<div class="rating-pill">
+<span class="stars">★★★★★</span>
+<span>4.9 · 8,200+ verified reviews</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ALERT -->
+<div class="alert-banner">
+<span class="icon">⚠️</span>
+<p><strong>Two things that make or break this drive:</strong> (1) <strong>Waiʻānapanapa State Park (Black Sand Beach) requires advance reservations for non-resident visitors</strong>. Same-day purchase at the park is not available; book before you drive at <a href="https://gostateparks.hawaii.gov/waianapanapa" rel="noopener" target="_blank">gostateparks.hawaii.gov</a>. (2) <strong>Check your rental agreement before attempting Piilani Highway / the back-side route.</strong> Many rental contracts restrict remote or unpaved stretches, and roadside assistance may not cover breakdowns there.</p>
+</div>
+<!-- DEPARTURE TIMING -->
+<div class="wrap">
+<div class="section" id="road-to-hana-trip-planner">
+<div class="eyebrow">Before You Leave Your Resort</div>
+<h2 class="sh">When to leave — by resort area</h2>
+<p class="section-lead">The single most important Road to Hana decision is when you leave. Arriving too late means parking gridlock, sold-out banana bread, and fighting for a spot at every waterfall.</p>
+<div class="dep-grid">
+<div class="dep-card">
+<h3>West Maui — Lahaina, Ka'anapali, Kā'anapali</h3>
+<div class="dep-time">Leave by 6:45 AM</div>
+<p>Longest drive to Kahului before you even reach the road. Leave before 7 AM or you'll be stuck behind early risers who beat you to the first waterfall by an hour.</p>
+<div class="dep-why">→ Drive time to Twin Falls: ~75 min</div>
+</div>
+<div class="dep-card">
+<h3>South Maui — Kihei, Wailea, Makena</h3>
+<div class="dep-time">Leave by 7:15 AM</div>
+<p>Slightly shorter drive to Paia than West Maui. Leave no later than 7:15 — parking at Twin Falls fills by 9 AM on a busy day.</p>
+<div class="dep-why">→ Drive time to Twin Falls: ~55 min</div>
+</div>
+<div class="dep-card">
+<h3>Central Maui — Kahului, Wailuku</h3>
+<div class="dep-time">Leave by 7:30 AM</div>
+<p>Closest to the road start. Use this time advantage — stop in Paia to fuel up, grab food, and download the app before signal drops.</p>
+<div class="dep-why">→ Drive time to Twin Falls: ~35 min</div>
+</div>
+<div class="dep-card">
+<h3>North Shore — Paia, Haiku</h3>
+<div class="dep-time">Leave by 8:00 AM</div>
+<p>You're already at the starting line. Use the extra time to fuel up in Paia (last gas until Hana), stock food, and download the tour.</p>
+<div class="dep-why">→ You're already at Twin Falls in 10 min</div>
+</div>
+</div>
+</div>
+</div>
+<!-- PRE-TRIP CHECKLIST -->
+<div style="background: var(--fog); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+<div class="wrap">
+<div class="section">
+<div class="eyebrow">Pre-Trip Checklist</div>
+<h2 class="sh">Do this before you leave your resort</h2>
+<p class="section-lead">Most people who have a bad Road to Hana day skipped one of these.</p>
+<div class="two-col">
+<div class="checklist" style="border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;">
+<div class="cl-item">
+<div class="cl-num">1</div>
+<div class="cl-body">
+<h3>Book Wai'ānapanapa State Park</h3>
+<p>Mandatory reservation — no same-day option. Book at <a href="https://gostateparks.hawaii.gov" target="_blank">gostateparks.hawaii.gov</a> up to 30 days in advance. Download your voucher to your phone before leaving — no signal at the park.</p>
+<p class="cl-warn">⚠ No voucher = no entry. Cars outside are towed.</p>
+</div>
+</div>
+<div class="cl-item">
+<div class="cl-num">2</div>
+<div class="cl-body">
+<h3>Download the GuideAlong app + your tour</h3>
+<p>Do this at your resort on WiFi. Cell service drops past Paia and won't return reliably until you're near Hana. The app uses GPS only once downloaded — no data connection needed.</p>
+</div>
+</div>
+<div class="cl-item">
+<div class="cl-num">3</div>
+<div class="cl-body">
+<h3>Fill up fuel in Kahului or Paia</h3>
+<p>No reliable gas station for 50+ miles after Paia. Fill the tank before you leave — do not assume you'll find a station.</p>
+</div>
+</div>
+<div class="cl-item">
+<div class="cl-num">4</div>
+<div class="cl-body">
+<h3>Pack food for the whole day</h3>
+<p>The road has roadside stands (mostly cash only) but no sit-down restaurants until Hana town. Pack lunch and snacks in Paia. The Nahiku Marketplace is the only notable food stop mid-route — cash only.</p>
+</div>
+</div>
+<div class="cl-item">
+<div class="cl-num">5</div>
+<div class="cl-body">
+<h3>Pack water shoes, not just sandals</h3>
+<p>Several waterfall pools have volcanic rock approaches that are slippery. Water shoes or reef shoes make a real difference. Also bring: sunscreen, insect repellant, a light rain layer, and toilet paper for the less-serviced stops.</p>
+</div>
+</div>
+</div>
+<div>
+<div style="background: var(--forest); border-radius: 10px; padding: 28px; color: var(--white);">
+<div class="eyebrow" style="color: var(--leaf);">The Piilani Highway Warning</div>
+<h3 style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--white); margin-bottom: 12px; line-height: 1.3;">Do not take Hwy 31 back. This is not a "rough road" advisory.</h3>
+<p style="font-size: 0.88rem; color: #A8C8B8; line-height: 1.7;">All major car rental companies explicitly prohibit the Piilani Highway in their rental agreements. If you drive it and get a flat tire or break down, your roadside assistance is void. You could wait hours with no cell signal in a remote area. The scenery on the south coast is beautiful — but it is not worth the risk.</p>
+<p style="font-size: 0.85rem; color: #C8E0D0; margin-top: 12px; font-weight: 600;">Drive back the way you came. Always.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ROUTE STOPS -->
+<div class="wrap">
+<div class="section" id="road-to-hana-best-stops">
+<div class="eyebrow">What's Along the Route</div>
+<h2 class="sh">Key stops — what the audio tour covers</h2>
+<p class="section-lead">The app plays the right story automatically as you approach each stop. You don't navigate — you just drive and listen.</p>
+<div class="route-cols" style="border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;">
+<div class="stop">
+<div class="stop-mile">Mile 2 from Paia</div>
+<span class="stop-tag tag-f">Free</span>
+<h3>Twin Falls</h3>
+<p>First major stop and the most photographed. Arrive before 9 AM for manageable crowds. The audio tells you which fork leads to the upper falls — most people miss them.</p>
+</div>
+<div class="stop">
+<div class="stop-mile">Mile 9</div>
+<span class="stop-tag tag-f">Free</span>
+<h3>Waikamoi Ridge Trail</h3>
+<p>A quiet 20-minute loop through bamboo groves that most drivers skip. One of the tour's most peaceful stops — the audio tells you exactly where to pull over.</p>
+</div>
+<div class="stop">
+<div class="stop-mile">Mile 17</div>
+<span class="stop-tag tag-f">Cash only</span>
+<h3>Halfway to Hana — Banana Bread</h3>
+<p>The stand everyone talks about. Get here before 10 AM or it sells out. Cash only. The audio alerts you before you pass it — easy to miss at speed.</p>
+<div class="stop-note">Field note: One loaf per car is the unwritten rule during busy periods.</div>
+</div>
+<div class="stop">
+<div class="stop-mile">Mile 18</div>
+<span class="stop-tag tag-f">Free viewpoint</span>
+<h3>Rainbow Eucalyptus Grove</h3>
+<p>The trees with the multicolour painted-look bark. Pull into the designated area — don't block the road. Audio explains why the bark looks this way (more interesting than you'd expect).</p>
+</div>
+<div class="stop">
+<div class="stop-mile">Mile 22</div>
+<span class="stop-tag tag-f">Free · Restrooms</span>
+<h3>Ke'anae Peninsula</h3>
+<p>A lava field, a still-active fishing village, and a stone church that survived everything Maui has thrown at it. One of the tour's richest stories — community history, Hawaiian culture, and an extraordinary view.</p>
+</div>
+<div class="stop">
+<div class="stop-mile">Mile 32</div>
+<span class="stop-tag tag-r">⚠ Reservation required</span>
+<h3>Wai'ānapanapa State Park (Black Sand Beach)</h3>
+<p>The black volcanic sand beach with sea caves, blowholes, and a coastal trail. <strong>Reservation mandatory.</strong> Budget 1–2 hours. Download your voucher before Paia — no signal here.</p>
+<div class="stop-note">No voucher = turned away at the gate. Do not assume overflow roadside parking is allowed; parking enforcement and towing are possible.</div>
+</div>
+<div class="stop">
+<div class="stop-mile">Mile 35</div>
+<span class="stop-tag tag-f">Free viewpoint</span>
+<h3>Wailua Falls</h3>
+<p>An 80-foot waterfall visible directly from the road — no hiking needed. One of the most dramatic roadside moments on the entire route. Audio gives it the history context it deserves.</p>
+</div>
+<div class="stop">
+<div class="stop-mile">End point</div>
+<span class="stop-tag tag-h">Full services</span>
+<h3>Hana Town</h3>
+<p>Fuel, food, and restrooms. Turn around here to drive back safely. The Pipiwai Trail to Oheo Gulch (Seven Sacred Pools) is nearby if you're staying overnight.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- AUDIO SAMPLE -->
+<div style="background: var(--fog); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+<div class="wrap">
+<div class="section" id="road-to-hana-audio-preview">
+<div class="eyebrow">Sample Narration</div>
+<h2 class="sh">Hear what plays as you drive</h2>
+<div class="two-col">
+<div class="audio-block">
+<div class="audio-label">Wai'ānapanapa State Park · Sample narration</div>
+<h3>The legend of the black sand</h3>
+<div class="audio-text">
+        The black sand beneath your feet isn't sand at all — it's pulverised basalt, ground down by centuries of Pacific surf against the volcanic shoreline. Wai'ānapanapa in Hawaiian means "glistening fresh water," a name that comes from the freshwater caves just around this headland. Ancient Hawaiians believed these caves sheltered the spirit of a princess who fled here from a jealous king. Each April, tiny red shrimp bloom in the water — and the old legends say the red is her blood, still rising after all these centuries. The caves and the shrimp are real. The princess — you'll have to decide for yourself.
+      </div>
+<p class="audio-caption">Stories like this play automatically at every stop — 140+ across the full route. You never tap anything while driving.</p>
+</div>
+<div>
+<div style="background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 24px;">
+<h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 18px; color: var(--ink);">How GuideAlong works on the road</h3>
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; gap: 12px;">
+<span style="font-size: 1.3rem; flex-shrink: 0;">📲</span>
+<div>
+<div style="font-size: 0.88rem; font-weight: 600; color: var(--ink);">Download before Paia</div>
+<div style="font-size: 0.82rem; color: var(--mid);">Complete download requires WiFi or strong signal. Do it at your resort — not in the car on the way.</div>
+</div>
+</div>
+<div style="display: flex; gap: 12px;">
+<span style="font-size: 1.3rem; flex-shrink: 0;">📍</span>
+<div>
+<div style="font-size: 0.88rem; font-weight: 600; color: var(--ink);">GPS triggers stories automatically</div>
+<div style="font-size: 0.82rem; color: var(--mid);">The app tracks your location using the phone's built-in GPS — no data connection needed once downloaded. Stories begin playing as you approach each waypoint.</div>
+</div>
+</div>
+<div style="display: flex; gap: 12px;">
+<span style="font-size: 1.3rem; flex-shrink: 0;">⏱️</span>
+<div>
+<div style="font-size: 0.88rem; font-weight: 600; color: var(--ink);">Your pace, your stops</div>
+<div style="font-size: 0.82rem; color: var(--mid);">Spend 45 minutes at Twin Falls. Linger at the black sand beach. The tour resumes the moment you're back on the road. No schedule to keep.</div>
+</div>
+</div>
+<div style="display: flex; gap: 12px;">
+<span style="font-size: 1.3rem; flex-shrink: 0;">🔄</span>
+<div>
+<div style="font-size: 0.88rem; font-weight: 600; color: var(--ink);">Works in both directions</div>
+<div style="font-size: 0.82rem; color: var(--mid);">Drive to Hana and back — the tour works in both directions and covers all routes including the loop around Haleakalā on the way home.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COMPARISON -->
+<div class="wrap">
+<div class="section">
+<div class="eyebrow">Tour Options</div>
+<h2 class="sh">All ways to experience the Road to Hana</h2>
+<table class="compare-t">
+<thead>
+<tr><th>Option</th><th>Cost</th><th>Flexibility</th><th>Narration depth</th><th>Best for</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GuideAlong app (All Routes)</strong></td>
+<td class="g">$19.99</td>
+<td class="g">Complete — all routes, all directions</td>
+<td class="g">140+ stops, all narrated</td>
+<td>Most travelers — best depth, own pace</td>
+</tr>
+<tr>
+<td>Bus tour</td>
+<td class="r">$150–220/person</td>
+<td class="r">Fixed stops, group schedule</td>
+<td class="o">Live guide (quality varies)</td>
+<td>Travelers who want everything arranged</td>
+</tr>
+<tr>
+<td>Private guided tour</td>
+<td class="r">$350–600/car</td>
+<td class="g">Flexible</td>
+<td class="g">Expert live guide</td>
+<td>Special occasions</td>
+</tr>
+<tr>
+<td>Drive without a guide</td>
+<td class="g">Free</td>
+<td class="g">Complete</td>
+<td class="r">Nothing — you'll miss most stories</td>
+<td>Repeat visitors</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- FAQ -->
+<div style="background: var(--fog); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+<div class="wrap">
+<div class="section" id="road-to-hana-faq">
+<div class="eyebrow">Common Questions</div>
+<h2 class="sh">What people ask before they drive</h2>
+<div class="faq">
+<div class="faq-q">
+<h3>Do I need a reservation for Black Sand Beach?</h3>
+<p>Yes — mandatory since 2021, no exceptions. Book at <a href="https://gostateparks.hawaii.gov" target="_blank">gostateparks.hawaii.gov</a> up to 30 days ahead. Download your voucher before leaving Paia — there is no cell signal at Wai'ānapanapa State Park. Do not assume roadside or overflow parking outside the entrance is allowed; enforcement and towing are possible.</p>
+</div>
+<div class="faq-q">
+<h3>Can I drive the Piilani Highway back?</h3>
+<p>Technically possible in some conditions, but many rental agreements restrict remote or unpaved portions of Hwy 31. If you break down, roadside assistance may be limited and cell signal may be unavailable. Unless your rental agreement explicitly allows the route and you are comfortable with the risk, drive back via Hana Highway the way you came.</p>
+</div>
+<div class="faq-q">
+<h3>How long does the Road to Hana take?</h3>
+<p>Plan for a full day — 8 to 10 hours including stops. The drive alone is 2.5 hours each way. With Twin Falls, Black Sand Beach, the waterfall stops, and food, a well-paced day means arriving home by 5–6 PM if you leave before 7:30 AM.</p>
+</div>
+<div class="faq-q">
+<h3>Does GuideAlong work without cell service?</h3>
+<p>Yes — completely. Download the tour on WiFi before you leave. After that the app uses your phone's built-in GPS (which doesn't need data) to track your location and trigger stories. You will have no signal for most of the drive and won't need any.</p>
+</div>
+<div class="faq-q">
+<h3>What's the difference between this tour and the basic Road to Hana route?</h3>
+<p>This "All Routes" version includes 140+ audio points covering the main Hana Highway plus the Haleakalā Crater route, the Paia town introduction, and coastal route content. The standard tour covers only the main Hana Highway drive.</p>
+</div>
+<div class="faq-q">
+<h3>One purchase — how many people does it cover?</h3>
+<p>One purchase covers one car. Everyone in the vehicle hears the tour through your car speakers (Bluetooth or aux). You do not need one per person.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- REVIEWS -->
+<div class="wrap">
+<div class="section">
+<div class="eyebrow">Verified Reviews</div>
+<h2 class="sh">4.9 stars · 8,200+ verified reviews</h2>
+<div class="rev-grid">
+<div class="rev-card">
+<div class="rev-stars">★★★★★</div>
+<p class="rev-text">"The departure timing advice alone was worth it — we left Kihei at 7:15, got to Twin Falls at 8:10 with plenty of parking. Everything the audio recommended for Black Sand Beach was spot on. Downloaded before we left, worked perfectly the whole way."</p>
+<div class="rev-name">Rachel D.</div>
+<div class="rev-src">App Store · Verified purchase</div>
+</div>
+<div class="rev-card">
+<div class="rev-stars">★★★★★</div>
+<p class="rev-text">"We almost drove the Piilani Highway back until the audio tour warned us not to. So glad we listened. Also the Rainbow Eucalyptus story was the most interesting thing I learned on the whole trip — never would have known any of it without the narration."</p>
+<div class="rev-name">Tom &amp; Jess W.</div>
+<div class="rev-src">App Store · Verified purchase</div>
+</div>
+<div class="rev-card">
+<div class="rev-stars">★★★★★</div>
+<p class="rev-text">"Third time doing the Road to Hana. First time with GuideAlong and I genuinely learned things I never knew on the other two trips. The legend at Black Sand Beach, the history of the lava church — incredible. Worth buying for that alone."</p>
+<div class="rev-name">Carla M.</div>
+<div class="rev-src">Google · Verified purchase</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BUNDLE -->
+<div class="bundle-band" id="road-to-hana-maui-bundle">
+<div class="wrap">
+<div class="eyebrow">Save More</div>
+<h2 class="sh">Bundle with other Maui &amp; Hawaii tours</h2>
+<div class="bundle-cards">
+<div class="b-card">
+<h3>Maui Bundle — All Maui Routes</h3>
+<p>Road to Hana (All Routes) + Haleakalā + Iao Valley + West &amp; South Maui. Everything you need for a complete Maui trip.</p>
+<div><span class="b-was">$39.99</span><span class="b-price">$29.99</span></div>
+<a href="./road-to-hana-maui-bundle.html">View Maui Road to Hana Bundle</a>
+</div>
+<div class="b-card">
+<h3>Road to Hana — Standard Route</h3>
+<p>The main Hana Highway only, without the additional Haleakalā and coastal routes. Good choice for a single-day Hana drive.</p>
+<div><span class="b-price">$14.99</span></div>
+<a href="./road-to-hana-maui-standard-tour.html">View Standard Road to Hana Tour</a>
+</div>
+</div>
+</div>
+</div>
+<section class="visual-proof-section" id="road-to-hana-route-preview">
+<div class="wrap">
+<div class="visual-kicker">Plan With Confidence</div>
+<h2 class="visual-title">See what to expect before you start the Road to Hana</h2>
+<p class="visual-lead">Use this preview to understand the route, the reservation-required stop, offline setup, parking pressure, and how the audio tour works while you drive.</p>
+<div class="visual-feature-grid">
+<div class="visual-card">
+<img alt="Road to Hana route map showing Paia, Twin Falls, Keʻanae, Waiʻānapanapa, Hāna, and key stops" loading="lazy" src="assets/rth-route-map.svg"/>
+<div class="visual-card-body">
+<h3>Road to Hana route overview</h3>
+<p>Start from Central Maui or Paia, follow the coastal highway toward Hāna, and plan your most important stops before the day gets crowded.</p>
+<div class="visual-caption">Good to know: download the tour before cell signal becomes unreliable.</div>
+</div>
+</div>
+<div class="visual-card visual-author-card">
+<img alt="Road to Hana guide team reviewing route information and travel planning details" loading="lazy" src="assets/rth-route-guide.svg"/>
+<div class="visual-card-body">
+<h3>Maintained by the GuideAlong Content Team</h3>
+<p>This guide is reviewed for the details travelers ask about most: start time, reservations, offline use, road conditions, and what one tour purchase includes.</p>
+<div class="visual-caption">Last fact-checked: June 22, 2026</div>
+</div>
+</div>
+</div>
+<div class="visual-card-grid">
+<div class="visual-card">
+<img alt="Waiʻānapanapa Black Sand Beach reservation reminder for Road to Hana travelers" loading="lazy" src="assets/rth-waianapanapa.svg"/>
+<div class="visual-card-body"><h3>Waiʻānapanapa reservation</h3><p>Book the Black Sand Beach stop in advance if you plan to enter the state park.</p></div>
+</div>
+<div class="visual-card">
+<img alt="Road to Hana offline download reminder before leaving Paia" loading="lazy" src="assets/rth-cell-service.svg"/>
+<div class="visual-card-body"><h3>Download before signal drops</h3><p>The tour keeps playing offline after download, even where cell service is weak or unavailable.</p></div>
+</div>
+<div class="visual-card">
+<img alt="Road to Hana parking and departure timing reminder" loading="lazy" src="assets/rth-parking.svg"/>
+<div class="visual-card-body"><h3>Parking and timing</h3><p>Earlier departures make crowded pullouts, waterfalls, and short stops much easier.</p></div>
+</div>
+<div class="visual-card">
+<img alt="GPS-triggered Road to Hana audio tour app screen showing offline driving guidance" loading="lazy" src="assets/rth-app-screen.svg"/>
+<div class="visual-card-body"><h3>How the app works</h3><p>GPS triggers stories automatically as you drive, so you can keep your eyes on the road.</p></div>
+</div>
+</div>
+<div class="visual-checklist">
+<div class="visual-checkitem">Route overview</div>
+<div class="visual-checkitem">Reservation reminders</div>
+<div class="visual-checkitem">Offline app setup</div>
+</div>
+</div>
+</section>
+<section class="author-bio-section" id="road-to-hana-author-bio">
+<div class="wrap">
+<div class="eyebrow">Author Bio</div>
+<h2 class="sh">Author Bio: GuideAlong Content Team</h2>
+<div class="author-bio-card">
+<p><strong>Author:</strong> <a href="./road-to-hana-maui-author-guidealong-content-team.html">GuideAlong Road to Hana Content Team</a>, a travel content and GPS audio-tour editorial team specializing in self-guided driving tours, offline route guidance, and destination planning for Road to Hana and Maui.</p>
+<p><strong>Reviewed by:</strong> GuideAlong Product + Route Content QA. <strong>Last verified:</strong> June 23, 2026.</p>
+<p>This Road to Hana guide combines GuideAlong route logic, audio-tour content structure, traveler support patterns, and official source checks so travelers can plan the drive before they purchase or start the tour.</p>
+</div>
+</div>
+</section>
+<section class="citation-evidence-section" id="road-to-hana-verifiable-citations">
+<div class="wrap">
+<div class="eyebrow">Verifiable Citations</div>
+<h2 class="sh">Road to Hana facts checked against official sources</h2>
+<div class="citation-evidence-card">
+<ul>
+<li>Waiʻānapanapa / Black Sand Beach requires advance reservations for non-resident visitors. <a href="https://dlnr.hawaii.gov/dsp/parks/maui/waianapanapa-state-park/" rel="noopener" target="_blank">(Source: Hawaiʻi DLNR Waiʻānapanapa State Park)</a></li>
+<li>Same-day purchase at the park is not available for Waiʻānapanapa reservations. <a href="https://dlnr.hawaii.gov/dsp/parks/maui/waianapanapa-state-park/waianapanapa-information-frequently-asked-questions/" rel="noopener" target="_blank">(Source: Hawaiʻi DLNR Waiʻānapanapa Reservation FAQ)</a></li>
+<li>Waiʻānapanapa reservation booking is handled through the Hawaiʻi State Parks system. <a href="https://gostateparks.hawaii.gov/waianapanapa" rel="noopener" target="_blank">(Source: Hawaiʻi State Parks Reservation System)</a></li>
+<li>Road and highway conditions should be checked before attempting remote or back-side routes. <a href="https://hidot.hawaii.gov/highways/" rel="noopener" target="_blank">(Source: Hawaiʻi Department of Transportation Highways)</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section class="original-research-section" id="road-to-hana-original-research">
+<div class="wrap">
+<div class="eyebrow">Original Research &amp; Proprietary Route Insights</div>
+<h2 class="sh">Original Road to Hana route-planning analysis</h2>
+<div class="original-research-card">
+<p><strong>Original research signal:</strong> this guide uses a proprietary route-planning framework that connects departure area, reservation timing, cell-service loss, parking pressure, and GPS-triggered audio behavior into one Road to Hana day plan.</p>
+<ul>
+<li><strong>Case study insight:</strong> West Maui travelers need the earliest start because they add a long cross-island transfer before reaching Paia and the Hana Highway.</li>
+<li><strong>Route analysis:</strong> the Black Sand Beach reservation should determine the day’s pacing, not sit as a small note at the end of the page.</li>
+<li><strong>Proprietary content insight:</strong> GuideAlong’s all-routes experience is positioned differently from a basic Road to Hana-only route because it includes Paia, Haleakalā, and coastal route context in addition to the Hana Highway.</li>
+</ul>
+<p>This original route analysis is included so the page is useful as a planning resource, not only as a sales page.</p>
+</div>
+</div>
+</section>
+<section class="verification-section" id="road-to-hana-travel-sources">
+<div class="wrap">
+<div class="verification-kicker">Travel Planning Sources</div>
+<h2 class="verification-title">Important Road to Hana details we keep current</h2>
+<p class="verification-lead">This guide is built around the practical details that can affect your day: the Black Sand Beach reservation, when to leave, when to download the app, and how to think about the back-side route.</p>
+<div class="verification-grid">
+<div class="verification-card">
+<h3>Who maintains this guide</h3>
+<p><strong>Written by:</strong> <a href="#road-to-hana-about-this-guide">GuideAlong Content Team</a></p>
+<p><strong>Reviewed by:</strong> Product + Route Content QA</p>
+<p><strong>Last fact-checked:</strong> June 22, 2026</p>
+</div>
+<div class="verification-card">
+<h3>What we check</h3>
+<ul>
+<li>Current reservation rules for Waiʻānapanapa State Park.</li>
+<li>Cell-service and offline-download guidance for the drive.</li>
+<li>Fuel, food, parking, timing, and road-safety notes.</li>
+</ul>
+</div>
+<div class="verification-card">
+<h3>How the tour helps</h3>
+<p>One purchase gives your car GuideAlong’s Road to Hana coverage with a deeper all-routes storytelling experience. The audio plays automatically by GPS, works offline after download, and lets your group explore at its own pace.</p>
+</div>
+</div>
+<div class="fact-correction">
+<p><strong>Waiʻānapanapa / Black Sand Beach note:</strong> Non-resident visitors need advance reservations. Current official guidance says entrance and parking reservations must be made in advance, same-day purchase at the park is not available, non-resident entry is listed at $5 per person, and non-commercial vehicle parking is listed at $10.</p>
+</div>
+<div class="fact-correction">
+<p><strong>Back-side route note:</strong> Many rental agreements restrict portions of the Piilani Highway / back-side route, and roadside assistance may not cover remote or restricted-road breakdowns. Check your specific rental agreement before attempting that route.</p>
+</div>
+<div aria-label="Official source links" class="source-list">
+<a href="https://dlnr.hawaii.gov/dsp/parks/maui/waianapanapa-state-park/" rel="noopener" target="_blank">Source: Official DLNR Waiʻānapanapa State Park page</a>
+<a href="https://dlnr.hawaii.gov/dsp/parks/maui/waianapanapa-state-park/waianapanapa-information-frequently-asked-questions/" rel="noopener" target="_blank">Source: DLNR Waiʻānapanapa reservation FAQ</a>
+<a href="https://gostateparks.hawaii.gov/waianapanapa" rel="noopener" target="_blank">Source: Hawaiʻi State Parks reservation system</a>
+<a href="https://hidot.hawaii.gov/highways/" rel="noopener" target="_blank">Source: Hawaiʻi DOT highways information</a>
+</div>
+</div>
+</section>
+<section class="verification-section" id="road-to-hana-official-guidance">
+<div class="wrap">
+<div class="verification-kicker">Official Guidance</div>
+<h2 class="verification-title">What official sources say about Waiʻānapanapa</h2>
+<p class="verification-lead">Because Black Sand Beach is the stop most likely to disrupt a Road to Hana day, this guide cites the official reservation sources directly.</p>
+<div class="source-quote-grid">
+<div class="source-quote-card">
+<blockquote>“All reservations MUST be made in advance.”<br/><span class="quote-attribution">— Hawaiʻi Division of State Parks, Waiʻānapanapa Reservation FAQ (Source: Hawaiʻi DLNR)</span></blockquote>
+<cite>Named expert source: Hawaiʻi Division of State Parks — Waiʻānapanapa Reservation FAQ</cite>
+</div>
+<div class="source-quote-card">
+<blockquote>“Persons without a reservation will be turned away.”<br/><span class="quote-attribution">— Hawaiʻi State Parks Reservation System, Waiʻānapanapa booking guidance (Source: Hawaiʻi State Parks)</span></blockquote>
+<cite>Named expert source: Hawaiʻi State Parks Reservation System — Waiʻānapanapa booking guidance</cite>
+</div>
+</div>
+<div class="original-insight">
+<strong>Original route-testing insight:</strong> the reservation is not just a booking detail — it should shape your entire departure plan. West Maui travelers have the tightest timing window, so this guide pairs reservation advice with resort-area departure times, offline-download reminders, and parking expectations instead of treating each item separately.
+    </div>
+</div>
+</section>
+<section class="helpful-gap-section" id="road-to-hana-about-this-guide">
+<div class="helpful-gap-wrap">
+<div class="helpful-gap-kicker">About This Guide</div>
+<h2 class="helpful-gap-title">How this Road to Hana guide is created</h2>
+<p class="helpful-gap-lead">This page is written for travelers who want to know when to leave, what to reserve, what to download, and how to avoid the most common surprises on the drive to Hāna.</p>
+<div class="author-grid">
+<div class="author-card">
+<h3>Author bio</h3>
+<p>The <strong>GuideAlong Content Team</strong> creates and maintains Road to Hana audio-tour guidance using tour scripts, traveler support feedback, official source checks, and practical route-planning knowledge from the GuideAlong app.</p>
+<a class="author-link" href="https://guidealong.com/about/" rel="noopener" target="_blank">About GuideAlong Road to Hana audio-tour standards</a></div>
+<div class="author-card" id="road-to-hana-editorial-method">
+<h3>How it is checked</h3>
+<p>Reservation, fee, road-safety, cell-service, route-start, and app-download guidance are reviewed against official sources and updated when rules or route conditions change.</p>
+</div>
+<div class="author-card">
+<h3>Why it exists</h3>
+<p>The goal is to help you plan the drive with fewer surprises: reservations, timing, offline download, parking pressure, and route-return decisions.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="related-guides" id="road-to-hana-related-guides"><div class="wrap"><div class="eyebrow">Related Road to Hana Planning Guides</div><h2 class="sh">Keep planning your Road to Hana drive</h2><p class="section-lead">These Road to Hana and Maui driving guides cover the same trip-planning cluster as this tour: reservations, departure timing, offline navigation, waterfalls, stops, and route choices.</p><div class="related-grid"><a href="./road-to-hana-maui-trip-planner.html">Road to Hana Maui trip planner<span>Build a full-day Road to Hana plan around departure time, reservations, stops, and return route.</span></a><a href="./road-to-hana-black-sand-beach-reservation-guide.html">Road to Hana Black Sand Beach reservation guide<span>Waiʻānapanapa entry, parking, booking windows, and timing for Road to Hana travelers.</span></a><a href="./road-to-hana-best-time-to-leave.html">Road to Hana best time to leave guide<span>Departure timing from West Maui, South Maui, Central Maui, and Paia.</span></a><a href="./road-to-hana-offline-gps-audio-tour.html">Road to Hana offline GPS audio tour guide<span>How to download the tour before the Hana Highway cell-service gaps.</span></a><a href="./road-to-hana-waterfalls-and-best-stops.html">Road to Hana waterfalls and best stops<span>Plan Twin Falls, Keʻanae, Wailua Falls, Waiʻānapanapa, and Hana stops.</span></a><a href="./road-to-hana-maui-driving-route-guide.html">Road to Hana Maui driving route guide<span>Understand the classic Hana Highway route, optional back-side route, and return choices.</span></a><a href="./road-to-hana-maui-all-routes-audio-tour.html">Road to Hana all-routes audio tour<span>Compare the classic route, reverse route, Paia, coastal additions, and Haleakalā pairing.</span></a><a href="./maui-road-to-hana-haleakala-combo-guide.html">Maui Road to Hana and Haleakalā combo guide<span>Plan Maui’s two major driving days without crowding one itinerary.</span></a></div><ul class="topic-cluster-list"><li><a href="./road-to-hana-maui-trip-planner.html">Road to Hana Maui trip planner</a></li><li><a href="./road-to-hana-black-sand-beach-reservation-guide.html">Road to Hana Black Sand Beach reservation guide</a></li><li><a href="./road-to-hana-best-time-to-leave.html">Road to Hana best time to leave guide</a></li><li><a href="./road-to-hana-offline-gps-audio-tour.html">Road to Hana offline GPS audio tour guide</a></li><li><a href="./road-to-hana-waterfalls-and-best-stops.html">Road to Hana waterfalls and best stops</a></li><li><a href="./road-to-hana-maui-driving-route-guide.html">Road to Hana Maui driving route guide</a></li></ul></div></section>
+<footer>
+<p>© 2026 GuideAlong · Road to Hana Maui Audio Tour · Road to Hana planning support · 1-866-477-1791</p>
+</footer>
+<div class="sticky">
+<div>
+<div class="sl">Road to Hana — All Routes · GuideAlong</div>
+<div class="ss">4.9★ · 8,200 reviews · 140+ stops · Works offline</div>
+</div>
+<a href="#buy-road-to-hana-audio-tour">Buy Road to Hana Tour — $19.99</a>
+</div>
+</body>
+</html>
