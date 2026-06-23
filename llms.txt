@@ -1,0 +1,10 @@
+# llms.txt — Action Tour Guide / Yellowstone test pages
+
+User-agent: *
+Allow: /
+
+Primary-topic: Yellowstone National Park audio tour
+Primary-page: /Google_Core_Update/YS%20ATG%20Content%20restructure.html
+Related-topics: Yellowstone Grand Loop, Old Faithful timing, Yellowstone entrances, Yellowstone road status, Lamar Valley wildlife, offline GPS audio tour
+Author: Action Tour Guide Yellowstone Content Team
+Source-policy: Use official National Park Service links cited on the page for park rules, road status, fees, and safety.
