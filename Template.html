@@ -1,1071 +1,536 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ATG / GuideAlong — Tour Page Content SOP</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
-
-:root {
-  --navy:   #0D2137;
-  --teal:   #0A6E8A;
-  --sky:    #E0F4FF;
-  --green:  #1A5C3A;
-  --mint:   #E0F5EC;
-  --red:    #B91C1C;
-  --rose:   #FEE2E2;
-  --amber:  #B45309;
-  --cream:  #FFFBF5;
-  --rule:   #E2E8F0;
-  --mid:    #475569;
-  --pale:   #94A3B8;
-  --ink:    #0F172A;
-  --white:  #FFFFFF;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: #F8FAFC; color: var(--ink); font-size: 15px; line-height: 1.6; }
-
-/* NAV */
-.nav { background: var(--navy); padding: 0 2rem; height: 52px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-.nav-title { color: #fff; font-weight: 700; font-size: 0.88rem; }
-.nav-sub { color: #5A8AAA; font-size: 0.76rem; margin-top: 1px; }
-.nav-links { display: flex; gap: 1.5rem; list-style: none; }
-.nav-links a { color: #5A8AAA; font-size: 0.74rem; text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; }
-.nav-links a:hover { color: #fff; }
-
-/* HERO */
-.hero { background: var(--navy); padding: 56px 2rem 48px; }
-.hero-inner { max-width: 860px; margin: 0 auto; }
-.hero-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.18em; color: #4FC3F7; text-transform: uppercase; margin-bottom: 16px; }
-.hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 14px; letter-spacing: -0.02em; }
-.hero p { font-size: 1rem; color: #7BA8C0; font-weight: 300; max-width: 620px; line-height: 1.7; margin-bottom: 28px; }
-.hero-legend { display: flex; gap: 20px; flex-wrap: wrap; }
-.legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #7BA8C0; }
-.legend-dot { width: 12px; height: 12px; border-radius: 2px; flex-shrink: 0; }
-.ld-must { background: var(--teal); }
-.ld-should { background: var(--green); }
-.ld-avoid { background: var(--red); }
-.ld-tip { background: var(--amber); }
-
-/* LAYOUT */
-.wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
-
-/* SECTION BLOCKS */
-.section-block {
-  margin: 0 auto 0;
-  max-width: 860px;
-  padding: 0 2rem;
-}
-
-/* SECTION CARD */
-.sec-card {
-  background: var(--white);
-  border: 1px solid var(--rule);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 16px;
-}
-
-/* Header bar with section number + title */
-.sec-header {
-  display: grid;
-  grid-template-columns: 56px 1fr auto;
-  align-items: stretch;
-  border-bottom: 1px solid var(--rule);
-}
-.sec-num {
-  background: var(--navy);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1rem; font-weight: 600; color: #4FC3F7;
-  border-right: 1px solid rgba(255,255,255,0.08);
-}
-.sec-title-wrap { padding: 14px 18px; }
-.sec-title { font-size: 0.95rem; font-weight: 700; color: var(--ink); }
-.sec-subtitle { font-size: 0.78rem; color: var(--pale); margin-top: 2px; }
-.sec-badge {
-  padding: 0 16px;
-  display: flex; align-items: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem; letter-spacing: 0.1em;
-  text-transform: uppercase; font-weight: 600;
-  border-left: 1px solid var(--rule);
-}
-.badge-must { color: var(--teal); background: var(--sky); }
-.badge-should { color: var(--green); background: var(--mint); }
-.badge-avoid { color: var(--red); background: var(--rose); }
-
-/* Body */
-.sec-body { padding: 20px 20px 20px 76px; }
-
-/* WHY row */
-.why-row {
-  display: flex; gap: 10px; align-items: flex-start;
-  padding: 10px 14px;
-  background: var(--sky);
-  border-left: 3px solid var(--teal);
-  border-radius: 0 4px 4px 0;
-  margin-bottom: 14px;
-  font-size: 0.85rem; color: #0A4A5E;
-}
-.why-row .why-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem; font-weight: 600;
-  color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em;
-  flex-shrink: 0; margin-top: 2px;
-}
-
-/* WHAT TO INCLUDE */
-.include-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-.include-item {
-  display: flex; gap: 10px; align-items: flex-start;
-  font-size: 0.86rem; color: var(--ink); line-height: 1.55;
-}
-.inc-icon { flex-shrink: 0; margin-top: 1px; font-size: 0.9rem; }
-
-/* EXAMPLE box */
-.example-box {
-  background: #F8FAFC;
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
-}
-.example-box .ex-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.63rem; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--pale);
-  margin-bottom: 8px;
-}
-.example-box .ex-good {
-  font-size: 0.84rem; color: var(--green); font-weight: 500;
-  padding: 6px 10px; background: var(--mint); border-radius: 4px;
-  margin-bottom: 6px; display: flex; gap: 8px; align-items: flex-start;
-}
-.example-box .ex-bad {
-  font-size: 0.84rem; color: var(--red);
-  padding: 6px 10px; background: var(--rose); border-radius: 4px;
-  display: flex; gap: 8px; align-items: flex-start;
-}
-
-/* AVOID box */
-.avoid-box {
-  background: var(--rose);
-  border: 1px solid #FECACA;
-  border-left: 3px solid var(--red);
-  border-radius: 0 4px 4px 0;
-  padding: 10px 14px;
-  font-size: 0.84rem; color: var(--red);
-  margin-bottom: 12px;
-}
-.avoid-box .avoid-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.63rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-/* TIP box */
-.tip-box {
-  background: #FFFBEB;
-  border: 1px solid #FDE68A;
-  border-left: 3px solid var(--amber);
-  border-radius: 0 4px 4px 0;
-  padding: 10px 14px;
-  font-size: 0.83rem; color: #78350F;
-  margin-top: 10px;
-}
-.tip-box .tip-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.63rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--amber); margin-bottom: 4px;
-}
-
-/* CONNECTOR — shows "next section" flow */
-.connector {
-  display: flex; align-items: center; gap: 0;
-  justify-content: center; padding: 6px 0 2px;
-}
-.connector-line { width: 2px; height: 32px; background: var(--rule); }
-
-/* SCHEMA BLOCK */
-.schema-block {
-  background: var(--navy);
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 16px;
-}
-.schema-label { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #4FC3F7; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 10px; }
-.schema-code { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: #A8D4F0; line-height: 1.7; }
-.schema-code .key { color: #7EC8E3; }
-.schema-code .val { color: #A8F0C8; }
-.schema-code .replace { color: #FFD580; }
-
-/* PRIORITY TABLE */
-.pri-table { width: 100%; border-collapse: collapse; border-radius: 8px; overflow: hidden; border: 1px solid var(--rule); font-size: 0.85rem; margin: 24px 0; }
-.pri-table thead th { background: var(--navy); color: #fff; padding: 10px 14px; text-align: left; font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; }
-.pri-table tbody tr:nth-child(even) { background: #F8FAFC; }
-.pri-table tbody td { padding: 10px 14px; border-top: 1px solid var(--rule); vertical-align: top; }
-.p1 { color: var(--red); font-weight: 700; }
-.p2 { color: var(--amber); font-weight: 700; }
-.p3 { color: var(--teal); font-weight: 700; }
-
-/* SECTION SPACER */
-.section-spacer { padding: 40px 2rem 8px; max-width: 860px; margin: 0 auto; }
-.spacer-label { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pale); display: flex; align-items: center; gap: 12px; }
-.spacer-label::before, .spacer-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
-
-/* CHECKLIST SUMMARY */
-.checklist-wrap { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin: 0 2rem 32px; max-width: 860px; margin-left: auto; margin-right: auto; }
-.cl-header { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
-.cl-header h3 { color: #fff; font-size: 0.9rem; font-weight: 700; }
-.cl-header span { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #4FC3F7; }
-.cl-row { display: grid; grid-template-columns: 32px 1fr auto; gap: 0; border-bottom: 1px solid var(--rule); align-items: center; }
-.cl-row:last-child { border-bottom: none; }
-.cl-num { padding: 12px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600; color: var(--pale); border-right: 1px solid var(--rule); background: #F8FAFC; }
-.cl-text { padding: 12px 16px; font-size: 0.86rem; color: var(--ink); }
-.cl-tag { padding: 0 16px; font-size: 0.68rem; font-family: 'JetBrains Mono', monospace; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; border-left: 1px solid var(--rule); white-space: nowrap; }
-.tag-must { color: var(--teal); }
-.tag-should { color: var(--green); }
-.tag-avoid { color: var(--red); }
-
-footer { background: var(--navy); padding: 32px 2rem; text-align: center; margin-top: 48px; }
-footer p { font-size: 0.78rem; color: #3A5A70; }
-
-@media(max-width: 640px) {
-  .sec-header { grid-template-columns: 44px 1fr; }
-  .sec-badge { display: none; }
-  .sec-body { padding: 16px; }
-  .nav-links { display: none; }
-}
-
-
-/* ── ADDED: TEMPLATE IMAGE PLACEHOLDERS ── */
-.template-visual-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 14px 0 16px; }
-.template-visual-card { background: #F8FAFC; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
-.template-visual-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
-.template-visual-card div { padding: 12px 14px; font-size: 0.83rem; color: var(--mid); }
-@media(max-width: 760px){ .template-visual-grid { grid-template-columns: 1fr; } }
-
-
-/* ── HELPFUL CONTENT GAP FIXES — AUTHOR, METHOD, QUICK ANSWERS ── */
-.helpful-gap-section {
-  padding: 56px 0;
-  border-top: 1px solid var(--rule, #E2E8F0);
-  background: var(--white, #FFFFFF);
-}
-.helpful-gap-wrap {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-.helpful-gap-kicker {
-  font-family: 'Inter', 'Space Mono', 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--rain, var(--trail, var(--sulfur, #0A6E8A)));
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-.helpful-gap-title {
-  font-family: inherit;
-  font-size: clamp(1.45rem, 2.5vw, 2rem);
-  line-height: 1.2;
-  color: var(--ink, var(--ash, var(--lava, #0F172A)));
-  margin-bottom: 12px;
-  font-weight: 800;
-}
-.helpful-gap-lead {
-  color: var(--mid, #475569);
-  font-size: 0.96rem;
-  max-width: 760px;
-  margin-bottom: 24px;
-}
-.author-grid, .quick-answer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-.author-card, .quick-answer-card {
-  border: 1px solid var(--rule, #E2E8F0);
-  background: var(--fog, var(--buff, #F8FAFC));
-  border-radius: 10px;
-  padding: 18px 20px;
-}
-.author-card h3, .quick-answer-card h3 {
-  font-size: 0.95rem;
-  margin-bottom: 7px;
-  color: var(--ink, var(--ash, var(--lava, #0F172A)));
-}
-.author-card p, .quick-answer-card p, .author-card li, .quick-answer-card li {
-  color: var(--mid, #475569);
-  font-size: 0.84rem;
-  line-height: 1.6;
-}
-.author-card ul, .quick-answer-card ul { margin-left: 18px; margin-top: 8px; }
-.author-card a, .quick-answer-card a {
-  color: var(--ocean, var(--sky, var(--sky-ys, #1565A0)));
-  font-weight: 700;
-  text-decoration: underline;
-}
-.method-note {
-  margin-top: 18px;
-  padding: 14px 16px;
-  border-left: 4px solid var(--rain, var(--trail, var(--sulfur, #0A6E8A)));
-  background: var(--mist, var(--geyser, #E0F4FF));
-  color: var(--mid, #475569);
-  font-size: 0.86rem;
-  line-height: 1.65;
-}
-.quick-answer-grid { grid-template-columns: repeat(2, 1fr); }
-@media(max-width: 760px) {
-  .author-grid, .quick-answer-grid { grid-template-columns: 1fr; }
-}
-
-
-
-/* ── AI SEO AUDITOR 100/100 SOP ADDITIONS ── */
-.audit-100-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0}
-.audit-100-card{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:16px 18px}
-.audit-100-card h4{font-size:.9rem;color:var(--ink);margin-bottom:6px}
-.audit-100-card p,.audit-100-card li{font-size:.83rem;color:var(--mid);line-height:1.6}
-.audit-100-card ul{margin-left:18px;margin-top:8px}
-.audit-code{background:var(--navy);color:#A8D4F0;border-radius:8px;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:.76rem;line-height:1.65;margin:12px 0;overflow:auto}
-.audit-ok{color:var(--green);font-weight:700}.audit-warn{color:var(--amber);font-weight:700}
-@media(max-width:760px){.audit-100-grid{grid-template-columns:1fr}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATG / GA Tour Page Template: E-E-A-T, SEO, AEO, GEO, LLM Ready</title>
+  <meta name="description" content="Final ATG and GA tour page template for E-E-A-T, SEO, AEO, GEO, LLM visibility, route proof, citations, author signals, and conversions." />
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <style>
+    :root {
+      --blue:#0e6fb8;
+      --blue-dark:#073c66;
+      --blue-soft:#eaf5ff;
+      --green:#18864b;
+      --green-soft:#eaf8f0;
+      --red:#b42318;
+      --red-soft:#fff1f0;
+      --amber:#d97706;
+      --amber-soft:#fff7ed;
+      --ink:#102033;
+      --muted:#667085;
+      --line:#e6edf5;
+      --card:#ffffff;
+      --bg:#f6f9fc;
+      --radius:22px;
+      --shadow:0 14px 34px rgba(16,32,51,.08);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+    }
+    a { color:var(--blue); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .topbar {
+      background:#fff;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+    .topbar-inner {
+      max-width:1120px;
+      margin:0 auto;
+      padding:14px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+    }
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      color:var(--blue-dark);
+      letter-spacing:-.02em;
+    }
+    .brand-mark {
+      width:34px;
+      height:34px;
+      border-radius:11px;
+      background:linear-gradient(135deg,var(--blue),#40b5ff);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+    }
+    .topnote { color:var(--muted); font-size:13px; font-weight:800; text-align:right; }
+    .hero {
+      background:radial-gradient(circle at top left,rgba(71,173,255,.35),transparent 30%),linear-gradient(135deg,#062d4f,#0a4a78 52%,#0b6d8f);
+      color:#fff;
+    }
+    .hero-inner {
+      max-width:1120px;
+      margin:0 auto;
+      padding:54px 22px 48px;
+    }
+    .eyebrow {
+      display:inline-flex;
+      border:1px solid rgba(255,255,255,.25);
+      background:rgba(255,255,255,.12);
+      color:#d9f1ff;
+      border-radius:999px;
+      padding:8px 12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:20px;
+    }
+    h1 {
+      font-size:clamp(40px,6vw,72px);
+      line-height:.96;
+      margin:0 0 18px;
+      letter-spacing:-.055em;
+      max-width:980px;
+    }
+    .hero-answer {
+      font-size:20px;
+      max-width:920px;
+      color:#e8f7ff;
+      margin:0;
+    }
+    .hero-grid {
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+      margin-top:26px;
+    }
+    .hero-card {
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.22);
+      border-radius:18px;
+      padding:16px;
+    }
+    .hero-card strong { display:block; font-size:22px; line-height:1.1; }
+    .hero-card span { display:block; color:#d8f0ff; font-size:13px; font-weight:800; margin-top:4px; }
+    .wrap { max-width:1120px; margin:0 auto; padding:32px 22px 80px; }
+    .notice {
+      border-radius:var(--radius);
+      border:1px solid #bfdef5;
+      background:var(--blue-soft);
+      border-left:6px solid var(--blue);
+      padding:20px;
+      box-shadow:var(--shadow);
+      margin-bottom:24px;
+    }
+    section {
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      margin:0 0 24px;
+      overflow:hidden;
+    }
+    .section-head {
+      padding:26px 28px 12px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg,#fff,#fbfdff);
+    }
+    .section-kicker {
+      text-transform:uppercase;
+      color:var(--blue);
+      letter-spacing:.14em;
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:8px;
+    }
+    h2 {
+      font-size:clamp(28px,4vw,42px);
+      line-height:1.05;
+      margin:0 0 10px;
+      letter-spacing:-.04em;
+      color:var(--blue-dark);
+    }
+    h3 {
+      font-size:22px;
+      line-height:1.18;
+      margin:0 0 10px;
+      letter-spacing:-.02em;
+      color:var(--ink);
+    }
+    h4 {
+      font-size:17px;
+      margin:0 0 8px;
+      color:var(--blue-dark);
+    }
+    .section-lede { color:#43576b; font-size:18px; max-width:900px; margin:0 0 8px; }
+    .body { padding:24px 28px 30px; }
+    .bluebox,.greenbox,.redbox,.amberbox {
+      border-radius:18px;
+      padding:18px;
+      margin:0 0 18px;
+      border:1px solid var(--line);
+    }
+    .bluebox { background:var(--blue-soft); border-color:#bfdef5; border-left:6px solid var(--blue); }
+    .greenbox { background:var(--green-soft); border-color:#b7e3ca; border-left:6px solid var(--green); }
+    .redbox { background:var(--red-soft); border-color:#fecaca; border-left:6px solid var(--red); }
+    .amberbox { background:var(--amber-soft); border-color:#fed7aa; border-left:6px solid var(--amber); }
+    .box-title { font-weight:900; margin-bottom:8px; color:var(--ink); }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .card { border:1px solid var(--line); border-radius:18px; background:#fff; padding:18px; box-shadow:0 8px 24px rgba(16,32,51,.05); }
+    .soft { background:#fbfdff; }
+    ul.checklist, ul.badlist { list-style:none; padding:0; margin:0; display:grid; gap:9px; }
+    ul.checklist li, ul.badlist li { position:relative; padding-left:30px; }
+    ul.checklist li::before {
+      content:"✓";
+      position:absolute;
+      left:0; top:1px;
+      width:20px; height:20px;
+      display:grid; place-items:center;
+      border-radius:50%;
+      background:#16a34a;
+      color:#fff;
+      font-size:12px;
+      font-weight:900;
+    }
+    ul.badlist li::before {
+      content:"✕";
+      position:absolute;
+      left:0; top:1px;
+      width:20px; height:20px;
+      display:grid; place-items:center;
+      border-radius:50%;
+      background:#dc2626;
+      color:#fff;
+      font-size:12px;
+      font-weight:900;
+    }
+    table { width:100%; border-collapse:separate; border-spacing:0; border:1px solid var(--line); border-radius:18px; overflow:hidden; margin:12px 0 18px; background:#fff; }
+    th,td { padding:14px 15px; border-bottom:1px solid var(--line); vertical-align:top; text-align:left; }
+    th { background:#f0f7ff; color:#0a3d66; font-size:13px; text-transform:uppercase; letter-spacing:.06em; }
+    tr:last-child td { border-bottom:0; }
+    code,pre { background:#0b243a; color:#e8f7ff; border-radius:14px; }
+    code { padding:2px 6px; }
+    pre { padding:16px; overflow:auto; }
+    .quote-box {
+      background:#f8fbfe;
+      border:1px solid var(--line);
+      border-left:6px solid var(--blue);
+      border-radius:18px;
+      padding:18px;
+      margin:14px 0;
+    }
+    blockquote { margin:0; font-size:19px; font-weight:800; color:#183a55; line-height:1.5; }
+    cite { display:block; margin-top:10px; color:#50687e; font-size:14px; font-weight:800; font-style:normal; }
+    .small { font-size:13px; color:var(--muted); }
+    .template-block { border:1px dashed #b8d8ee; background:#fbfdff; border-radius:18px; padding:16px; margin:12px 0; }
+    .footer { background:#061f36; color:#d7e9f8; }
+    .footer-inner { max-width:1120px; margin:0 auto; padding:30px 22px; }
+    .footer a { color:#d7e9f8; }
+    @media (max-width:900px) {
+      .hero-grid,.grid-3,.grid-2 { grid-template-columns:1fr; }
+      .topbar-inner { align-items:flex-start; flex-direction:column; }
+      .topnote { text-align:left; }
+    }
+    @media print {
+      .topbar { display:none; }
+      .hero { background:#fff; color:#000; }
+      .hero-answer { color:#111; }
+      section { box-shadow:none; break-inside:avoid; }
+    }
+  </style>
 </head>
 <body>
-<nav class="nav">
-<div>
-<div class="nav-title">Tour Page Content Template</div>
-<div class="nav-sub">ATG &amp; GuideAlong · For Marketing Team</div>
-</div>
-<ul class="nav-links">
-<li><a href="#sections">Sections</a></li>
-<li><a href="#schema">Schema</a></li>
-<li><a href="#checklist">Checklist</a></li>
-<li><a href="#ai-audit-100">AI Audit</a></li></ul>
-</nav>
-<!-- HERO -->
-<div class="hero">
-<div class="hero-inner">
-<div class="hero-tag">Internal · Marketing Reference · June 2026</div>
-<h1>Tour Page Content Template</h1>
-<p>Every tour page across ATG and GuideAlong should follow this section order. Each section is here for a specific SEO reason — explained below. Use this as the brief when writing or briefing any tour page.</p>
-<div class="hero-legend">
-<div class="legend-item"><span class="legend-dot ld-must"></span> Must have — page will underperform without it</div>
-<div class="legend-item"><span class="legend-dot ld-should"></span> Should have — significant SEO and conversion value</div>
-<div class="legend-item"><span class="legend-dot ld-avoid"></span> Avoid — actively hurts rankings</div>
-<div class="legend-item"><span class="legend-dot ld-tip"></span> Pro tip — small effort, outsized impact</div>
-</div>
-</div>
-</div>
-<!-- ═══════════════════════════════════════════════════════ -->
-<div class="section-spacer" id="sections">
-<div class="spacer-label">Page Section Order — Top to Bottom</div>
-</div>
-<!-- SECTION 1: META -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">01</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Page Title (HTML &lt;title&gt;) and Meta Description</div>
-<div class="sec-subtitle">Not visible on page — appears in Google search results</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        This is the first thing Google and the searcher see. A weak title and meta means people don't click even if the page ranks. This is the fastest CTR improvement available — no ranking change needed.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Title:</strong> Tour name + the most specific differentiator (e.g. "140+ Stories, All 5 Entrances") + brand name at the end</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Meta:</strong> Lead with the one thing that makes this tour different (GPS-triggered, works offline, specific stop count). Then name 2–3 pieces of practical content on the page (Black Sand Beach reservation guide, departure timing, Old Faithful eruption schedule). Under 155 characters.</div>
-<div class="include-item"><span class="inc-icon">✅</span> Keep title under 60 characters so it doesn't get cut off in search results</div>
-</div>
-<div class="example-box">
-<div class="ex-label">Example — Road to Hana</div>
-<div class="ex-good">✓ <span><strong>Good:</strong> "Road to Hana Maui Audio Tour — Departure Guide, Black Sand Beach Reservations &amp; GPS Stories | ATG"</span></div>
-<div class="ex-bad">✗ <span><strong>Avoid:</strong> "Best Road to Hana Maui Self Guided Driving Audio Tour" — no differentiators, "Best" is ignored by Google</span></div>
-</div>
-<div class="avoid-box">
-<div class="avoid-label">Never do this</div>
-        Don't start the title with "Best" or "Top" — Google discounts self-promotion superlatives. Don't write a meta that could apply to any tour ("Explore X with stunning views and expert narration"). Name the specific, practical content that's actually on the page.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 2: HERO -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">02</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Hero Section — Headline, Key Facts, Buy Button</div>
-<div class="sec-subtitle">Top of the page — first impression for both Google and the visitor</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        Google reads the H1 (headline) to understand what the page is about. If your H1 doesn't clearly state the tour and destination, you lose ranking signal on every query that includes the destination name. The hero is also the conversion anchor — the buy button should be visible without scrolling.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> <strong>H1 headline:</strong> Must include the destination name and "tour" or "audio tour" — e.g. "Yellowstone National Park Audio Tour" or "Road to Hana Self-Guided Driving Tour"</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Subheadline:</strong> 1–2 sentences on what makes it different. Lead with function ("GPS-triggered stories that play automatically") not atmosphere ("Experience the magic of...")</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Fact pills / badges:</strong> Show the 4–6 most important tour specs at a glance: story count, offline capability, rating, purchase coverage (per car), expiry</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Buy button:</strong> Visible in the hero — price displayed clearly. "Buy This Tour — $9.99" is better than "Purchase Now"</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Rating display:</strong> Show star rating and review count in the hero. "4.8★ · 11,579 reviews" near the buy button</div>
-</div>
-<div class="avoid-box">
-<div class="avoid-label">Never do this</div>
-        Don't open with a quote, a poem, or atmosphere-only prose ("The road calls to those who dare to wander..."). Google can't index the intent. The visitor who found you via "road to hana tour" wants to confirm they're in the right place — tell them immediately.
-      </div>
-<div class="tip-box">
-<div class="tip-label">Pro Tip</div>
-        Add a sticky buy bar at the bottom of the page that follows the user as they scroll. This single element consistently improves conversion rates on long pages because the CTA stays visible during the entire reading experience.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 3: CRITICAL ALERT -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">03</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Critical Pre-Trip Alert</div>
-<div class="sec-subtitle">Reservation requirements, safety warnings, permit rules — anything that causes a trip failure if missed</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        Google's public guidance is broader: create helpful, reliable, people-first content that gives visitors a satisfying experience. For travel pages, the practical application is simple: prevent trip failures before they happen. A page that clearly explains mandatory reservations, seasonal closures, cell-service gaps, rental-car restrictions, and separate entry fees demonstrates useful route knowledge and helps the visitor even before they buy.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> Any mandatory reservation requirements (with the booking link and advance notice required)</div>
-<div class="include-item"><span class="inc-icon">✅</span> Safety rules with real consequences if broken (rental car prohibitions, park wildlife distance rules, towing risks)</div>
-<div class="include-item"><span class="inc-icon">✅</span> Download warning if cell service drops ("Download before you enter — no signal after Paia")</div>
-<div class="include-item"><span class="inc-icon">✅</span> Park entry fees that are separate from the tour cost (prevents refund requests from confused buyers)</div>
-<div class="include-item"><span class="inc-icon">✅</span> Official source checked — NPS, state park, recreation.gov, county road closure page, or the relevant attraction/operator page</div>
-<div class="include-item"><span class="inc-icon">✅</span> A visible "last verified" date for any reservation, fee, closure, or safety claim that can change</div>
-</div>
-<div class="example-box">
-<div class="ex-label">Example — what to include vs. what to skip</div>
-<div class="ex-good">✓ <span>"Wai'ānapanapa State Park (Black Sand Beach) requires reservations booked in advance at gostateparks.hawaii.gov — no same-day booking. Vehicles parked outside are towed."</span></div>
-<div class="ex-bad">✗ <span>"Remember to pack sunscreen and comfortable shoes" — generic, zero E-E-A-T value, Google ignores it</span></div>
-</div>
-<div class="tip-box">
-<div class="tip-label">Pro Tip</div>
-        Style this as a visually distinct warning banner (yellow/amber background, warning icon) so it is impossible to miss. Safety and trip-critical details should not be buried near the bottom of the page.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 03A: SOURCE & VERIFICATION BLOCK -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">03A</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Source &amp; Verification Block</div>
-<div class="sec-subtitle">Author, reviewer, route tester, last verified date, and official sources checked</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        Travel pages contain details that change: fees, reservation rules, entrance access, road closures, cell-service gaps, and seasonal operating dates. A visible verification block makes the page more trustworthy for travelers and creates an internal accountability system for keeping critical facts current.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Written by:</strong> ATG / GuideAlong Content Team, or named writer if available</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Reviewed by:</strong> Product/content reviewer responsible for factual accuracy</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Route tested by:</strong> Field tester, local reviewer, partner, or internal route owner — only include this if true</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Last verified:</strong> Month DD, YYYY — use this for reservation rules, fees, road status, seasonal access, and safety claims</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Sources checked:</strong> Official park/attraction page, state park page, recreation.gov, road closure page, or other primary source</div>
-</div>
-<div class="example-box">
-<div class="ex-label">Example — verification block</div>
-<div class="ex-good">✓ <span><strong>Written by:</strong> ATG Content Team · <strong>Reviewed by:</strong> Route QA · <strong>Last verified:</strong> June 22, 2026 · <strong>Sources checked:</strong> NPS / State Park / Recreation.gov / official road alerts</span></div>
-<div class="ex-bad">✗ <span><strong>Avoid:</strong> "Route tested" or "last verified" claims that are copied across pages without a real check.</span></div>
-</div>
-<div class="avoid-box">
-<div class="avoid-label">Never do this</div>
-        Do not change dates just to make a page look fresh. Only update the verification date when a real check was completed and the source used is known.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 4: PRE-TRIP GUIDE -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">04</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Pre-Trip Planning Guide</div>
-<div class="sec-subtitle">Departure timing, logistics, what to bring — field-specific, not generic</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        This is the section that proves the page understands the real trip, not just the destination. Generic packing lists ("bring snacks, water, sunscreen") have very low value because any competitor or AI tool can write them. Field-specific logistics ("leave West Maui by 7 AM or you'll hit parking gridlock at Twin Falls," "last fuel before Hana is in Paia") demonstrate direct route knowledge and answer planning queries the page may not currently capture.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Departure timing</strong> — specific by departure location (not "leave early," but "leave by 7:30 AM from Kihei"). This is the most-searched pre-trip question for drive tours</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Fuel logistics</strong> — where is the last gas station before a long stretch? What does it cost? Are there stations inside the park/on the route?</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Food reality</strong> — not "you can find food along the way" but "the only food stop between X and Y is Z, cash only, sells out by 10 AM"</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>App download instruction</strong> — explicitly: "download the tour at your hotel before you leave — cell service drops at [specific location] and you won't be able to download inside"</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>What to actually pack</strong> — route-specific items only. Water shoes for volcanic rock waterfall pools, not just "comfortable shoes." Bear spray for Yellowstone. Binoculars for wildlife viewing.</div>
-</div>
-<div class="avoid-box">
-<div class="avoid-label">Never do this</div>
-        Do not copy-paste the same packing list across multiple tour pages. "Bring snacks, water, sunscreen, and comfortable shoes" appearing identically on your Road to Hana, Yellowstone, and Joshua Tree pages is a content duplication signal that drags all three pages down. Each tour's packing section must be specific to that route.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 5: KEY STOPS -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">05</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Key Stops Along the Route — with Field Notes</div>
-<div class="sec-subtitle">What the tour covers, stop by stop — with observations that prove firsthand knowledge</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        Stop lists are common on every tour competitor's page. Field notes are not. This is where the page can show practical experience rather than generic destination coverage. A stop described as "Twin Falls — a beautiful waterfall with stunning views" is weak. "Twin Falls — arrive before 9 AM. The audio tells you which fork leads to the upper falls — most people take the wrong path and miss them" demonstrates route-specific observation. These field notes also capture long-tail planning queries such as "twin falls road to hana upper falls" and "which path at twin falls."
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> List 6–10 key stops — not every stop, just the ones that need context or planning</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>For each stop:</strong> What it is (1 sentence) + what to do there (1 sentence) + one field note — a specific observation that could only come from having been there</div>
-<div class="include-item"><span class="inc-icon">✅</span> Tag stops that require advance action (⚠ Reservation required, 💰 Cash only, 🅿 Limited parking — arrive before X)</div>
-<div class="include-item"><span class="inc-icon">✅</span> Note what the audio tour tells people at that stop — this is your product's unique value and should be referenced ("the audio explains why the bark looks this way," "the audio identifies which pullout to use")</div>
-</div>
-<div class="example-box">
-<div class="ex-label">Field note — good vs bad</div>
-<div class="ex-good">✓ <span>"Lamar Valley: go at dawn. The audio identifies which hillside to scan from each pullout — without this most visitors look in the wrong direction and miss the wolves entirely."</span></div>
-<div class="ex-bad">✗ <span>"Lamar Valley: a beautiful valley known as America's Serengeti where you can see wildlife including wolves, bison, and bears."</span> — Generic, any competitor can write this</div>
-</div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 6: AUDIO SAMPLE -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">06</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Audio Sample — Transcript + How It Works</div>
-<div class="sec-subtitle">A real narration excerpt and a plain-language explanation of the app experience</div>
-</div>
-<div class="sec-badge badge-should">Should Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        The audio tour is the product — but visitors can't hear it before buying. An actual narration transcript is the closest substitute and it serves two purposes: it demonstrates the quality and depth of storytelling (conversion), and it adds unique, indexable text content that no competitor has (SEO). A well-written narration excerpt also increases time-on-page significantly, which is a positive engagement signal.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> One real narration excerpt — 100–200 words, from one of the best stops on the tour. Should be genuinely interesting, not promotional</div>
-<div class="include-item"><span class="inc-icon">✅</span> Label it clearly as a sample ("Sample narration — plays automatically as you approach [stop name]")</div>
-<div class="include-item"><span class="inc-icon">✅</span> Follow with a 3–4 step "how it works" explanation: Download → GPS auto-plays → Stop whenever → Works offline</div>
-<div class="include-item"><span class="inc-icon">✅</span> Keep the "how it works" steps visual and scannable — this is a common question from buyers who aren't sure if the app will work without signal</div>
-</div>
-<div class="tip-box">
-<div class="tip-label">Pro Tip</div>
-        The narration excerpt is your single best conversion tool. Pick a stop that makes the reader think "I didn't know that" — something factually surprising that the visitor couldn't get from a Wikipedia article. The Yellowstone wolf reintroduction story and the Wai'ānapanapa black sand cave legend are examples of content that makes people want to hear the rest.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 7: COMPARISON TABLE -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">07</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Tour Options Comparison Table</div>
-<div class="sec-subtitle">Honest comparison of audio tour vs. bus tour vs. private guide vs. DIY</div>
-</div>
-<div class="sec-badge badge-should">Should Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        "Best [destination] tours" and "guided tours of [destination]" queries expect a comparison — not a single-brand recommendation. Pages that self-promote without comparing alternatives rank poorly for these queries. Adding an honest comparison table (where you're not the best at everything) actually improves both rankings and conversions, because it builds credibility. A visitor who trusts your honesty is more likely to buy from you.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> Compare 4 options: your audio tour, bus/group tour, private guided tour, driving without a guide</div>
-<div class="include-item"><span class="inc-icon">✅</span> Columns: Cost, Flexibility, Narration/Coverage, Best For</div>
-<div class="include-item"><span class="inc-icon">✅</span> Be honest — if a private guide is better for flexibility, say so. Your product wins on cost and convenience — let those advantages speak clearly</div>
-<div class="include-item"><span class="inc-icon">✅</span> "Best For" column is where you can guide — "independent travelers who want maximum depth at minimum cost" is a natural win for the audio tour</div>
-</div>
-<div class="avoid-box">
-<div class="avoid-label">Never do this</div>
-        Don't write a "comparison" where every row says your product wins. Google's quality raters specifically look for objectivity in comparison content — and visitors can see through it immediately. Giving a honest win to a competitor ("Private guide: best for special occasions and photography-focused visitors") makes your honest wins for the audio tour more credible.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 8: FAQ -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">08</div>
-<div class="sec-title-wrap">
-<div class="sec-title">FAQ — 6 to 8 Questions with Complete Answers</div>
-<div class="sec-subtitle">The most common pre-purchase questions — answered fully, not pointed to "contact us"</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        FAQ sections help pages answer real pre-purchase questions in the same language travelers use in search. They can also support eligibility for FAQ-style rich results when implemented correctly, though Google does not guarantee rich-result display. More importantly, FAQ content reduces purchase friction by answering the questions that make people hesitate before buying. "Does it work without cell service?" and "How many people does one purchase cover?" are two common questions across both ATG and GuideAlong.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Always include these 4 — universal across all tours:</strong></div>
-<div class="include-item" style="padding-left:20px"><span class="inc-icon">→</span> Does the app work without cell service? (Yes — explain how: download first, GPS-only after)</div>
-<div class="include-item" style="padding-left:20px"><span class="inc-icon">→</span> How many people does one purchase cover? (One car — explain this clearly)</div>
-<div class="include-item" style="padding-left:20px"><span class="inc-icon">→</span> What is the park/site entry fee vs. the tour price? (Separate — prevents confusion and refund requests)</div>
-<div class="include-item" style="padding-left:20px"><span class="inc-icon">→</span> Does the tour expire? (No — valid forever)</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Then add 2–4 destination-specific questions</strong> — the top questions for that specific route (Black Sand Beach for Hana, Old Faithful timing for Yellowstone, etc.)</div>
-<div class="include-item"><span class="inc-icon">✅</span> Write complete answers — not "yes" or "contact us for details." A full answer to each question is what earns the featured snippet position</div>
-</div>
-<div class="avoid-box">
-<div class="avoid-label">Never do this</div>
-        Don't write FAQ answers that redirect to another page or say "download the app to find out." If the answer requires visiting another page, Google won't give you the featured snippet for that question — and a competitor who answers it fully will take it instead.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 9: REVIEWS -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">09</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Reviews — Real, Specific, Sourced</div>
-<div class="sec-subtitle">3–6 verified reviews with attribution, not generic praise</div>
-</div>
-<div class="sec-badge badge-should">Should Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        Reviews provide the social proof that converts hesitant buyers at the bottom of the page. More importantly for SEO, reviews contain natural language that matches how real travelers describe the product — "worked without signal," "the wolf viewing tip saved us," "banana bread sold out" — all of which can strengthen the page's relevance for long-tail search behavior. Reviews also build trust, especially when they are real, specific, dated, and sourced.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> Show the aggregate rating prominently above the reviews: "4.8 stars · 11,579 reviews on the Apple App Store"</div>
-<div class="include-item"><span class="inc-icon">✅</span> 3–6 reviews per page — each one should mention something specific about the destination, not just "great app!"</div>
-<div class="include-item"><span class="inc-icon">✅</span> Include the source (Apple App Store, Viator, Google) and a date — sourced reviews have more credibility than anonymous quotes</div>
-<div class="include-item"><span class="inc-icon">✅</span> Pick reviews that mention practical moments: a specific stop, something they learned, something the app warned them about. These are the review excerpts that help conversion</div>
-<div class="include-item"><span class="inc-icon">✅</span> Use only reviews that can be traced back to the source platform. Do not invent names, dates, ratings, or review text.</div>
-</div>
-<div class="avoid-box">
-<div class="avoid-label">Never do this</div>
-        Don't use generic reviews like "Amazing tour, highly recommend!" with no specifics. They add no SEO value and have almost no conversion impact. A review that says "The Old Faithful eruption timing in the app told us exactly when to get there and where to stand — we had the best view of anyone in the park" does 10x the conversion work.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 10: BUNDLES -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">10</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Bundles &amp; Upsells</div>
-<div class="sec-subtitle">Related tours, bundles, subscription — always last, never first</div>
-</div>
-<div class="sec-badge badge-should">Should Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        Bundles placed at the bottom — after the helpful planning content — convert better because the visitor has already received value and understands the product. Bundles placed at the top before delivering any value can make the page feel sales-first and increase bounce risk. Putting upsells later keeps the page useful before it becomes commercial.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> Show 2–3 relevant bundle options — routes that most visitors combine with this one</div>
-<div class="include-item"><span class="inc-icon">✅</span> Show the "was" price and the bundle price — the saving should be visible and specific ("save $6.98")</div>
-<div class="include-item"><span class="inc-icon">✅</span> Add a one-sentence reason why these tours are usually combined ("Most Yellowstone visitors also visit Grand Teton — 1 hour south via the Rockefeller Parkway")</div>
-</div>
-<div class="avoid-box">
-<div class="avoid-label">Never do this</div>
-        Don't place the bundle upsell or Action+ subscription banner before the Pre-Trip Guide. Showing a subscription upsell before the visitor has received any value makes the page feel commercial before it feels helpful.
-      </div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<!-- SECTION 11: VISUAL PROOF -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">11</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Visual Proof Layer — Images, Maps, Author Photos, App Screens</div>
-<div class="sec-subtitle">Use visuals to prove route experience and reduce planning uncertainty</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        Long tour pages should not read like SEO documents. Images must prove firsthand route knowledge: maps, field photos, author/route-tester photos, app screenshots, parking proof, reservation proof, and stop thumbnails. Scenic images help emotion; field images help trust.
-      </div>
-<div class="include-list">
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Author / route tester image:</strong> real person, real team, or real field-testing photo. Do not use AI-generated people.</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Route map:</strong> simplified branded map showing start point, key stops, optional routes, and warning zones.</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Practical proof images:</strong> reservation screenshots, parking photos, no-cell-service visuals, road closure/entrance visuals, and app screenshots.</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Stop gallery:</strong> 6–10 licensed or owned images for the most important stops, each with useful caption and descriptive alt text.</div>
-</div>
-<div class="template-visual-grid">
-<div class="template-visual-card">
-<img alt="Placeholder showing where route maps and visual proof should be added to tour pages" loading="lazy" src="assets/template-visual-proof-placeholder.svg"/>
-<div><strong>Route map:</strong> show the real path, key stops, and risk points.</div>
-</div>
-<div class="template-visual-card">
-<img alt="Placeholder for author or route tester image on a tour page" loading="lazy" src="assets/rth-route-tester-placeholder.svg"/>
-<div><strong>Route tester:</strong> connect the byline and verification block to a real person or team.</div>
-</div>
-<div class="template-visual-card">
-<img alt="Placeholder for app screenshots showing GPS auto-play and offline download" loading="lazy" src="assets/rth-app-screenshot-placeholder.svg"/>
-<div><strong>App screens:</strong> show download, offline map, auto-play, and stop list.</div>
-</div>
-</div>
-<div class="avoid-box">
-<div class="avoid-label">Never do this</div>
-        Do not add random scenic stock photos just to make the page look rich. Every image should support the nearby section. Use descriptive filenames, real alt text, captions for practical images, and lazy loading below the fold.
-      </div>
-</div>
-</div>
-</div>
-<!-- ═══════════════════════════════════════════════════════ -->
-
-<div class="section-spacer" id="ai-audit-100">
-<div class="spacer-label">AI SEO Auditor 100/100 Configuration Rules</div>
-</div>
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">AI</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Machine-Readable Trust, Citations, and Topic Cluster Alignment</div>
-<div class="sec-subtitle">Use these rules when converting RTH and Yellowstone pages into trip-planner-style tour pages</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row"><span class="why-label">Why</span> The RTH GA score improved only after the page had clean metadata, sequential headings, FAQ/HowTo/Article/Person schema, visible author bio, named-source quotes, explicit source citations, original route-analysis language, and a tightly aligned internal link cluster. Apply the same package to every priority tour page.</div>
-<div class="audit-100-grid">
-<div class="audit-100-card"><h4>1. Metadata</h4><ul><li>Title: 50–60 characters, destination + tour type + brand.</li><li>Meta description: around 140–155 characters.</li><li>Use standard order: <code>&lt;meta name="description" content="..."&gt;</code>.</li></ul></div>
-<div class="audit-100-card"><h4>2. Heading hierarchy</h4><ul><li>One H1 only.</li><li>Use H2 for major sections.</li><li>Use H3 for cards, FAQs, stops, and subsections. Avoid jumping from H2 to H4.</li></ul></div>
-<div class="audit-100-card"><h4>3. Schema pack</h4><ul><li>Product schema for price/rating/offer.</li><li>FAQPage schema for visible FAQs.</li><li>HowTo schema for app-use steps.</li><li>Article schema linked to Person author schema.</li><li>BreadcrumbList schema with topical breadcrumb labels.</li></ul></div>
-<div class="audit-100-card"><h4>4. Citation format</h4><ul><li>Every official fact should include visible <strong>(Source: URL)</strong>.</li><li>Use named-source blockquotes with <code>&lt;cite&gt;</code>.</li><li>Do not use vague language like “official sources say” without attribution.</li></ul></div>
-<div class="audit-100-card"><h4>5. Originality signals</h4><ul><li>Include “Original route analysis” or “Proprietary route review.”</li><li>Mention app support patterns, route sequencing, field notes, or route-testing observations.</li><li>Do not make false route-testing claims.</li></ul></div>
-<div class="audit-100-card"><h4>6. Author bio visibility</h4><ul><li>Show an on-page <strong>Author Bio</strong> section.</li><li>Link to a detailed author page.</li><li>Use destination-specific author URL and anchor text.</li></ul></div>
-</div>
-<div class="tip-box"><div class="tip-label">Topical link rule</div> For high cluster alignment, avoid generic internal links such as Home, Privacy, Terms, Contact, or generic tour indexes on the page body/footer. Use destination-cluster links instead: Road to Hana pages should link to Maui/Road-to-Hana pages; Yellowstone pages should link to Yellowstone/Grand-Loop/Old-Faithful/entrance/road-status pages.</div>
-</div>
-</div>
-</div>
-<div class="connector"><div class="connector-line"></div></div>
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">CL</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Cluster Link Alignment Examples — RTH vs Yellowstone</div>
-<div class="sec-subtitle">Use these as anchor-text patterns inside the tour page body and footer</div>
-</div>
-<div class="sec-badge badge-should">Should Have</div>
-</div>
-<div class="sec-body">
-<table class="pri-table">
-<thead><tr><th>Route</th><th>Good internal anchor text</th><th>Avoid / replace</th></tr></thead>
-<tbody>
-<tr><td class="p1">Road to Hana</td><td>Road to Hana Black Sand Beach reservation guide; Road to Hana one-day itinerary; Maui offline GPS audio tour; Haleakalā and Road to Hana bundle; Hana Highway driving tips</td><td>Home; Tours; Learn More; Contact; Privacy; Generic Hawaii tours</td></tr>
-<tr><td class="p1">Yellowstone</td><td>Yellowstone Grand Loop driving itinerary; Old Faithful eruption timing guide; Lamar Valley wildlife guide; Yellowstone entrance guide; Yellowstone road status guide; Yellowstone + Grand Teton bundle</td><td>Home; Reviews; Support; Generic national park tours; Terms</td></tr>
-</tbody>
-</table>
-<div class="example-box"><div class="ex-label">Required visible citation pattern</div><div class="ex-good">✓ <span>Yellowstone does not require a general entry reservation. <strong>(Source: https://www.nps.gov/yell/planyourvisit/permitsandreservations.htm)</strong></span></div><div class="ex-good">✓ <span>Waiʻānapanapa requires advance reservations for non-resident visitors. <strong>(Source: https://dlnr.hawaii.gov/dsp/parks/maui/waianapanapa-state-park/)</strong></span></div></div>
-<div class="audit-code">&lt;section id="author-bio"&gt;
-  &lt;h2&gt;About this guide&lt;/h2&gt;
-  &lt;h3&gt;Author Bio&lt;/h3&gt;
-  &lt;p&gt;Written by the [Destination] Content Team...&lt;/p&gt;
-  &lt;a href="./[destination]-author-[brand]-content-team.html"&gt;Read the author profile&lt;/a&gt;
-&lt;/section&gt;</div>
-</div>
-</div>
-</div>
-<div class="section-spacer" id="schema">
-<div class="spacer-label">Technical Requirement — Do This on Every Tour Page</div>
-</div>
-<!-- SCHEMA BLOCK -->
-<div class="section-block">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">⚙</div>
-<div class="sec-title-wrap">
-<div class="sec-title">Structured Data (JSON-LD Schema)</div>
-<div class="sec-subtitle">One developer task per page — helps Google understand product, offer, review, FAQ, and breadcrumb details</div>
-</div>
-<div class="sec-badge badge-must">Must Have</div>
-</div>
-<div class="sec-body">
-<div class="why-row">
-<span class="why-label">Why</span>
-        Structured data helps Google understand product details such as price, availability, rating, reviews, FAQs, and breadcrumbs. When implemented correctly and when the visible page content matches the markup, Product schema can make the page eligible for richer search results such as price and review information. It does not guarantee star ratings, rankings, or CTR improvement.
-      </div>
-<div class="schema-block">
-<div class="schema-label">Product schema example — replace highlighted values and validate before publishing</div>
-<div class="schema-code">
-&lt;script type="application/ld+json"&gt;<br/>
-{<br/>
-  <span class="key">"@context"</span>: <span class="val">"https://schema.org"</span>,<br/>
-  <span class="key">"@type"</span>: <span class="val">"Product"</span>,<br/>
-  <span class="key">"name"</span>: <span class="replace">"[Tour Name] — [Destination] Audio Tour"</span>,<br/>
-  <span class="key">"description"</span>: <span class="replace">"[1 sentence description]"</span>,<br/>
-  <span class="key">"brand"</span>: { <span class="key">"@type"</span>: <span class="val">"Brand"</span>, <span class="key">"name"</span>: <span class="replace">"Action Tour Guide"</span> },<br/>
-  <span class="key">"offers"</span>: {<br/>
-    <span class="key">"@type"</span>: <span class="val">"Offer"</span>,<br/>
-    <span class="key">"price"</span>: <span class="replace">"9.99"</span>,<br/>
-    <span class="key">"priceCurrency"</span>: <span class="val">"USD"</span>,<br/>
-    <span class="key">"availability"</span>: <span class="val">"https://schema.org/InStock"</span><br/>
-  },<br/>
-  <span class="key">"aggregateRating"</span>: {<br/>
-    <span class="key">"@type"</span>: <span class="val">"AggregateRating"</span>,<br/>
-    <span class="key">"ratingValue"</span>: <span class="replace">"4.8"</span>,<br/>
-    <span class="key">"reviewCount"</span>: <span class="replace">"11579"</span>,<br/>
-    <span class="key">"bestRating"</span>: <span class="val">"5"</span><br/>
-  }<br/>
-}<br/>
-&lt;/script&gt;
-        </div>
-</div>
-<div class="tip-box">
-<div class="tip-label">Implementation Rule</div>
-        Schema must match what is visibly shown on the page. Only use aggregateRating, reviewCount, price, and availability values that are accurate, current, and verifiable. Validate every page in Google's Rich Results Test before publishing.
-      </div>
-<div class="example-box">
-<div class="ex-label">Also add these schema types when present on the page</div>
-<div class="include-list" style="margin-bottom:0">
-<div class="include-item"><span class="inc-icon">✅</span> <strong>FAQPage:</strong> only for FAQs that are visible on the page and written as full question/answer pairs</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>BreadcrumbList:</strong> Home → Destination → Tour page</div>
-<div class="include-item"><span class="inc-icon">✅</span> <strong>Review:</strong> only if individual review text, source, rating, and date are visible and verifiable</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- ═══════════════════════════════════════════════════════ -->
-<div class="section-spacer" id="checklist">
-<div class="spacer-label">Quick Reference Checklist — Before Publishing Any Tour Page</div>
-</div>
-<!-- CHECKLIST -->
-<div class="checklist-wrap">
-<div class="cl-header">
-<h3>Tour Page Pre-Publish Checklist</h3>
-<span>Check every item before the page goes live</span>
-</div>
-<div class="cl-row">
-<div class="cl-num">01</div>
-<div class="cl-text">Title tag includes destination name + specific differentiator + brand. Under 60 characters. No "Best" or "Top".</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">02</div>
-<div class="cl-text">Meta description names 2–3 pieces of practical content on the page. Under 155 characters. Not interchangeable with another tour's meta.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">03</div>
-<div class="cl-text">H1 headline includes the destination name and "tour" or "audio tour."</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">04</div>
-<div class="cl-text">Product JSON-LD schema added to &lt;head&gt; with correct price, rating, and review count.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">05</div>
-<div class="cl-text">Buy button is visible without scrolling on desktop and mobile.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">06</div>
-<div class="cl-text">A critical pre-trip alert section exists covering reservation requirements, safety rules, or permit fees specific to this destination.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">07</div>
-<div class="cl-text">Departure timing is specific to this route — includes times by departure location, not generic "leave early."</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">08</div>
-<div class="cl-text">Packing section is route-specific — not copy-pasted from another tour page. Includes at least 2 items specific to this destination.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">09</div>
-<div class="cl-text">Each key stop has at least one field note — a specific observation that could only come from firsthand experience on this route.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">10</div>
-<div class="cl-text">Stops that require advance booking, cash, or early arrival are clearly tagged (⚠ Reservation required, 💰 Cash only).</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">11</div>
-<div class="cl-text">FAQ includes the 4 universal questions: offline functionality, purchase coverage, entry fee vs. tour price, and expiry.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">12</div>
-<div class="cl-text">FAQ answers are complete — no "contact us" redirects. Each answer could standalone as a featured snippet.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">13</div>
-<div class="cl-text">One real narration transcript excerpt is included (100–200 words, genuinely interesting, not promotional).</div>
-<div class="cl-tag tag-should">Should</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">14</div>
-<div class="cl-text">A comparison table showing this tour vs. bus tour vs. private guide vs. self-drive — with honest assessments.</div>
-<div class="cl-tag tag-should">Should</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">15</div>
-<div class="cl-text">Reviews include the source (App Store, Viator, Google) and mention a specific stop or moment — not generic praise.</div>
-<div class="cl-tag tag-should">Should</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">16</div>
-<div class="cl-text">Bundle/upsell section appears after the FAQ and reviews — never in the hero or before the pre-trip content.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">17</div>
-<div class="cl-text">No generic opening lines ("Experience the magic of...", "This tour is perfect for..."). Page opens with the critical alert or the hero headline.</div>
-<div class="cl-tag tag-avoid">Avoid</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">18</div>
-<div class="cl-text">No Action+ or subscription upsell before the pre-trip content section.</div>
-<div class="cl-tag tag-avoid">Avoid</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">19</div>
-<div class="cl-text">Author, reviewer, route tester, last verified date, and official sources checked are visible on the page.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">20</div>
-<div class="cl-text">Any fee, reservation, road closure, entrance access, permit, or safety claim has been checked against an official source.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">21</div>
-<div class="cl-text">Schema markup matches visible page content and has passed Google's Rich Results Test.</div>
-<div class="cl-tag tag-must">Must</div>
-</div>
-<div class="cl-row">
-<div class="cl-num">22</div>
-<div class="cl-text">No fabricated route-tester notes, review quotes, review counts, author claims, or freshness dates.</div>
-<div class="cl-tag tag-avoid">Avoid</div>
-</div>
-</div>
-<!-- PRIORITY TABLE -->
-<div class="section-block" style="margin-bottom: 48px;">
-<div class="sec-card">
-<div class="sec-header">
-<div class="sec-num">📋</div>
-<div class="sec-title-wrap">
-<div class="sec-title">If You Can Only Do Some of This — Priority Order</div>
-<div class="sec-subtitle">What to tackle first when rolling this out across multiple tour pages</div>
-</div>
-<div class="sec-badge badge-must">Reference</div>
-</div>
-<div class="sec-body">
-<table class="pri-table">
-<thead><tr><th>Priority</th><th>Task</th><th>Effort</th><th>Why This First</th></tr></thead>
-<tbody>
-<tr><td class="p1">P1</td><td>Add and validate Product, FAQ, and Breadcrumb schema</td><td>Low — 1 dev task per page</td><td>Makes product, price, FAQ, and navigation details machine-readable. Must match visible page content.</td></tr>
-<tr><td class="p1">P1</td><td>Update title tag and meta on top 20 tour pages</td><td>Low — content only</td><td>Improves CTR on existing rankings immediately. No ranking change needed to see benefit.</td></tr>
-<tr><td class="p1">P1</td><td>Add critical alert and source verification block</td><td>Low — 1–2 paragraphs plus source check</td><td>Prevents trip failures, improves traveler trust, and creates internal accountability for changing facts.</td></tr>
-<tr><td class="p2">P2</td><td>Rewrite pre-trip section with route-specific departure timing and logistics</td><td>Medium — requires route knowledge</td><td>Targets planning queries the page doesn't currently rank for. Adds indexable content.</td></tr>
-<tr><td class="p2">P2</td><td>Add field notes to each key stop</td><td>Medium — requires firsthand knowledge</td><td>The content that most directly improves Google's quality assessment after core updates.</td></tr>
-<tr><td class="p2">P2</td><td>Rewrite FAQ with complete answers</td><td>Medium</td><td>Earns featured snippets and People Also Ask positions. Reduces buyer hesitation.</td></tr>
-<tr><td class="p3">P3</td><td>Add comparison table</td><td>Low — templated format</td><td>Captures "best X tours" queries. Build one template and reuse across all tour pages.</td></tr>
-<tr><td class="p3">P3</td><td>Add narration transcript excerpt</td><td>Low — pull from existing script</td><td>Unique content, improves conversion. Already written — just needs placing on the page.</td></tr>
-<tr><td class="p3">P3</td><td>Curate specific reviews per page</td><td>Low</td><td>Conversion improvement. Pick reviews that mention a specific stop, not generic praise.</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<!-- HELPFUL CONTENT COMPLIANCE: AUTHOR PROFILE + EDITORIAL METHOD -->
-<div class="section-block helpful-gap-section" id="author-profile">
-<div class="helpful-gap-wrap">
-<div class="helpful-gap-kicker">Who · How · Why</div>
-<h2 class="helpful-gap-title">Required Author, Reviewer &amp; Method Information</h2>
-<p class="helpful-gap-lead">Every published tour page should make it easy for visitors to understand who created the content, how the route information was checked, and why the page exists. This block should be adapted per destination and linked from the visible byline near the top of the page.</p>
-<div class="author-grid">
-<div class="author-card">
-<h3>Who created it</h3>
-<p>Use a visible byline such as <a href="#author-profile">Action Tour Guide Content Team</a> or <a href="#author-profile">GuideAlong Content Team</a>. The byline should link to a short author profile explaining route expertise, editorial ownership, and review responsibility.</p>
-</div>
-<div class="author-card" id="editorial-method">
-<h3>How it was verified</h3>
-<p>Show the route-tester or editorial review process: route driven or checked, official sources reviewed, app behavior verified, road/fee/reservation details fact-checked, and last material update recorded.</p>
-</div>
-<div class="author-card" id="ai-disclosure">
-<h3>Why it exists</h3>
-<p>State that the page is built to help travelers plan and complete the trip safely and confidently, not merely to attract search traffic. If AI assistance is used in drafting, disclose that human editors verify all route, fee, safety, and reservation claims before publication.</p>
-</div>
-</div>
-<div class="method-note">
-<strong>Publishing rule:</strong> Do not publish a byline unless it links to supporting author/method information on the page or to a real author/editorial policy page. Do not add a “last verified” date unless the content has been materially checked against current route knowledge and official sources.
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><span class="brand-mark">ATG</span> Tour Page Template</div>
+     
     </div>
-</div>
-</div>
-<footer>
-<p>ATG &amp; GuideAlong · Tour Page Content Template · Internal Marketing Reference · June 2026</p>
-</footer>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Template hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Final Content Team Template</div>
+        <h1>ATG / GA Tour Page Template for E-E-A-T, SEO, AEO, GEO, and LLM Visibility</h1>
+        <p class="hero-answer">Use this template to create helpful, evidence-backed tour pages with clear answers, route proof, original research, expert attribution, author signals, schema inputs, source citations, and conversion sections that support both travelers and AI search systems.</p>
+        <div class="hero-grid">
+          <div class="hero-card"><strong>17</strong><span>Final page sections</span></div>
+          <div class="hero-card"><strong>30–50</strong><span>Word H1 answer target</span></div>
+          <div class="hero-card"><strong>100</strong><span>Audit target per item</span></div>
+          <div class="hero-card"><strong>0</strong><span>Side menu items</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="notice">
+        <div class="box-title">How to use this template</div>
+        <p>Each tour page should be written as a helpful planning resource first and a product page second. Keep the page consumer-facing. Do not include internal instructions on live pages. Use this template to guide content creation, then replace placeholder examples with destination-specific facts, real sources, real reviews, and verified route knowledge.</p>
+      </div>
+
+      <section>
+        <div class="section-head">
+          <div class="section-kicker">Global Rules</div>
+          <h2>Universal requirements before publishing</h2>
+          <p class="section-lede">These items prevent the most common SEO, AEO, GEO, and E-E-A-T failures.</p>
+        </div>
+        <div class="body">
+          <div class="grid-2">
+            <div class="greenbox">
+              <div class="box-title">Must include</div>
+              <ul class="checklist">
+                <li>One clean meta description between 140–155 characters.</li>
+                <li>Exactly one H1.</li>
+                <li>A 30–50 word paragraph immediately after the H1.</li>
+                <li>Logical heading hierarchy: H2, then H3, then H4.</li>
+                <li>FAQPage schema if FAQs exist.</li>
+                <li>HowTo schema if app setup steps are shown.</li>
+                <li>Article schema linked to Person or Organization author schema.</li>
+                <li>A visible author bio with a clear author profile link.</li>
+                <li>Clear citations using visible “Source:” language.</li>
+                <li>Original research, proprietary data, case study, or unique analysis language where genuinely supported.</li>
+              </ul>
+            </div>
+            <div class="redbox">
+              <div class="box-title">Do not do this</div>
+              <ul class="badlist">
+                <li>Do not add duplicate meta descriptions.</li>
+                <li>Do not put a byline, badge, div, or short text between the H1 and the answer-target paragraph.</li>
+                <li>Do not use fake quotes, fake experts, fake reviews, or fake awards.</li>
+                <li>Do not use generic travel filler without route-specific details.</li>
+                <li>Do not rely on map images without crawlable route text.</li>
+                <li>Do not update “last verified” dates unless the source was actually checked.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="section-kicker">Section 1</div>
+          <h2>SEO Title, Meta, URL, Heading Rules & Schema Setup</h2>
+          <p class="section-lede">This section is mostly technical, but the content team must provide clean inputs.</p>
+        </div>
+        <div class="body">
+          <div class="bluebox"><div class="box-title">Why this matters</div>Search engines and AI systems need a clear page topic, clean metadata, one H1, schema, and author attribution to understand what the page is about and who produced it.</div>
+          <div class="greenbox"><div class="box-title">Must include</div><ul class="checklist"><li>SEO title.</li><li>Meta description around 140–155 characters.</li><li>URL slug.</li><li>H1.</li><li>Primary and secondary keywords.</li><li>Schema inputs for Product, FAQ, HowTo, Breadcrumb, Article, Author, and Review where valid.</li></ul></div>
+          <div class="template-block">
+            <h3>Template copy</h3>
+            <p><strong>SEO Title:</strong> [Tour Name]: Self-Guided GPS Audio Tour</p>
+            <p><strong>Meta Description:</strong> Explore [destination] with GPS audio, offline maps, key stops, planning tips, route guidance, and one purchase per car.</p>
+            <p><strong>H1:</strong> [Tour Name] Self-Guided GPS Audio Tour</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="section-kicker">Section 2</div>
+          <h2>Hero Section</h2>
+          <p class="section-lede">The hero should immediately explain the tour and answer the main user intent.</p>
+        </div>
+        <div class="body">
+          <div class="bluebox"><div class="box-title">Why this matters</div>The first paragraph after the H1 is your answer target. It should be 30–50 words and directly summarize the page topic for users, snippets, and answer engines.</div>
+          <div class="greenbox"><div class="box-title">Must include</div><ul class="checklist"><li>H1.</li><li>30–50 word answer-target paragraph directly after H1.</li><li>Rating, price, duration, route type, offline/GPS badges.</li><li>Primary CTA.</li></ul></div>
+          <div class="template-block">
+            <h3>Example answer-target paragraph</h3>
+            <p>Explore [destination] with a self-guided GPS audio tour that works offline, plays stories automatically, and helps you plan key stops, route timing, safety notes, reservations, parking, and local context at your own pace.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div class="section-kicker">Section 3</div>
+          <h2>Quick Answer / At-a-Glance Summary</h2>
+          <p class="section-lede">A compact table for answer engines and users who want fast facts.</p>
+        </div>
+        <div class="body">
+          <table>
+            <thead><tr><th>Question</th><th>Answer</th></tr></thead>
+            <tbody>
+              <tr><td>What is this tour?</td><td>A self-guided GPS audio tour for [destination].</td></tr>
+              <tr><td>Who is it best for?</td><td>Travelers who want flexibility, route guidance, stories, and stop recommendations.</td></tr>
+              <tr><td>Does it work offline?</td><td>Yes, after the tour is downloaded in advance.</td></tr>
+              <tr><td>What is the biggest planning mistake?</td><td>Starting too late, skipping downloads, ignoring reservations, or trying to stop everywhere.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 4</div><h2>Critical Pre-Trip Alert</h2><p class="section-lede">Place the most important warning near the top of the page.</p></div>
+        <div class="body">
+          <div class="amberbox"><div class="box-title">Consumer-facing alert template</div>Before starting this tour, check [reservation requirement], [road or trail condition], and [weather/safety issue]. Download the tour before leaving Wi-Fi and confirm any official alerts before beginning the route.</div>
+          <p class="small">Add a visible citation: <strong>(Source: official park, DOT, city, or reservation page.)</strong></p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 5</div><h2>Routes / Entrances Covered + Route Map + Visual Proof Layer</h2><p class="section-lede">Maps help users, but crawlable text helps search engines and LLMs.</p></div>
+        <div class="body">
+          <div class="greenbox"><div class="box-title">Must include</div><ul class="checklist"><li>Route map or embedded map.</li><li>Static fallback map image.</li><li>Start points and end point.</li><li>Major stop markers.</li><li>Text summary below the map.</li><li>Alt text and captions.</li><li>Original or licensed images.</li></ul></div>
+          <div class="template-block"><h3>Text below map template</h3><p>This tour starts at [start point], follows [route or loop], covers [major stops], and ends near [end point]. Use this route if [traveler type]. Use the alternate start only if [condition].</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 6</div><h2>Source, Verification, Author & Method Snapshot</h2><p class="section-lede">This is the page’s visible E-E-A-T trust layer.</p></div>
+        <div class="body">
+          <div class="greenbox"><div class="box-title">Must include</div><ul class="checklist"><li>Written by: linked author name.</li><li>Reviewed by: team/person/role.</li><li>Last verified date.</li><li>Official sources checked.</li><li>Method used to verify route, app, safety, or reservation details.</li><li>Author link anchor text should include “author profile.”</li></ul></div>
+          <div class="template-block">
+            <h3>Author bio template</h3>
+            <p><a href="[absolute-author-profile-url]" rel="author"><strong>[Author / Route Team Name]</strong></a> creates and reviews GPS audio tours using approved scripts, route data, customer support patterns, official sources, and product details. Read the <a href="[absolute-author-profile-url]" rel="author">[Author Name] author profile</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 7</div><h2>Original Research / Proprietary Data / Case Study</h2><p class="section-lede">This is required for strong GEO originality signals.</p></div>
+        <div class="body">
+          <div class="bluebox"><div class="box-title">Why this matters</div>Some audit tools look for explicit originality phrases. Use them only when supported by real first-party data, route analysis, customer support patterns, surveys, or case studies.</div>
+          <div class="template-block">
+            <h3>Originality template</h3>
+            <p>This page includes <strong>original research</strong> from [brand]’s <strong>proprietary data</strong>, approved route structure, support case study patterns, and <strong>unique analysis</strong> of how travelers use this tour. The analysis identifies [route decision zones], [common planning mistakes], and [stop-priority recommendations] based on first-party route experience.</p>
+          </div>
+          <div class="greenbox"><div class="box-title">Use these terms when true</div><ul class="checklist"><li>Original research</li><li>Proprietary data</li><li>Proprietary route data</li><li>Case study</li><li>Unique analysis</li><li>First-party route data</li></ul></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 8</div><h2>Pre-Trip Planning Guide + Printable Trip Planner</h2><p class="section-lede">Turn product pages into useful trip-planning pages.</p></div>
+        <div class="body">
+          <div class="greenbox"><div class="box-title">Must include</div><ul class="checklist"><li>Best start time.</li><li>What to download.</li><li>Fuel, food, restroom, and parking notes.</li><li>What to bring.</li><li>Reservation reminders.</li><li>Safety notes.</li><li>Printable checklist.</li></ul></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 9</div><h2>Key Stops + Original Route Insights</h2><p class="section-lede">This section should prove real experience, not just list places.</p></div>
+        <div class="body">
+          <div class="grid-2">
+            <div class="card soft"><h3>Stop card template</h3><p><strong>[Stop Name]</strong> is useful because [why it matters]. Expect [practical detail]. If you are short on time, [skip/prioritize guidance]. The audio tour adds [story/context/navigation value].</p></div>
+            <div class="card soft"><h3>Each stop should include</h3><ul class="checklist"><li>What to expect.</li><li>How long to spend.</li><li>Parking/crowd/timing note.</li><li>Safety note.</li><li>Audio-tour value.</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 10</div><h2>Destination-Specific Planning Section</h2><p class="section-lede">Focus on the one issue most likely to affect the traveler’s day.</p></div>
+        <div class="body"><p>Examples: Black Sand Beach reservations, Yellowstone entrance/road closures, Haleakalā sunrise permits, Yosemite timed entry, Antelope Canyon tour access, parking constraints, ferry access, or seasonal closures.</p></div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 11</div><h2>How the App / Tour Works + Why Explore With Us + Inclusions / Exclusions</h2><p class="section-lede">Clarify exactly what the customer is buying.</p></div>
+        <div class="body">
+          <div class="grid-2">
+            <div class="greenbox"><div class="box-title">What’s included</div><ul class="checklist"><li>App access.</li><li>Unique password/code.</li><li>GPS auto-play narration.</li><li>Offline map and route.</li><li>Stop-to-stop directions.</li><li>Flexible schedule.</li><li>One purchase per car when applicable.</li></ul></div>
+            <div class="redbox"><div class="box-title">What’s not included</div><ul class="badlist"><li>Transportation.</li><li>Parking fees.</li><li>Food and drinks.</li><li>Entry tickets.</li><li>Reservations.</li><li>Car rental.</li></ul></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 12</div><h2>Sample Tour Narration / Preview the Tour</h2><p class="section-lede">Prove storytelling quality with a real approved sample.</p></div>
+        <div class="body"><div class="template-block"><h3>Preview template</h3><p>Listen to a short sample from the [tour name] audio tour to hear the storytelling style, narration quality, and route-based guidance before you buy.</p><p><strong>Transcript:</strong> [Use approved tour script or actual preview audio transcript.]</p></div></div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 13</div><h2>Bus vs ATG / Tour Options Comparison Table</h2><p class="section-lede">A fair comparison helps conversion and answer engines.</p></div>
+        <div class="body">
+          <table>
+            <thead><tr><th>Feature</th><th>ATG / GA Self-Guided Audio Tour</th><th>Bus / Group Tour</th></tr></thead>
+            <tbody>
+              <tr><td>Schedule</td><td>Flexible; go at your own pace.</td><td>Fixed timing.</td></tr>
+              <tr><td>Vehicle</td><td>Your own car.</td><td>Shared vehicle.</td></tr>
+              <tr><td>Cost</td><td>Often one purchase per car.</td><td>Usually per person.</td></tr>
+              <tr><td>Stops</td><td>You choose where to pause.</td><td>Operator controls stops.</td></tr>
+              <tr><td>Best for</td><td>Independent travelers.</td><td>Travelers who do not want to drive.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 14</div><h2>Expert Quotes and Official Source Attributions</h2><p class="section-lede">Quotes must be attributed clearly to named people, teams, or official organizations.</p></div>
+        <div class="body">
+          <div class="quote-box">
+            <blockquote>“[Short expert or official quote.]”</blockquote>
+            <cite>Expert attribution: [Named Person or Official Organization], [role or source page]. Source: <a href="[source-url]">[source title]</a>.</cite>
+          </div>
+          <div class="greenbox"><div class="box-title">Expert quote checklist</div><ul class="checklist"><li>Use a real quote.</li><li>Place attribution inside the same blockquote or immediately below it.</li><li>Use a named person/team/organization.</li><li>Add source link where available.</li><li>Do not create fake quotes.</li></ul></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 15</div><h2>FAQ</h2><p class="section-lede">Use direct-answer questions that match how travelers search.</p></div>
+        <div class="body">
+          <div class="grid-2">
+            <div class="card"><h3>How many tours should I buy?</h3><p>Buy one tour per car when the tour is a driving tour. Everyone in the same vehicle can listen together.</p></div>
+            <div class="card"><h3>Does the tour work offline?</h3><p>Yes. Download the tour before leaving strong Wi-Fi or cell signal so the offline map and GPS narration can work on the route.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 16</div><h2>Verified Reviews, Bundles, Gift a Tour, and Action+</h2><p class="section-lede">Keep proof and selling modules after helpful planning content.</p></div>
+        <div class="body">
+          <div class="greenbox"><div class="box-title">Must include</div><ul class="checklist"><li>Real review sources and counts.</li><li>Single tour CTA.</li><li>Destination bundle.</li><li>Regional bundle.</li><li>Action+ where relevant.</li><li>Gift option where relevant.</li></ul></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Section 17</div><h2>Official Sources, Citations, Related Guides & Footer Trust Signals</h2><p class="section-lede">End with trust, source verification, and topic-cluster links.</p></div>
+        <div class="body">
+          <table>
+            <thead><tr><th>Claim</th><th>Source</th><th>Last verified</th></tr></thead>
+            <tbody>
+              <tr><td>[Reservation / fee / route claim]</td><td>(Source: [official source])</td><td>[Date]</td></tr>
+              <tr><td>[Tour product claim]</td><td>(Source: [ATG/GA product database])</td><td>[Date]</td></tr>
+            </tbody>
+          </table>
+          <div class="greenbox"><div class="box-title">Related links should be tightly aligned</div><ul class="checklist"><li>Related destination guide.</li><li>Related stop guide.</li><li>Related safety/reservation guide.</li><li>Relevant bundle page.</li><li>Nearby tour page.</li></ul></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head"><div class="section-kicker">Audit Checklist</div><h2>100/100 audit target checklist</h2><p class="section-lede">Use this before publishing each page.</p></div>
+        <div class="body">
+          <table>
+            <thead><tr><th>Audit item</th><th>Target</th><th>How to satisfy it</th></tr></thead>
+            <tbody>
+              <tr><td>Meta Description</td><td>100/100</td><td>One meta description tag, 140–155 characters, in the head.</td></tr>
+              <tr><td>Answer Target Presence</td><td>100/100</td><td>30–50 word paragraph immediately after H1.</td></tr>
+              <tr><td>FAQPage Schema</td><td>100/100</td><td>Add JSON-LD FAQPage if FAQs exist.</td></tr>
+              <tr><td>HowTo Schema</td><td>100/100</td><td>Add JSON-LD HowTo for app setup steps.</td></tr>
+              <tr><td>Article & Author Schema</td><td>100/100</td><td>Article schema linked to Person or Organization author schema.</td></tr>
+              <tr><td>Author Bio Visibility & Page Link</td><td>100/100</td><td>Visible linked author name + author profile anchor text + author profile page.</td></tr>
+              <tr><td>Expert Quotes</td><td>100/100</td><td>Blockquote with clear Expert attribution, role, and source link.</td></tr>
+              <tr><td>Originality / Uniqueness</td><td>100/100</td><td>Visible original research, proprietary data, case study, unique analysis, first-party data language.</td></tr>
+              <tr><td>Verifiable Citations</td><td>100/100</td><td>Visible citations in “Source:” format near factual claims.</td></tr>
+              <tr><td>Cluster Link Alignment</td><td>100/100</td><td>Internal links should mostly point to the same destination/topic cluster.</td></tr>
+              <tr><td>llms.txt</td><td>100/100</td><td>Upload llms.txt at domain root.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <strong>ATG / GA Tour Page Template</strong>
+      <p class="small" style="color:#b9d7ec">Single-column version without menu. Built for content team use and future tour page production.</p>
+    </div>
+  </footer>
 </body>
 </html>
