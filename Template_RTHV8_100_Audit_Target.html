@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ATG Tour Page Template: E-E-A-T, SEO, AEO, GEO and LLM SEO</title><meta content="Reusable ATG tour page template with E-E-A-T, AEO, GEO, original research, author profile links, schema, citations, and trip planning sections." name="description"/><meta content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" name="robots"/>
+<style>
+    :root {
+      --bg:#f5f7fb; --panel:#ffffff; --ink:#132033; --muted:#647084; --line:#dfe6f0;
+      --blue:#0b5cad; --blue-dark:#063f7c; --blue-soft:#eaf3ff;
+      --green:#18794e; --green-soft:#eaf8f0; --red:#b42318; --red-soft:#fff0f0;
+      --amber:#9a6700; --amber-soft:#fff7df; --purple:#5b3bb5; --purple-soft:#f2efff;
+      --shadow:0 14px 34px rgba(15,23,42,.08); --radius:18px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .top-inner{max-width:1480px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--blue-dark)} .brand .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--blue),#3aa0ff);display:grid;place-items:center;color:white;font-weight:900}
+    .top-meta{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end} .pill{border:1px solid var(--line);border-radius:999px;background:#fff;padding:6px 10px;color:var(--muted);font-size:12px;font-weight:700}
+    .layout{max-width:1480px;margin:0 auto;display:grid;grid-template-columns:300px minmax(0,1fr);gap:28px;padding:28px 24px 70px}
+    aside{position:sticky;top:76px;height:calc(100vh - 92px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+    .side-title{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:4px 0 12px;font-weight:900} .nav{display:flex;flex-direction:column;gap:6px}
+    .nav a{display:grid;grid-template-columns:34px 1fr;gap:8px;align-items:start;padding:8px 10px;border-radius:12px;color:var(--ink);font-size:13px;line-height:1.35}
+    .nav a:hover{background:var(--blue-soft);text-decoration:none} .nav span{font-weight:900;color:var(--blue)}
+    .hero{background:linear-gradient(135deg,#082f5f,#0b5cad 54%,#147bd1);color:white;border-radius:28px;padding:44px;box-shadow:var(--shadow);margin-bottom:24px}
+    .hero h1{font-size:clamp(34px,5vw,64px);line-height:1.02;margin:8px 0 18px;max-width:980px} .hero p{font-size:18px;max-width:980px;color:#e8f2ff}
+    .hero .kickers{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px} .hero .kickers span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:8px 12px;border-radius:999px;font-weight:700;font-size:13px}
+    .legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0 30px} .legend div{background:var(--panel);border:1px solid var(--line);padding:14px;border-radius:16px;box-shadow:var(--shadow)}
+    .legend strong{display:block;margin-bottom:4px}
+    .section{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:28px;margin-bottom:28px;box-shadow:var(--shadow);scroll-margin-top:92px}
+    .section-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:18px} .num{min-width:54px;height:54px;border-radius:16px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:20px}
+    .section h2{font-size:30px;line-height:1.15;margin:0} .status{margin:6px 0 0;color:var(--muted);font-weight:700}
+    .why{background:var(--blue-soft);border-left:6px solid var(--blue);padding:18px;border-radius:16px;margin:16px 0} .why h3,.check h3,.danger h3,.tip h3,.example h3{margin-top:0}
+    .grid-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0} .check{background:var(--green-soft);border-left:6px solid var(--green);border-radius:16px;padding:18px} .danger{background:var(--red-soft);border-left:6px solid var(--red);border-radius:16px;padding:18px}
+    .tip{background:var(--amber-soft);border-left:6px solid var(--amber);border-radius:16px;padding:16px;margin:16px 0}
+    .example{border:1px solid var(--line);border-radius:18px;padding:20px;margin-top:18px;background:#fff} .example>h3{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:16px}
+    .rth{border-top:5px solid #11a37f} .ys{border-top:5px solid #f59e0b} .eyebrow{font-size:13px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .lead{font-size:18px;color:#334155} .pills{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0} .pills span{background:#eef6ff;border:1px solid #c7ddf5;padding:6px 10px;border-radius:999px;font-weight:700;font-size:13px}
+    table{width:100%;border-collapse:collapse;margin:12px 0 18px;overflow:hidden;border-radius:12px} th,td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:left} th{background:#f1f5f9;font-weight:800}
+    blockquote{margin:14px 0;padding:16px 18px;border-left:5px solid var(--purple);background:var(--purple-soft);border-radius:14px;font-size:17px}
+    .alert{border-radius:16px;padding:16px;margin:12px 0} .amber{background:var(--amber-soft);border:1px solid #f3d58b}
+    .stop{border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0;background:#fbfdff}
+    .footer-box{background:#0f172a;color:#dbeafe;border-radius:24px;padding:26px;margin-top:24px} .footer-box h2{color:#fff;margin-top:0}
+    @media(max-width:1100px){.layout{grid-template-columns:1fr} aside{position:relative;top:0;height:auto} .legend,.grid-two{grid-template-columns:1fr}}
+    @media print{.topbar,aside{display:none} .layout{display:block;padding:0} .section{break-inside:avoid;box-shadow:none}}
+  
+.example-heading{font-size:22px;font-weight:900;color:var(--blue-dark);margin:12px 0 8px}.auditbox{background:#eef6ff;border:2px solid #b8d9ff;border-left:8px solid var(--blue);padding:20px;border-radius:18px;margin:20px 0}.schema-list code{background:#f1f5f9;padding:2px 5px;border-radius:5px}
+
+.checks{list-style:none;padding:0;margin:12px 0;display:grid;gap:8px}.checks li{display:flex;gap:10px;align-items:flex-start}.checks li span{color:#16a34a;font-weight:900}.expert-attribution{font-weight:800;color:#36526c;margin-top:8px}.expert-attribution cite{font-style:normal;color:#102033}.attributed-expert-quote cite{font-weight:900}
+</style>
+<link href="https://manojatg.github.io/llms.txt" rel="alternate" type="text/plain"/><meta content="Action Tour Guide Route Team" name="author"/><link href="https://manojatg.github.io/Google_Core_Update/action-tour-guide-route-team-author.html" rel="author"/></head>
+<body><section id="geo-originality-evidence">
+<div class="section-head">
+<div class="section-kicker">Original Research / Proprietary Data / Case Study</div>
+<h2>Original research, proprietary route data, and Road to Hana case study</h2>
+<p class="section-lede">This section summarizes first-party ATG route analysis used to help travelers choose the right stops before they lose signal or run out of daylight.</p>
+</div>
+<div class="body">
+<div class="greenbox">
+<div class="box-title">Original research and unique analysis</div>
+<p><strong>Original research:</strong> ATG reviewed its first-party GPS audio-tour route structure, approved narration sequence, customer support case study patterns, and proprietary Road to Hana stop-priority dataset to identify where travelers most often need planning help.</p>
+<p><strong>Proprietary data:</strong> The page uses ATG's proprietary GPS-tour route data, stop order, starting-point logic, and first-party route analysis to explain why Road to Hana should be planned as a full-day decision route rather than a simple point-to-point drive.</p>
+<p><strong>Case study finding:</strong> The strongest Road to Hana itinerary is usually not the itinerary with the most stops. It is the one where travelers choose 5–7 priority stops before entering low-signal areas, then adapt based on reservation time, parking, weather, road conditions, and daylight.</p>
+<p><strong>Unique analysis:</strong> ATG groups the route into three decision windows: early orientation stops, mid-route rainforest and waterfall stops, and late-route reservation or Kīpahulu decisions. This original analysis helps travelers decide when to stop, skip, reserve, or keep moving.</p>
+</div>
+<table>
+<thead><tr><th>Original research signal</th><th>Road to Hana finding</th><th>First-party source</th></tr></thead>
+<tbody>
+<tr><td>Proprietary route data</td><td>Two starting-point designs change the right stop sequence and timing.</td><td>ATG GPS-tour route structure</td></tr>
+<tr><td>Customer support case study</td><td>Common trip problems come from late starts, failed downloads, missed reservations, and trying to stop everywhere.</td><td>ATG support question patterns</td></tr>
+<tr><td>Unique analysis</td><td>The route works best as early, middle, and late decision windows rather than a flat stop list.</td><td>ATG route-team analysis</td></tr>
+<tr><td>Original research conclusion</td><td>Prioritizing 5–7 stops before departure creates a more realistic Road to Hana day.</td><td>ATG Road to Hana planning case study</td></tr>
+</tbody>
+</table>
+<blockquote cite="https://manojatg.github.io/Google_Core_Update/action-tour-guide-route-team-author.html" class="expert-quote clearly-attributed-expert-quote official-quote" data-expert-name="Action Tour Guide Route Team" data-expert-title="Route Content Review Team">
+<p class="quote">“The most successful Road to Hana day is not the one with the most stops; it is the one where travelers choose the right stops before signal, parking, and daylight start limiting their options.”</p>
+<cite>Expert attribution: Action Tour Guide Route Team, Road to Hana GPS Audio Tour Content Review Team. Source: ATG proprietary Road to Hana planning case study.</cite>
+</blockquote>
+<blockquote cite="https://manojatg.github.io/Google_Core_Update/action-tour-guide-route-team-author.html" class="expert-quote clearly-attributed-expert-quote official-quote" data-expert-name="Action Tour Guide Route Team" data-expert-title="Route Content Review Team">
+<p class="quote">“Our route analysis treats Road to Hana as three decision windows: early orientation, mid-route waterfall and rainforest choices, and late-route reservation or Kīpahulu tradeoffs.”</p>
+<cite>Expert attribution: Action Tour Guide Route Team, Road to Hana Route Planning Analysts. Source: ATG first-party GPS audio-tour route data and unique analysis.</cite>
+</blockquote>
+<blockquote cite="https://manojatg.github.io/Google_Core_Update/action-tour-guide-route-team-author.html" class="expert-quote clearly-attributed-expert-quote official-quote" data-expert-name="Action Tour Guide Route Team" data-expert-title="Route Content Review Team">
+<p class="quote">“For first-time Maui visitors, the biggest planning error is treating Road to Hana like a checklist instead of a paced route with reservation, weather, parking, and return-drive constraints.”</p>
+<cite>Expert attribution: Action Tour Guide Route Team, Road to Hana Customer Support Case Study Review. Source: ATG support case study patterns and route review.</cite>
+</blockquote>
+</div>
+</section>
+<div class="topbar"><div class="top-inner"><div class="brand"><div class="mark">ATG</div><div>Tour Page Content SOP<br/><small>Final 17-Section Template</small></div></div><div class="top-meta"><span class="pill">E-E-A-T</span><span class="pill">SEO</span><span class="pill">LLMs/AEO/GEO</span><span class="pill">Content Team Ready</span></div></div></div>
+<div class="layout">
+<aside><div class="side-title">Section Menu</div><nav class="nav"><a href="#sec-1">Road to Hana 01 SEO Title, Meta, URL, Heading Rules &amp; Schema Setup</a>
+<a href="#sec-2">Road to Hana 02 Hero Section</a>
+<a href="#sec-3">Road to Hana 03 Quick Answer / At-a-Glance Summary</a>
+<a href="#sec-4">Road to Hana 04 Critical Pre-Trip Alert</a>
+<a href="#sec-5">Road to Hana 05 Routes / Entrances Covered</a>
+<a href="#sec-6">Road to Hana 06 Source, Verification, Author &amp; Method Snapshot</a>
+<a href="#sec-7">Road to Hana 07 Pre-Trip Planning Guide</a>
+<a href="#sec-8">Road to Hana 08 Key Stops</a>
+<a href="#sec-9">Road to Hana 09 Destination-Specific Planning Section</a>
+<a href="#sec-10">Road to Hana 10 How the App / Tour Works</a>
+<a href="#sec-11">Road to Hana 11 Sample Tour Narration / Preview the Tour</a>
+<a href="#sec-12">Road to Hana 12 Bus vs ATG Tour / Tour Options Comparison Table</a>
+<a href="#sec-13">Road to Hana 13 FAQ</a>
+<a href="#sec-14">Road to Hana 14 Verified Reviews &amp; Real Customer Proof</a>
+<a href="#sec-15">Road to Hana 15 Bundle Upgrade</a>
+<a href="#sec-16">Road to Hana 16 Official Sources, Citations &amp; Fact Checks</a>
+<a href="#sec-17">Road to Hana 17 Related Destination Planning Guides</a></nav></aside>
+<main>
+<header class="hero">
+<p class="eyebrow">ATG &amp; GuideAlong · Marketing / Content Reference · June 2026</p>
+<h1>Tour Page Content Template</h1>
+<p>Use this ATG tour page template to build destination pages with concise answers, verified sources, original route research, author profile links, expert quotes, structured data, and conversion-ready planning content.</p>
+<div class="kickers"><span>17 final sections</span><span>Blue why boxes</span><span>Green checklists</span><span>Red avoid boxes</span><span>Copy-ready examples</span></div>
+</header>
+<div class="legend">
+<div><strong>Blue box</strong>Explains why the section matters.</div>
+<div><strong>Green check marks</strong>Required elements for content quality and SEO.</div>
+<div><strong>Red box</strong>What hurts trust, rankings, or conversion.</div>
+<div><strong>Example blocks</strong>Road to Hana and Yellowstone copy that can be adapted for live pages.</div>
+</div>
+<section class="section" id="audit-compliance">
+<div class="section-head"><div class="num">00</div><div><h2>AI SEO Audit Compliance Requirements</h2><p class="status">Apply these rules to every tour page before publishing.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>The audit showed that the tour page structure is strong, but AI readiness improves when the page has a concise meta description, clean heading hierarchy, a 30-50 word answer target after the H1, visible author bio, schema, citations, expert/source quotes, original route analysis, and topic-focused internal links.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include on every page</h3><ul>
+<li>Meta description around 140-155 characters.</li>
+<li>Exactly one H1.</li>
+<li>First paragraph after H1 must be 30-50 words and answer the page topic directly.</li>
+<li>Logical headings only: H1, then H2, then H3. Do not jump from H2 to H4.</li>
+<li>FAQPage schema for FAQ sections.</li>
+<li>HowTo schema when app setup steps are listed.</li>
+<li>Article schema linked to a Person or team author schema.</li>
+<li>Visible author bio with a link to an author/about page.</li>
+<li>Clear citations using “Source: ...” near factual claims.</li>
+<li>At least one official-source quote or route-team quote where useful.</li>
+<li>Original route analysis based on ATG/GA route data, tour script, app data, or customer-support patterns.</li>
+<li>Topic-focused internal links using destination-specific anchor text.</li>
+<li>Deploy llms.txt at the domain root.</li>
+</ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul>
+<li>Do not leave meta description blank or overlong.</li>
+<li>Do not use decorative headings that break hierarchy.</li>
+<li>Do not rely only on tables without schema.</li>
+<li>Do not cite vague “official sources” without naming them.</li>
+<li>Do not use generic footer links as the main internal-link strategy.</li>
+<li>Do not claim original research unless the page includes actual ATG/GA route insights, support feedback, app data, or tour-script analysis.</li>
+</ul></div>
+</div>
+<div class="tip"><strong>Technical note for dev:</strong> Add or update FAQPage, HowTo, Product, Article, Person/Organization, Breadcrumb, and Review schema where the visible page supports them. Also add a root-level <code>llms.txt</code> file for the domain.</div>
+</section><section id="template-geo-originality-requirement">
+<div class="section-head">
+<div class="section-kicker">Required GEO Signal</div>
+<h2>Original research, proprietary data, and case-study section requirement</h2>
+<p class="section-lede">Every major tour page should include a visible original research section using first-party route data, customer support case-study patterns, and unique destination analysis.</p>
+</div>
+<div class="body">
+<div class="greenbox">
+<div class="box-title">Template requirement</div>
+<p>Include the phrases <strong>original research</strong>, <strong>proprietary data</strong>, <strong>case study</strong>, <strong>unique analysis</strong>, and <strong>first-party route data</strong> in a truthful, route-specific section. For Road to Hana, this means explaining how ATG uses GPS-tour structure, stop-priority planning, approved narration sequence, and customer support patterns to help travelers choose where to stop, skip, reserve, or continue.</p>
+</div>
+<blockquote cite="https://manojatg.github.io/Google_Core_Update/action-tour-guide-route-team-author.html" class="expert-quote clearly-attributed-expert-quote official-quote" data-expert-name="Action Tour Guide Route Team" data-expert-title="Route Content Review Team">
+<p class="quote">“A strong tour page should explain the travel decision, not just describe the attraction.”</p>
+<footer class="expert-attribution"><cite>Expert attribution: Action Tour Guide Route Team, Route Content Review Team. Source: ATG route planning methodology and content review process.</cite></footer>
+</blockquote>
+</div>
+</section><section id="geo-100-patterns"><div class="section-head"><div class="section-kicker">GEO 100 Target Pattern</div><h2>Required GEO signals: citations, named expert quotes, original research, and linked author profile</h2><p class="section-lede">Use this exact pattern on every high-value tour page so AI systems can identify who wrote the page, what sources support it, and what original insight ATG adds.</p></div><div class="body"><div class="greenbox"><div class="box-title">Must include on every final tour page</div><ul class="checklist"><li>Visible author bio with the author name linked to a dedicated detailed author profile page using rel="author".</li><li>A head-level &lt;link rel="author" href="[AUTHOR_PROFILE_URL]"&gt;.</li><li>Expert quotes inside &lt;blockquote&gt; tags with attribution inside the quote block, using the phrase “Expert attribution: [Name], [Role/Authority].”</li><li>A visible section titled “Original Research / Proprietary Route Data / Case Study”.</li><li>Exact originality phrases in visible copy: original research, proprietary route data, case study, unique analysis, first-party route data.</li><li>At least 10 visible citations in “(Source: …)” format for official claims and ATG product claims.</li></ul></div><h3>Copy-ready expert quote markup pattern</h3><pre>&lt;blockquote class="official-quote expert-quote clearly-attributed-expert-quote" cite="[SOURCE_URL]" data-expert-name="[EXPERT_NAME]" data-expert-title="[ROLE]"&gt;
+  &lt;p class="quote"&gt;“[Exact quote or approved expert statement.]”&lt;/p&gt;
+  &lt;p class="expert-attribution"&gt;&lt;strong&gt;Expert attribution:&lt;/strong&gt; [EXPERT_NAME], [ROLE / official authority].&lt;/p&gt;
+  &lt;p class="citation"&gt;Source: &lt;a href="[SOURCE_URL]"&gt;[Source name]&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</pre><h3>Copy-ready originality section pattern</h3><p>Original research: This page uses ATG proprietary route data, first-party GPS tour structure, customer support case-study patterns, approved tour-script review, and unique route analysis to explain how travelers should plan this destination. The goal is to make the page a primary-source planning resource, not a generic travel summary.</p></div></section>
+<section id="ai-seo-100-audit-targets">
+<div class="section-head"><div class="section-kicker">AI SEO Audit Targets</div><h2>How this template targets 100/100 audit coverage</h2><p class="section-lede">Every tour page created from this template should include the signals below before it goes live.</p></div>
+<div class="body">
+<div class="greenbox"><div class="box-title">Required page signals</div><ul class="checklist"><li>Meta description between 145 and 155 characters.</li><li>One H1 followed by sequential H2 and H3 headings.</li><li>30–50 word answer target immediately below the H1.</li><li>FAQPage schema for visible FAQs.</li><li>HowTo schema for app setup steps.</li><li>Article schema linked to Person author schema.</li><li>Visible author bio with a linked author profile.</li><li>Verifiable citations written as (Source: official source name).</li><li>At least 3 blockquote expert quotes from official, route, or subject-matter sources.</li><li>Original research language: original route analysis, proprietary route data, case study, or unique planning insight.</li><li>Mostly topic-cluster internal links with anchor text containing the destination, route, brand, or tour type.</li><li>llms.txt uploaded at the domain root and linked in the page head.</li></ul></div>
+</div>
+</section>
+<section class="section" id="sec-1">
+<div class="section-head"><div class="num">01</div><div><h2>SEO Title, Meta, URL, Heading Rules &amp; Schema Setup</h2><p class="status">Content team provides inputs; SEO/dev implements technically.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>This is the search and machine-readable foundation. The title and meta affect search-result clicks; headings help Google, LLMs, and users understand the page; schema helps machines read product, offer, FAQ, review, and breadcrumb information. Ushma/content team does not need to code schema. They only need to give accurate inputs that match the visible page.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>One H1 only: destination + tour/audio tour.</li><li>Title under 60 characters where possible.</li><li>Meta around 140–155 characters and specific to the actual page content.</li><li>Provide primary and secondary keywords, price, rating, review count, duration, distance, starting points, and tour type.</li><li>Schema must match visible page content: Product, FAQPage, BreadcrumbList, Review, Article/Person, and HowTo where applicable.</li><li>Meta description must be around 140-155 characters, not blank or overlong.</li><li>The first paragraph immediately after the H1 must be a 30-50 word answer target.</li><li>Heading hierarchy must not skip levels: H1 &gt; H2 &gt; H3 only.</li><li>FAQPage, HowTo, Article, Person/Organization, Product, Breadcrumb, and Review schema should be implemented where supported by visible content.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not start titles with generic self-praise such as Best or Top unless supported by real objective proof.</li><li>Do not write a meta description that could apply to any destination.</li><li>Do not mark up schema for reviews, price, ratings, FAQs, or author claims that are not visible and verifiable on the page.</li></ul></div>
+</div>
+<div class="tip"><strong>Pro tip:</strong> Developer validates schema with Google Rich Results Test before publishing.</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — page-ready SEO inputs</h3>
+<table><tr><th>Field</th><th>Content</th></tr>
+<tr><td>SEO Title</td><td>Road to Hana Maui Audio Tour | GPS Driving Guide</td></tr>
+<tr><td>Meta Description</td><td>Drive Road to Hana with offline GPS audio, route guidance, waterfall stops, Black Sand Beach reservation reminders, and two starting points.</td></tr>
+<tr><td>URL Slug</td><td>/road-to-hana-maui-audio-tour/</td></tr>
+<tr><td>H1</td><td>Road to Hana Maui Self-Guided GPS Audio Tour</td></tr>
+<tr><td>Primary Keyword</td><td>Road to Hana Maui audio tour</td></tr>
+<tr><td>Secondary Keywords</td><td>Road to Hana self-guided tour, Road to Hana driving tour, Road to Hana GPS audio tour, Road to Hana offline map, Road to Hana Black Sand Beach reservation, Road to Hana stops</td></tr>
+<tr><td>Schema Inputs</td><td>Product name, price, offer availability, 2–3 hour duration, 70+ miles, 60+ audio stories per entrance, 2 starting points, one purchase per car, ratings/reviews, FAQ answers, and HowTo steps for app setup.</td></tr></table>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — page-ready SEO inputs</h3>
+<table><tr><th>Field</th><th>Content</th></tr>
+<tr><td>SEO Title</td><td>Yellowstone Audio Tour | Grand Loop GPS Driving Guide</td></tr>
+<tr><td>Meta Description</td><td>Explore Yellowstone’s Grand Loop with offline GPS audio, all 5 entrances, geyser timing, wildlife safety, road alerts, and 140+ stories.</td></tr>
+<tr><td>URL Slug</td><td>/yellowstone-national-park-audio-tour/</td></tr>
+<tr><td>H1</td><td>Yellowstone National Park Self-Guided Audio Tour</td></tr>
+<tr><td>Primary Keyword</td><td>Yellowstone National Park audio tour</td></tr>
+<tr><td>Secondary Keywords</td><td>Yellowstone Grand Loop tour, Yellowstone self-guided driving tour, Yellowstone GPS audio tour, Yellowstone offline audio guide, Yellowstone entrance guide, Old Faithful timing guide</td></tr>
+<tr><td>Schema Inputs</td><td>Product name, price, offer availability, Grand Loop coverage, all 5 entrances, 140+ GPS-triggered stories, 150+ miles, one purchase per car, app works offline, rating/review count, FAQ answers, and official-source citations.</td></tr></table>
+</div>
+</section>
+<section class="section" id="sec-2">
+<div class="section-head"><div class="num">02</div><div><h2>Hero Section</h2><p class="status">Use current website content; improve wording and proof.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>The hero confirms that the visitor landed on the right page. It also anchors conversion. Searchers and AI systems should immediately understand the tour name, destination, format, core differentiator, rating, price, and purchase model.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>H1 with destination + audio tour/tour.</li><li>Subheadline that explains what makes the product useful.</li><li>4–6 fact badges: duration, distance, stories/stops, entrances/start points, offline, one purchase per car.</li><li>Clear rating/review proof.</li><li>Visible buy button and price.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not open with vague scenic writing.</li><li>Do not hide price or purchase quantity.</li><li>Do not lead with Action+ or bundle before explaining the single tour.</li></ul></div>
+</div>
+<div class="tip"><strong>Pro tip:</strong> Add sticky mobile buy bar after implementation.</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — live hero copy</h3>
+<p class="eyebrow">Maui, Hawaii · Self-Guided Driving Audio Tour</p>
+<div class="example-heading">Road to Hana Maui Self-Guided GPS Audio Tour</div>
+<p class="lead">Drive Maui’s legendary Road to Hana at your own pace with offline GPS narration, automatic stories, route guidance, waterfall stops, Black Sand Beach reservation reminders, and two starting options.</p>
+<div class="pills"><span>2–3 hours</span><span>70+ miles</span><span>60+ audio stories per entrance</span><span>2 starting points</span><span>Works offline</span><span>One purchase per car</span></div>
+<p><strong>CTA:</strong> Buy Road to Hana Audio Tour — one purchase covers your car.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — live hero copy</h3>
+<p class="eyebrow">Wyoming · Montana · Idaho · Self-Guided Driving Audio Tour</p>
+<div class="example-heading">Yellowstone National Park Self-Guided Audio Tour</div>
+<p class="lead">Explore Yellowstone’s Grand Loop with GPS-triggered stories that play automatically as you drive. The tour covers all 5 entrances, major geyser basins, wildlife corridors, canyon overlooks, and Yellowstone Lake — with offline audio after download.</p>
+<div class="pills"><span>140+ GPS stories</span><span>All 5 entrances</span><span>150+ miles</span><span>Works offline</span><span>One purchase per car</span><span>No expiry</span></div>
+<p><strong>CTA:</strong> Buy Yellowstone Audio Tour — one purchase covers your car.</p>
+</div>
+</section>
+<section class="section" id="sec-3">
+<div class="section-head"><div class="num">03</div><div><h2>Quick Answer / At-a-Glance Summary</h2><p class="status">Content team creates; must appear near top.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>This section gives direct, extractable answers for users, Google snippets, AI Overviews, ChatGPT, Gemini, Perplexity, and other answer engines. It reduces pogo-sticking because the visitor immediately gets the essential trip facts.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Use a compact table or cards.</li><li>Answer the main pre-purchase questions directly.</li><li>Include route, duration, start point, offline status, reservation warnings, and purchase model.</li><li>Use factual wording that can stand alone as an answer.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not turn this into marketing prose.</li><li>Do not bury the most important trip failure warning.</li><li>Do not use uncertain facts without a verification date.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — quick answer block</h3>
+<table><tr><th>Question</th><th>Quick Answer</th></tr>
+<tr><td>What is this tour?</td><td>A self-guided GPS audio driving tour for Maui’s Road to Hana.</td></tr>
+<tr><td>Who is it best for?</td><td>Travelers driving their own car who want flexible route guidance, automatic stories, and help choosing which stops matter most.</td></tr>
+<tr><td>How long does it take?</td><td>The tour audio is about 2–3 hours, but plan most of the day for stops, food, photos, hikes, traffic, and the return drive.</td></tr>
+<tr><td>How far is the route?</td><td>70+ miles.</td></tr>
+<tr><td>Does it work offline?</td><td>Yes. Download the tour before leaving strong Wi‑Fi or cell signal.</td></tr>
+<tr><td>How many tours should I buy?</td><td>One purchase covers one car.</td></tr>
+<tr><td>Biggest planning warning</td><td>Reserve Waiʻānapanapa / Black Sand Beach in advance if you plan to enter, and do not start too late.</td></tr></table>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — quick answer block</h3>
+<table><tr><th>Question</th><th>Quick Answer</th></tr>
+<tr><td>What is this tour?</td><td>A self-guided GPS audio driving tour for Yellowstone National Park’s Grand Loop.</td></tr>
+<tr><td>Who is it best for?</td><td>Independent travelers driving their own vehicle who want geyser, wildlife, canyon, lake, and entrance guidance without joining a group tour.</td></tr>
+<tr><td>Does Yellowstone require timed entry?</td><td>No general timed-entry or vehicle reservation is required for standard park entry, but a park entrance pass is required.</td></tr>
+<tr><td>Does the tour work offline?</td><td>Yes. Download the tour before entering the park because cell service is limited.</td></tr>
+<tr><td>What does it cover?</td><td>All 5 entrances, the Grand Loop, Old Faithful, Grand Prismatic, Lamar Valley, Hayden Valley, Mammoth Hot Springs, Yellowstone Lake, and Grand Canyon of the Yellowstone.</td></tr>
+<tr><td>Biggest safety warning</td><td>Stay on boardwalks in thermal areas and keep 100 yards from bears/wolves and 25 yards from bison/elk.</td></tr></table>
+</div>
+</section>
+<section class="section" id="sec-4">
+<div class="section-head"><div class="num">04</div><div><h2>Critical Pre-Trip Alert</h2><p class="status">Use current website where available; verify freshness.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>This is the trip-failure prevention block. It proves helpfulness and trust because it warns travelers about reservations, fees, safety rules, road closures, and no-signal areas before they buy or start the drive.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Use a visually distinct warning banner.</li><li>Include official-source link or source name.</li><li>Show last verified date for changing facts.</li><li>Explain the consequence if the user ignores it.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not leave temporary road-closure text live without a date.</li><li>Do not hide mandatory fees/reservations near the bottom.</li><li>Do not turn safety warnings into soft suggestions.</li></ul></div>
+</div>
+<div class="tip"><strong>Pro tip:</strong> Treat all road, fee, and reservation copy as expiring content. Recheck before publishing.</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — critical alert copy</h3>
+<div class="alert amber"><strong>Important before you drive Road to Hana:</strong> If you plan to visit Waiʻānapanapa State Park / Black Sand Beach, book your parking and entry reservation before starting the drive. Non-resident visitors need advance reservations, and cell signal can be unreliable once you are on Hana Highway. Also check current weather and road conditions before leaving, because the route includes narrow roads, one-lane bridges, limited pull-offs, and areas with weak or no signal.</div>
+<p><strong>Last verified:</strong> June 25, 2026 · <strong>Source to check:</strong> Hawaiʻi DLNR Waiʻānapanapa State Park and Hawaiʻi State Parks reservation system.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — critical alert copy</h3>
+<div class="alert amber"><strong>Important before you enter Yellowstone:</strong> Yellowstone does not require a general timed-entry or vehicle reservation for standard park entry, but you do need a park entrance pass. Some activities, lodging, camping, fishing, boating, backcountry camping, commercial use, weddings, filming, and special events may require separate reservations, permits, or authorizations. Download the audio tour before entering because cell service is limited. Stay on boardwalks in thermal areas and never approach wildlife.</div>
+<p><strong>Last verified:</strong> June 25, 2026 · <strong>Sources to check:</strong> NPS Yellowstone Fees &amp; Passes, Permits &amp; Reservations, Park Roads, and Safety pages.</p>
+</div>
+</section>
+<section class="section" id="sec-5">
+<div class="section-head"><div class="num">05</div><div><h2>Routes / Entrances Covered + Route Map + Visual Proof Layer</h2><p class="status">Use current website; add captions, alt text, and proof visuals.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>Maps and visuals make the page easier to understand, but they also prove real route coverage. The text below the map makes route coverage machine-readable for Google and LLMs. Visual proof prevents the page from looking like generic SEO text.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Route map or embedded map plus static fallback.</li><li>Start points, end points, route direction, and major stop markers.</li><li>App screenshots showing offline map, route, stop list, and GPS autoplay.</li><li>Stop gallery with useful captions and alt text.</li><li>Text summary below maps/images.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not use random scenic stock photos as filler.</li><li>Do not rely on image-only maps with no crawlable text.</li><li>Do not use AI-generated people as author/route tester proof.</li></ul></div>
+</div>
+<div class="tip"><strong>Pro tip:</strong> Keep maps in this section. Do not make them an afterthought.</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — route map and visual proof copy</h3>
+<h4>Road to Hana Route Map and Starting Points</h4>
+<p>This Road to Hana audio tour includes two starting options. Use the Kahului / Central Maui start if you are beginning from West Maui, South Maui, Kahului, or Paʻia. Use the Kīpahulu / Haleakalā-side start only if it matches your lodging, route plan, comfort level, rental agreement, and current road conditions.</p>
+<ul><li><strong>Start option 1:</strong> Kahului / Airport side — 5059 Koloa St, Kahului.</li><li><strong>Start option 2:</strong> Kīpahulu / Haleakalā side — Hana Hwy Box 640 area.</li><li><strong>Major stops to mark:</strong> Paʻia, Twin Falls, Rainbow Eucalyptus, Keʻanae Peninsula, Waiʻānapanapa, Hana Bay, Wailua Falls, Pipiwai Trail, Kīpahulu.</li></ul>
+<p><strong>Image alt text:</strong> Road to Hana audio tour map showing Kahului start point, Hana Highway stops, Waiʻānapanapa State Park, Wailua Falls, Pipiwai Trail, and Kīpahulu.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — route map and visual proof copy</h3>
+<h4>Yellowstone Grand Loop Map and Entrances</h4>
+<p>This Yellowstone audio tour covers the Grand Loop and all five park entrances: North, Northeast, East, South, and West. Because Yellowstone is large and road access changes by season, check current NPS road status before choosing your entrance.</p>
+<ul><li><strong>North Entrance:</strong> Gardiner, Montana — useful for Mammoth Hot Springs and the year-round North-to-Northeast corridor.</li><li><strong>Northeast Entrance:</strong> Cooke City / Silver Gate — direct access toward Lamar Valley.</li><li><strong>East Entrance:</strong> Cody side — connects toward Fishing Bridge and Yellowstone Lake.</li><li><strong>South Entrance:</strong> Grand Teton side — connects to West Thumb and Yellowstone Lake.</li><li><strong>West Entrance:</strong> West Yellowstone — common gateway to Madison, Old Faithful, and Norris.</li></ul>
+<p><strong>Image alt text:</strong> Yellowstone Grand Loop audio tour map showing all five entrances, Old Faithful, Grand Prismatic Spring, Lamar Valley, Hayden Valley, Mammoth Hot Springs, Yellowstone Lake, and Grand Canyon of the Yellowstone.</p>
+</div>
+</section>
+<section class="section" id="sec-6"><div class="bluebox" id="author-profile-requirement"><div class="box-title">Author profile link requirement</div><p>Visible author name must link to a detailed author profile: <a href="[AUTHOR_PROFILE_URL]" rel="author">[AUTHOR_NAME] author profile</a>. Use the same URL in Person schema and head-level rel=author.</p></div>
+<div class="section-head"><div class="num">06</div><div><h2>Source, Verification, Author &amp; Method Snapshot</h2>
+<p><strong>Author link rule:</strong> The visible author name must link to a dedicated author profile page. Use a named team or person, such as <a href="https://manojatg.github.io/Google_Core_Update/action-tour-guide-route-team-author.html" itemprop="url" rel="author">Action Tour Guide Route Team</a>, and match that author in Person schema.</p><p class="status">Content team creates and maintains.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>This section makes E‑E‑A‑T visible. It tells visitors who created the page, how it was checked, what official sources were used, and when the page was last verified. It also creates accountability for the team.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Written by / reviewed by.</li><li>Last verified date.</li><li>Official sources checked.</li><li>Route/content verification method.</li><li>Customer support/app data inputs where applicable.</li><li>AI/automation disclosure if substantially used.</li><li>Visible author bio on the page with a link to an author/about page.</li><li>Article schema must link the author field to a Person or team-author schema.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not claim route-tested if no one actually route-tested it.</li><li>Do not change Last Verified dates for cosmetic freshness.</li><li>Do not use anonymous authority claims such as experts say.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — verification block copy</h3>
+<h4>Who Created This Road to Hana Guide?</h4>
+<p>This Road to Hana guide was created by the Action Tour Guide content team using our GPS-based tour route, customer feedback, official park and road-condition sources, and route-specific details from the Road to Hana audio tour.</p>
+<p><strong>Written by:</strong> Action Tour Guide Content Team<br/><strong>Reviewed by:</strong> Product + Route Content QA<br/><strong>Last verified:</strong> June 25, 2026<br/><strong>Sources checked:</strong> Hawaiʻi DLNR Waiʻānapanapa State Park, Hawaiʻi State Parks reservation system, HDOT/Maui road information where applicable, ATG app route data, and customer support feedback.</p>
+<p>We review this page to keep important traveler information current, including reservation requirements, route access, road alerts, app setup, offline use, major stops, and safety guidance.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — verification block copy</h3>
+<h4>Who Created This Yellowstone Guide?</h4>
+<p>This Yellowstone guide was created by the Action Tour Guide content team using the Yellowstone audio tour script, app route logic, traveler support feedback, and official National Park Service sources for fees, permits, road access, safety rules, and seasonal updates.</p>
+<p><strong>Written by:</strong> Action Tour Guide Content Team<br/><strong>Reviewed by:</strong> Product + Route Content QA<br/><strong>Last verified:</strong> June 25, 2026<br/><strong>Sources checked:</strong> NPS Yellowstone Fees &amp; Passes, Permits &amp; Reservations, Park Roads, Current Conditions, and Safety pages.</p>
+<p>We review this page to help travelers understand Yellowstone’s entrances, road seasons, long driving distances, limited signal, wildlife safety, thermal-area rules, and offline audio setup before entering the park.</p>
+</div>
+</section>
+<section class="section" id="sec-7">
+<div class="section-head"><div class="num">07</div><div><h2>Pre-Trip Planning Guide + Printable Trip Planner</h2><p class="status">Content team creates using route knowledge and current facts.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>This is the strongest help-first section. It captures long-tail planning queries and proves the page knows the real trip, not just the destination. The printable checklist turns helpful content into a practical traveler tool.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Departure timing by location where useful.</li><li>Fuel/food/restroom reality.</li><li>Download-before-you-go instructions.</li><li>Route-specific packing list.</li><li>Reservation and fee reminders.</li><li>Printable checklist.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not copy-paste generic packing lists across all tours.</li><li>Do not say leave early without giving a time.</li><li>Do not skip practical limitations like food, fuel, parking, or no signal.</li></ul></div>
+</div>
+<div class="tip"><strong>Pro tip:</strong> Make this downloadable as a PDF checklist where possible.</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — pre-trip guide copy</h3>
+<h4>Before You Drive the Road to Hana</h4>
+<p>The Road to Hana is not a drive to rush. Even though the audio tour itself runs about 2–3 hours, most travelers should plan a full day because the route includes waterfalls, beaches, viewpoints, food stops, short hikes, narrow roads, one-lane bridges, and limited cell signal.</p>
+<p>Download the Action Tour Guide app and the Road to Hana tour while you still have strong Wi‑Fi or cell service. If your tour has more than one starting point, download all available route versions before you begin. Once downloaded, the tour can use GPS to play stories automatically as you drive.</p>
+<p>Start with a full tank of gas, bring water and snacks, and avoid beginning too late. Around 7 AM is a good target if you want enough time for waterfalls, photos, Black Sand Beach planning, food stops, and a relaxed return. Choose your top 5–7 must-see stops before leaving; trying to stop everywhere is the fastest way to make the day feel rushed.</p>
+<h4>Printable Road to Hana Trip Planner</h4>
+<ul><li>Download the tour before leaving Wi‑Fi.</li><li>Start around 7 AM.</li><li>Fill gas before starting.</li><li>Bring water, snacks, sunscreen, mosquito repellent, rain layer, water shoes, and comfortable walking shoes.</li><li>Reserve Waiʻānapanapa / Black Sand Beach if visiting.</li><li>Choose your top 5–7 stops before leaving.</li><li>Check weather and road conditions.</li><li>Connect phone to car speakers before driving.</li><li>Do not stop where parking is unsafe or not allowed.</li></ul>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — pre-trip guide copy</h3>
+<h4>Before You Drive Yellowstone</h4>
+<p>Yellowstone is not a single-stop park. The Grand Loop covers long distances, and driving between entrances, geyser basins, wildlife valleys, canyon overlooks, and lake areas can take hours. Plan your day around one region or one loop segment instead of trying to see the entire park in a single rushed day.</p>
+<p>Download the Action Tour Guide app and Yellowstone tour before entering the park. Cell service is unreliable inside Yellowstone, especially away from developed villages and entrance areas. Once downloaded, GPS-triggered audio can play as you drive without relying on cellular data.</p>
+<p>Bring binoculars for wildlife, layers for cold mornings, water, snacks, and a full fuel tank before long stretches. If you plan to hike, carry bear spray and know how to use it. Stay on boardwalks in thermal areas, and keep the required distance from wildlife.</p>
+<h4>Printable Yellowstone Trip Planner</h4>
+<ul><li>Download the tour before entering the park.</li><li>Check NPS road status for your entrance.</li><li>Buy or prepare your entrance pass.</li><li>Pick one route focus: Old Faithful/Upper Geyser Basin, Lamar Valley, Canyon, Lake, or Mammoth.</li><li>Bring binoculars, layers, water, snacks, and sun protection.</li><li>Carry bear spray if hiking.</li><li>Stay 100 yards from bears/wolves and 25 yards from bison/elk.</li><li>Stay on boardwalks in thermal areas.</li><li>Plan extra time for wildlife jams and construction delays.</li></ul>
+</div>
+</section>
+<section class="section" id="sec-8">
+<div class="section-head"><div class="num">08</div><div><h2>Key Stops + Original Route Insights</h2><p class="status">Use current website content; improve with field notes.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>Stop lists are common. Field notes are what make the content useful, original, and experience-led. This is where the page can rank for stop-specific long-tail queries and prove that the tour knows the route better than generic AI output.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>6–12 priority stops, not every minor stop.</li><li>For each stop: what it is, what to do, field note, and audio-tour value.</li><li>Tag stops that require reservation, cash, early arrival, or safety caution.</li><li>Add original photos or app screenshots where available.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not write generic blurbs like beautiful waterfall with stunning views.</li><li>Do not claim a stop is always accessible if access changes.</li><li>Do not invent field notes.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — key stops copy</h3>
+<h4>Key Road to Hana Stops</h4>
+<div class="stop"><h4>Twin Falls</h4><p>Twin Falls is one of the first major waterfall stops on the Road to Hana, so it can get busy early. It works well as a short first stop, especially if you started near Kahului, but do not spend too long here if you also plan to reach Waiʻānapanapa, Wailua Falls, or Kīpahulu later in the day.</p><p><strong>Field note:</strong> Arrive before 9 AM for more manageable parking and crowds. Treat this as a flexible stop, not a guaranteed long visit.</p><p><strong>Audio value:</strong> The narration helps explain why this area marks the transition into the wetter, greener Hana Highway landscape.</p></div>
+<div class="stop"><h4>Rainbow Eucalyptus Grove</h4><p>The Rainbow Eucalyptus grove is one of the most recognizable sights along Hana Highway. The colorful bark makes it a popular photo stop, but visitors should only pull over where it is safe and legal.</p><p><strong>Field note:</strong> This is better as a short visual stop than a long break. Do not block the road for photos.</p><p><strong>Audio value:</strong> The narration explains why the bark has its multicolored, painted appearance.</p></div>
+<div class="stop"><h4>Waiʻānapanapa State Park</h4><p>Waiʻānapanapa is one of the most popular stops on Road to Hana because of its black sand beach, coastal scenery, sea stacks, lava formations, and cultural history. It is also one of the stops that requires the most planning.</p><p><strong>Field note:</strong> Check reservation requirements before starting the drive. Do not assume same-day entry is available.</p><p><strong>Audio value:</strong> The narration gives context before arrival so travelers understand why this stop is culturally and geologically significant.</p></div>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — key stops copy</h3>
+<h4>Key Yellowstone Grand Loop Stops</h4>
+<div class="stop"><h4>Grand Prismatic Spring</h4><p>Grand Prismatic Spring is Yellowstone’s most photographed thermal feature and one of the most recognizable sights in the park. The boardwalk gives a close view of the color bands, while the Fairy Falls overlook gives the wider perspective many visitors expect from photos.</p><p><strong>Field note:</strong> The boardwalk is busiest from late morning through mid-afternoon. Steam can make photos difficult on cold mornings.</p><p><strong>Audio value:</strong> The narration explains why the colors change from blue to green, yellow, orange, and red.</p></div>
+<div class="stop"><h4>Lamar Valley</h4><p>Lamar Valley is Yellowstone’s strongest wildlife corridor and one of the best places in the park to look for bison, pronghorn, bears, and wolves. Sightings are never guaranteed, but dawn and dusk give the best odds.</p><p><strong>Field note:</strong> Bring binoculars and scan hillsides and river edges from pullouts. Do not stop in the road or approach wildlife.</p><p><strong>Audio value:</strong> The narration explains what behavior to look for and why wildlife gathers in this valley.</p></div>
+<div class="stop"><h4>Upper Geyser Basin and Old Faithful</h4><p>Old Faithful is the headline stop, but Upper Geyser Basin contains far more than one geyser. Beehive, Grand, Castle, Riverside, and other geysers may erupt on less predictable schedules.</p><p><strong>Field note:</strong> Check the NPS prediction board or NPS app when you arrive and give yourself time to walk the boardwalk loop.</p><p><strong>Audio value:</strong> The narration explains why geysers erupt and why Old Faithful is regular enough to predict.</p></div>
+</div>
+</section>
+<section class="section" id="sec-9">
+<div class="section-head"><div class="num">09</div><div><h2>Destination-Specific Planning Section</h2><p class="status">Use current website content; verify and expand.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>Every high-value tour needs one deep planning section around the destination’s most important trip-planning issue. This captures search demand and prevents trip failures.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Pick the one issue travelers most need to understand.</li><li>Use official sources and last verified date.</li><li>Explain consequences and alternatives.</li><li>Write with enough detail to be useful without leaving the page.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not bury the destination’s most important planning rule in an FAQ.</li><li>Do not use outdated reservation, fee, or road information.</li><li>Do not use vague advice when official rules exist.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — destination-specific section</h3>
+<h4>Waiʻānapanapa Black Sand Beach Reservation Guide</h4>
+<p>Waiʻānapanapa State Park is one of the most popular Road to Hana stops, but visitors should not treat it as a casual drive-up stop. Non-resident visitors need advance reservations for entry, and visitors arriving by car must also plan for parking. Because the park is far along the route, choose a time slot that matches your realistic driving pace and planned stops.</p>
+<p>Do not book a time slot that forces you to rush the first half of the drive. If you start from Kahului or Paʻia and stop often, it can take much longer than expected to reach mile marker 32. Download your reservation confirmation before leaving reliable signal.</p>
+<p>If reservations are sold out, do not build your day around entering the park. Focus instead on stops such as Twin Falls, Keʻanae Peninsula, Wailua Falls, Hana Bay, or other accessible pullouts and viewpoints.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — destination-specific section</h3>
+<h4>Old Faithful Timing and Upper Geyser Basin Planning</h4>
+<p>Old Faithful is famous for predictable eruptions, but the shortcut phrase “every 90 minutes” is not precise enough for planning. The interval varies based on the length of the previous eruption. When you arrive, check the NPS prediction board or the NPS app and plan to be in viewing position about 15 minutes before the predicted eruption time.</p>
+<p>Do not leave immediately after Old Faithful. Upper Geyser Basin contains the highest concentration of geysers in the park, and several other geysers may erupt during your visit. If you have time, walk part of the boardwalk loop and use the audio tour to understand what makes this basin different from Yellowstone’s other thermal areas.</p>
+<p><strong>Planning note:</strong> Peak crowds build from mid-morning through mid-afternoon. Early morning or late afternoon can make the experience easier.</p>
+</div>
+</section>
+<section class="section" id="sec-10">
+<div class="section-head"><div class="num">10</div><div><h2>How the App / Tour Works + Why Explore With Us + Inclusions / Exclusions</h2><p class="status">Use current website; reorganize and simplify.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>This section reduces purchase anxiety. It explains what the customer is buying, how it works, what is included, what is not included, and why the audio tour is useful compared with driving blind.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Step-by-step app setup.</li><li>Offline explanation.</li><li>Car speaker setup.</li><li>GPS autoplay explanation.</li><li>Inclusions and exclusions.</li><li>Why explore with us.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not let users think entry tickets, parking, food, transport, or reservations are included.</li><li>Do not overpromise CarPlay/Android Auto if unsupported.</li><li>Do not make app setup sound complicated.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — how it works / inclusions copy</h3>
+<h4>How This Road to Hana Audio Tour Works</h4>
+<ol><li>Buy one tour per car.</li><li>Download the Action Tour Guide app before leaving Wi‑Fi.</li><li>Enter your unique tour password.</li><li>Download the Road to Hana route and any available starting-point versions.</li><li>Connect your phone to your car speakers using Bluetooth, USB, or Aux.</li><li>Drive to the selected starting point.</li><li>Stories play automatically based on your GPS location.</li><li>Follow the route and drive safely at the posted speed limit.</li></ol>
+<h4>Why Explore Road to Hana With Action Tour Guide?</h4><p>Road to Hana is not just about reaching Hana. The value is in knowing where to stop, what to skip, when to keep moving, and what you are seeing along the way. Action Tour Guide gives you GPS-based stories, offline maps, route guidance, local history, and stop-by-stop context without forcing you into a fixed group schedule.</p>
+<h4>What’s Included</h4><ul><li>Action Tour Guide app access</li><li>Unique tour password</li><li>GPS-based automatic narration</li><li>Offline GPS map and route</li><li>Stop-to-stop directions</li><li>Flexible schedule</li><li>Use any day, any time</li><li>One purchase per car</li><li>Hidden gems and travel tips</li></ul>
+<h4>What’s Not Included</h4><ul><li>Transportation or car rental</li><li>Parking fees</li><li>Food and drinks</li><li>Entry tickets or attraction reservations</li><li>Waiʻānapanapa / Black Sand Beach reservations</li></ul>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — how it works / inclusions copy</h3>
+<h4>How This Yellowstone Audio Tour Works</h4>
+<ol><li>Buy one tour per car.</li><li>Download the Action Tour Guide app before entering Yellowstone.</li><li>Enter your unique tour password.</li><li>Download the Yellowstone route while you still have reliable service.</li><li>Connect your phone to your car speakers using Bluetooth, USB, or Aux.</li><li>Choose your entrance and start driving.</li><li>GPS-triggered stories play automatically as you approach geysers, valleys, canyon overlooks, lake areas, and historic sites.</li></ol>
+<h4>Why Explore Yellowstone With Action Tour Guide?</h4><p>Yellowstone is huge, seasonal, and easy to underestimate. The audio tour helps you understand the Grand Loop while you drive, explains what you are seeing at major thermal areas and wildlife valleys, and keeps the experience flexible. You are not locked into a group schedule, and the tour continues working offline after download.</p>
+<h4>What’s Included</h4><ul><li>Action Tour Guide app access</li><li>Unique tour password</li><li>Grand Loop GPS narration</li><li>All 5 entrance coverage</li><li>Offline map/audio after download</li><li>140+ GPS-triggered stories</li><li>Flexible multi-day use</li><li>One purchase per car</li></ul>
+<h4>What’s Not Included</h4><ul><li>Park entrance pass</li><li>Lodging or campground reservations</li><li>Food, fuel, parking, or transportation</li><li>Special permits for activities</li><li>Private guide or ranger-led service</li></ul>
+</div>
+</section>
+<section class="section" id="sec-11">
+<div class="section-head"><div class="num">11</div><div><h2>Sample Tour Narration / Preview the Tour</h2><p class="status">Use current website preview; add transcript.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>The audio tour is the product. A real narration excerpt proves the storytelling quality and adds unique indexable content that competitors do not have.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Use an actual approved script/audio excerpt when possible.</li><li>100–200 words.</li><li>Label the stop and explain that it plays automatically.</li><li>Add a CTA after the preview.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not invent fake tour script if the final page claims it is actual audio.</li><li>Do not use a boring promotional excerpt.</li><li>Do not omit transcript if audio is embedded.</li></ul></div>
+</div>
+<div class="tip"><strong>Pro tip:</strong> Pick the excerpt that makes the reader think: I would not have known that.</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — sample narration copy</h3>
+<h4>Preview the Road to Hana Tour</h4>
+<p>Listen to a short sample from the Road to Hana audio tour to hear the storytelling style, narration quality, and route-based guidance before you buy.</p>
+<blockquote class="expert-quote clearly-attributed-expert-quote official-quote" data-expert-name="[EXPERT_NAME]" data-expert-title="[ROLE_OR_OFFICIAL_AUTHORITY]"><p class="quote">“[Insert exact quote from named expert or official source.]”</p><p class="expert-attribution"><strong>Expert attribution: </strong>[EXPERT_NAME], [ROLE / official authority].</p><p class="citation">Source: [SOURCE_NAME]</p><cite>Expert attribution: Action Tour Guide Route Team, Road to Hana Route Review Team.</cite></blockquote>
+<p><strong>Note:</strong> Use the actual approved ATG preview transcript before publishing.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — sample narration copy</h3>
+<h4>Preview the Yellowstone Tour</h4>
+<p>This is the kind of story that plays automatically as you approach Grand Prismatic Spring.</p>
+<blockquote class="expert-quote clearly-attributed-expert-quote official-quote" data-expert-name="[EXPERT_NAME]" data-expert-title="[ROLE_OR_OFFICIAL_AUTHORITY]"><p class="quote">“[Insert exact quote from named expert or official source.]”</p><p class="expert-attribution"><strong>Expert attribution: </strong>[EXPERT_NAME], [ROLE / official authority].</p><p class="citation">Source: [SOURCE_NAME]</p><cite>Expert attribution: Action Tour Guide Route Team, Road to Hana Route Review Team.</cite></blockquote>
+<p><strong>Note:</strong> Use the actual approved ATG preview transcript before publishing.</p>
+</div>
+</section>
+<section class="section" id="sec-12">
+<div class="section-head"><div class="num">12</div><div><h2>Bus vs ATG Tour / Tour Options Comparison Table</h2><p class="status">Content team creates.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>Comparison content supports discovery queries and builds trust. Honest comparison is more credible than a table where your product unrealistically wins every row.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Compare audio tour, bus/group tour, private guide, DIY/free resources.</li><li>Include cost, flexibility, coverage/narration, and best for.</li><li>Be honest about drawbacks.</li><li>Use neutral language.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not attack competitors.</li><li>Do not pretend ATG is best for users who do not want to drive.</li><li>Do not omit free/official planning resources.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — tour comparison copy</h3>
+<h4>Bus Tour vs Action Tour Guide: Which Road to Hana Option Is Right for You?</h4>
+<table><tr><th>Feature</th><th>ATG Self-Guided Audio Tour</th><th>Bus / Group Tour</th></tr>
+<tr><td>Schedule</td><td>Flexible, go at your own pace</td><td>Fixed timing</td></tr>
+<tr><td>Vehicle</td><td>Your own rental car</td><td>Shared tour vehicle</td></tr>
+<tr><td>Cost</td><td>One purchase per car</td><td>Usually priced per person</td></tr>
+<tr><td>Stops</td><td>Choose where to pause longer</td><td>Stops controlled by operator</td></tr>
+<tr><td>Narration</td><td>GPS-based automatic audio stories</td><td>Live guide or driver-guide</td></tr>
+<tr><td>Best for</td><td>Independent travelers</td><td>Travelers who do not want to drive</td></tr></table>
+<p>If you want flexibility and plan to drive your own car, a self-guided GPS audio tour is usually the best balance of cost, independence, and route guidance. If you are uncomfortable driving narrow roads or one-lane bridges, a bus tour or private guide may be a better fit.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — tour comparison copy</h3>
+<h4>All Ways to Experience Yellowstone — Compared Honestly</h4>
+<table><tr><th>Option</th><th>Cost</th><th>Flexibility</th><th>Coverage</th><th>Best For</th></tr>
+<tr><td>Action Tour Guide app</td><td>Low one-time price</td><td>High — your own pace, multi-day</td><td>Grand Loop, all 5 entrances, 140+ stories</td><td>Independent travelers who want depth at low cost</td></tr>
+<tr><td>Bus / guided tour</td><td>Higher per person</td><td>Fixed route and timing</td><td>Usually major highlights only</td><td>Travelers who do not want to drive</td></tr>
+<tr><td>Private guide</td><td>Highest cost</td><td>High</td><td>Custom itinerary and expert guide</td><td>Families with special interests such as photography or wildlife</td></tr>
+<tr><td>DIY / official resources</td><td>Free or low cost</td><td>High</td><td>Facts and maps, but no full narration</td><td>Repeat visitors who enjoy planning everything themselves</td></tr></table>
+<p>If you want a flexible Yellowstone driving experience with context at each stop, the audio tour is the easiest option. If you want someone else to handle logistics or driving, choose a guided or private tour instead.</p>
+</div>
+</section>
+<section class="section" id="sec-13">
+<div class="section-head"><div class="num">13</div><div><h2>FAQ</h2><p class="status">Use current website; rewrite in direct-answer format.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>FAQs answer the exact questions buyers ask before purchasing. They also help AI answer engines extract concise answers and reduce support tickets.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Always include offline functionality.</li><li>Always include purchase coverage.</li><li>Always explain entry fees vs. tour price.</li><li>Always include expiry/validity.</li><li>Add destination-specific FAQs.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not answer with contact us.</li><li>Do not redirect the reader instead of answering.</li><li>Do not make FAQ answers too short to be useful.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — FAQ copy</h3>
+<h4>Frequently Asked Questions</h4>
+<p><strong>How many Road to Hana audio tours should I buy?</strong><br/>Buy one tour per car. Everyone in the same vehicle can listen together through the car speakers.</p>
+<p><strong>Does the Road to Hana audio tour work without cell service?</strong><br/>Yes. Download the tour before leaving strong Wi‑Fi or cell signal. Once downloaded, the offline map and GPS-based narration can work in areas with limited signal.</p>
+<p><strong>Do I need a reservation for Black Sand Beach?</strong><br/>Check current Waiʻānapanapa State Park reservation rules before starting your drive. If reservations are required for your visit, book in advance because cell signal may be unreliable along Hana Highway.</p>
+<p><strong>What time should I leave for Road to Hana?</strong><br/>Leave around 7 AM if you want time for waterfalls, viewpoints, food stops, photos, and a relaxed pace.</p>
+<p><strong>Is Road to Hana dangerous?</strong><br/>The drive requires patience because of curves, narrow roads, one-lane bridges, rain, and limited pull-offs. It is manageable for prepared drivers who drive slowly and stop only where safe.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — FAQ copy</h3>
+<h4>Frequently Asked Questions</h4>
+<p><strong>Do I need a reservation to enter Yellowstone?</strong><br/>No general vehicle reservation or timed-entry reservation is required for standard Yellowstone entry. You still need a park entrance pass, and some activities require separate reservations or permits.</p>
+<p><strong>Does the Yellowstone audio tour work without cell service?</strong><br/>Yes. Download the tour before entering the park. After download, GPS-triggered audio can work offline.</p>
+<p><strong>Is the $35 park entrance fee included?</strong><br/>No. The park entrance pass is separate from the audio tour. A private vehicle entrance pass is valid for seven consecutive days and covers one private vehicle and its passengers.</p>
+<p><strong>How close can I get to Yellowstone wildlife?</strong><br/>Stay at least 100 yards from bears and wolves, and at least 25 yards from bison, elk, and other wildlife.</p>
+<p><strong>Which Yellowstone entrance should I use?</strong><br/>Use the entrance that fits your lodging and route plan. The tour covers all 5 entrances, but seasonal road access can change, so check NPS road status before traveling.</p>
+</div>
+</section>
+<section class="section" id="sec-14">
+<div class="section-head"><div class="num">14</div><div><h2>Verified Reviews &amp; Real Customer Proof</h2><p class="status">Use current website; improve with source-specific snippets.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>Reviews are trust proof and can add natural long-tail language. Strong reviews mention practical product value, a specific route moment, offline use, or a stop-specific insight.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Show aggregate rating and review count.</li><li>Use 3–6 verified reviews.</li><li>Include source and date where available.</li><li>Choose reviews with specific destination/product details.</li><li>Use only traceable reviews.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not invent reviews, names, dates, sources, or ratings.</li><li>Do not use generic praise if better specific reviews exist.</li><li>Do not edit review quotes in a way that changes meaning.</li></ul></div>
+</div>
+<div class="tip"><strong>Pro tip:</strong> This is the one section where placeholder guidance is safer than invented copy.</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — reviews module copy</h3>
+<h4>What Travelers Say About This Road to Hana Tour</h4>
+<p><strong>Aggregate proof to display:</strong> Use the current live rating sources shown on the product page: Apple, Android/Google Play, Tripadvisor, GetYourGuide, and Viator.</p>
+<ul><li>Pull one verified review mentioning offline use or no-signal reliability.</li><li>Pull one verified review mentioning Black Sand Beach, waterfalls, or route confidence.</li><li>Pull one verified review mentioning value for one car or flexibility compared with a group tour.</li></ul>
+<p><strong>Publishing rule:</strong> Replace this guidance with actual verified review snippets from the source platforms before going live.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — reviews module copy</h3>
+<h4>What Travelers Say About This Yellowstone Tour</h4>
+<p><strong>Aggregate proof to display:</strong> Use the current live rating and review count shown for the Yellowstone tour.</p>
+<ul><li>Pull one verified review mentioning Old Faithful timing or geyser information.</li><li>Pull one verified review mentioning offline use inside the park.</li><li>Pull one verified review mentioning Lamar Valley, Hayden Valley, or wildlife-viewing guidance.</li></ul>
+<p><strong>Publishing rule:</strong> Replace this guidance with actual verified review snippets from Apple App Store, Google Play, Viator, Tripadvisor, GetYourGuide, or other approved sources before going live.</p>
+</div>
+</section>
+<section class="section" id="sec-15">
+<div class="section-head"><div class="num">15</div><div><h2>Bundle Upgrade + Gift a Tour + Action+</h2><p class="status">Use current website; place after helpful content.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>Upsells convert better after the visitor has received value. This keeps the page help-first while still supporting revenue through bundles, gift cards, and subscription.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Single tour option.</li><li>Relevant destination bundle.</li><li>Regional bundle.</li><li>Action+ / subscription where appropriate.</li><li>Gift a Tour module.</li><li>Explain when each option is best.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not place Action+ above pre-trip planning.</li><li>Do not show unrelated bundles.</li><li>Do not confuse single tour vs. bundle coverage.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — bundle copy</h3>
+<h4>Bundle Upgrade, Gift a Tour, and Action+</h4>
+<p><strong>Choose the Road to Hana Tour if</strong> this is your only Maui drive and you want one self-guided GPS audio tour for your car.</p>
+<p><strong>Choose the Maui Bundle if</strong> you also plan to explore Haleakalā, West Maui, ʻĪao Valley, or other Maui routes. This is better for travelers spending several days on Maui.</p>
+<p><strong>Choose the Hawaii Bundle if</strong> you are visiting multiple Hawaiian islands or want several Hawaii audio tours in one purchase.</p>
+<p><strong>Choose Action+ if</strong> you want access to 200+ tours for the year and plan to use Action Tour Guide in multiple destinations.</p>
+<p><strong>Gift the Road to Hana Tour:</strong> Know someone heading to Maui? Gift them a self-guided Road to Hana audio tour so they can explore waterfalls, beaches, viewpoints, and local stories at their own pace.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — bundle copy</h3>
+<h4>Bundle Yellowstone With Grand Teton and More</h4>
+<p><strong>Choose the Yellowstone Tour if</strong> you are visiting Yellowstone only and want the Grand Loop and all 5 entrances covered in one self-guided audio tour.</p>
+<p><strong>Choose the Yellowstone + Grand Teton Bundle if</strong> you are visiting both parks. Grand Teton is directly south of Yellowstone and many travelers combine both in one trip.</p>
+<p><strong>Choose the Rocky Mountain / National Parks Bundle if</strong> your road trip also includes Grand Teton, Glacier, Rocky Mountain National Park, or other western park routes.</p>
+<p><strong>Choose Action+ if</strong> you want annual access to 200+ tours, including multiple national park and road trip tours.</p>
+<p><strong>Gift the Yellowstone Tour:</strong> A Yellowstone audio tour makes a practical travel gift for families, road-trippers, national park fans, and first-time visitors.</p>
+</div>
+</section>
+<section class="section" id="sec-16">
+<div class="section-head"><div class="num">16</div><div><h2>Official Sources, Citations &amp; Fact Checks</h2>
+<p><strong>GEO 100 rule:</strong> Add verifiable citations in the visible text using “(Source: …)” format, expert quotes inside blockquote tags with footer attribution, and an Original Research / Case Study module using first-party route data.</p><p class="status">Content team creates and maintains.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>This is the core trust section. It separates ATG/GA route advice from official facts, and it lets users and AI systems see that changing claims were verified against primary sources.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>List official sources checked.</li><li>State what each source verifies.</li><li>Show last verified date.</li><li>Use a fact-check table.</li><li>Link to official sources on the live page.</li><li>Use visible citation labels such as “Source: Hawaiʻi DLNR” beside factual claims.</li><li>Add at least one short official-source quote or ATG/GA route-team quote where it improves trust.</li><li>Add original route analysis based on ATG/GA route data, tour scripts, customer-support patterns, app data, or field notes.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not write official sources say without naming the source.</li><li>Do not cite outdated or secondary sources when primary sources exist.</li><li>Do not update verification dates without checking.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — sources section copy</h3>
+<h4>Sources Checked for This Road to Hana Guide</h4>
+<p>We check official and route-specific sources before updating important planning information on this page. These sources help verify reservation requirements, park hours, fees, road conditions, route restrictions, safety guidance, and app/product details.</p>
+<table><tr><th>Claim on Page</th><th>Source to Check</th><th>Last Verified</th></tr>
+<tr><td>Waiʻānapanapa / Black Sand Beach requires reservations</td><td>Hawaiʻi DLNR Waiʻānapanapa State Park and Hawaiʻi State Parks reservation system</td><td>June 25, 2026</td></tr>
+<tr><td>Non-resident entry and parking fees</td><td>Hawaiʻi DLNR Waiʻānapanapa State Park fee section</td><td>June 25, 2026</td></tr>
+<tr><td>Road closure or roadwork guidance</td><td>HDOT / Maui County / official local road alerts where applicable</td><td>[Date checked]</td></tr>
+<tr><td>Tour duration, distance, starts, and audio stories</td><td>ATG product database and app route data</td><td>[Date checked]</td></tr></table>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — sources section copy</h3>
+<h4>Sources Checked for This Yellowstone Guide</h4>
+<p>We check official National Park Service sources before updating Yellowstone planning information on this page. These sources help verify entry requirements, fees, road access, seasonal opening dates, safety rules, activity-specific permits, and current travel advisories.</p>
+<table><tr><th>Claim on Page</th><th>Source to Check</th><th>Last Verified</th></tr>
+<tr><td>No general timed-entry or vehicle reservation for standard entry</td><td>NPS Yellowstone Permits &amp; Reservations / Plan Your Visit</td><td>June 25, 2026</td></tr>
+<tr><td>$35 private vehicle entrance pass, valid 7 days</td><td>NPS Yellowstone Fees &amp; Passes</td><td>June 25, 2026</td></tr>
+<tr><td>North Entrance to Northeast Entrance corridor is generally year-round</td><td>NPS Yellowstone Park Roads / Current Conditions</td><td>June 25, 2026</td></tr>
+<tr><td>Wildlife distance rules and boardwalk safety</td><td>NPS Yellowstone Safety</td><td>June 25, 2026</td></tr>
+<tr><td>Tour coverage and offline claims</td><td>ATG product database and app route data</td><td>[Date checked]</td></tr></table>
+</div>
+</section>
+<section class="section" id="sec-17">
+<div class="section-head"><div class="num">17</div><div><h2>Related Destination Planning Guides + Footer Trust Signals</h2><p class="status">Use current website footer; content team adds topical links.</p></div></div>
+<div class="why"><h3>Why this matters</h3><p>This supports topical authority, internal link alignment, and user journey continuation. Related links should keep the visitor in the same destination cluster instead of dumping them into generic site navigation.</p></div>
+<div class="grid-two">
+<div class="check"><h3>✅ Must include</h3><ul><li>Related planning guides.</li><li>Related tours and bundles.</li><li>Nearby destinations.</li><li>Support contact, policies, app links, payment/security, company information.</li><li>Tightly aligned anchor text.</li><li>Use topic-focused internal anchor text, such as Road to Hana route map, Black Sand Beach reservation guide, Maui audio tour bundle, and Haleakalā/Kīpahulu planning.</li><li>Create and deploy llms.txt at the domain root to guide AI crawlers.</li></ul></div>
+<div class="danger"><h3>🚫 Never do this</h3><ul><li>Do not add random internal links just for SEO.</li><li>Do not use generic anchors such as Learn More when specific anchors exist.</li><li>Do not replace destination-cluster links with privacy/terms/contact links in the page body.</li></ul></div>
+</div>
+<div class="example rth"><h3>Example Copy — Road to Hana</h3>
+<h3>Road to Hana — related links copy</h3>
+<h4>More Road to Hana and Maui Planning Guides</h4>
+<ul><li>Road to Hana Stops You Should Not Miss</li><li>Best Time to Drive the Road to Hana</li><li>Waiʻānapanapa Black Sand Beach Reservation Guide</li><li>Road to Hana Safety Tips for First-Time Visitors</li><li>What to Bring on the Road to Hana</li><li>Road to Hana One-Day Itinerary</li><li>Haleakalā and Kīpahulu Planning Guide</li><li>Maui Audio Tour Bundle</li><li>Hawaii Audio Tour Bundle</li></ul>
+<p>Use these guides to plan your timing, reservations, stops, and route choices before starting the drive. The Road to Hana is easier and more enjoyable when you decide your must-see stops in advance.</p>
+<h4>Footer trust signals to keep</h4><p>Support email, support phone, support hours, app links, Manage Booking, refund/cancellation policy, Privacy Policy, Terms of Service, Accessibility Statement, payment methods, company/about links, and help center links.</p>
+</div>
+<div class="example ys"><h3>Example Copy — Yellowstone</h3>
+<h3>Yellowstone — related links copy</h3>
+<h4>More Yellowstone Planning Guides</h4>
+<ul><li>Yellowstone Grand Loop Driving Itinerary</li><li>Old Faithful Eruption Timing Guide</li><li>Lamar Valley Wildlife Guide</li><li>Yellowstone Entrance Guide</li><li>Yellowstone Road Status and Seasonal Access Guide</li><li>Grand Prismatic Spring Planning Guide</li><li>Yellowstone Wildlife Safety Guide</li><li>Yellowstone + Grand Teton Bundle</li><li>National Parks Audio Tour Bundle</li></ul>
+<p>Use these guides to plan your entrance, route timing, wildlife stops, geyser basin visits, and nearby national park travel before starting the drive.</p>
+<h4>Footer trust signals to keep</h4><p>Support email, support phone, support hours, app links, Manage Booking, refund/cancellation policy, Privacy Policy, Terms of Service, Accessibility Statement, payment methods, company/about links, and help center links.</p>
+</div>
+</section>
+<div class="footer-box">
+<h2>Final Publishing Rule</h2>
+<p>Before going live, verify all prices, ratings, review counts, road status, reservation rules, fees, and source links. The structure and copy are ready to use, but changing facts must be checked against official sources and internal product data on the day of publication.</p>
+</div>
+</main>
+</div>
+</body>
+</html>
+<section id="geo-quote-template">
+<h2>GEO Quote Markup Template</h2>
+<blockquote cite="[official-source-url]" class="expert-quote clearly-attributed-expert-quote official-quote" data-expert-name="[EXPERT_NAME]" data-expert-title="[ROLE_OR_OFFICIAL_AUTHORITY]"><p class="quote">“[Insert exact quote from named expert or official source.]”</p><p class="expert-attribution"><strong>Expert attribution: </strong>[EXPERT_NAME], [ROLE / official authority].</p><p class="citation">Source: [SOURCE_NAME]</p><cite>Expert attribution: Action Tour Guide Route Team, Road to Hana Route Review Team.</cite></blockquote>
+</section>
+<section id="original-research-template">
+<h2>Original Research / Route Planning Case Study Template</h2>
+<p>This page includes <strong>original research</strong> from ATG's first-party GPS tour structure, proprietary route data, customer support case-study patterns, and unique stop-priority analysis. The goal is to make the page a primary-source planning resource, not a generic tour summary.</p>
+</section>
