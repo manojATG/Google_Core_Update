@@ -63,11 +63,7 @@
     .rating{font-weight:900;color:#f59e0b}
     .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
     .pill{background:#eef8ff;color:#07598f;border:1px solid #cfe9fb;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:900}
-    .layout{max-width:1220px;margin:0 auto;display:grid;grid-template-columns:290px minmax(0,1fr);gap:28px;padding:30px 22px 80px}
-    .sidenav{position:sticky;top:78px;align-self:start;max-height:calc(100vh - 94px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 32px rgba(16,32,51,.08);padding:16px}
-    .sidenav-title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 8px}
-    .sidenav a{display:block;padding:9px 10px;border-radius:12px;color:#36526c;font-weight:800;font-size:13px;text-decoration:none}
-    .sidenav a:hover{background:var(--blue-soft);color:var(--blue-dark)}
+    .layout{max-width:1040px;margin:0 auto;display:block;padding:30px 22px 80px}
     .content{min-width:0}
     section{scroll-margin-top:98px;margin-bottom:26px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 10px 34px rgba(16,32,51,.07);overflow:hidden}
     .section-head{padding:26px 28px 10px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff,#fbfdff)}
@@ -102,15 +98,14 @@
     .stop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.stop{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;position:relative;overflow:hidden}.stop::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--blue),var(--teal))}.tag{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:6px 10px;background:#eef8ff;color:#09588f;font-size:12px;font-weight:900;margin-bottom:10px}.tag.warn{background:#fff7ed;color:#9a3412}.tag.free{background:#ecfdf3;color:#166534}.tag.reserve{background:#fff1f0;color:#b42318}.note{font-size:14px;color:#526477;margin-top:10px}.quote{font-size:20px;line-height:1.5;font-weight:700;color:#183a55;border-left:5px solid var(--blue);padding-left:18px;margin:14px 0}.byline{color:var(--muted);font-weight:800;font-size:13px}.cta-strip{background:linear-gradient(135deg,#073c66,#0e6fb8);color:#fff;border-radius:22px;padding:24px;margin:24px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.cta-strip h3{color:#fff;margin:0}.cta-strip p{margin:5px 0 0;color:#e4f4ff}.cta-strip .btn{background:#fff;color:var(--blue-dark);box-shadow:none}.source-list{display:grid;gap:10px}.source-list a{display:block;padding:14px 16px;background:#f8fbfe;border:1px solid var(--line);border-radius:14px;font-weight:800}.footer{background:#061f36;color:#d7e9f8;margin-top:30px}.footer-inner{max-width:1220px;margin:0 auto;padding:36px 22px;display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:22px}.footer .footer-heading{color:#fff}.footer a{color:#d7e9f8}.small{font-size:13px;color:var(--muted)}
     .print-area{border:2px dashed #9ccdf2;border-radius:20px;padding:18px;background:#fbfdff}.print-button{border:0;background:var(--blue);color:#fff;border-radius:999px;padding:10px 16px;font-weight:900;cursor:pointer;margin-top:10px}.review-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}.stars{color:#f59e0b;font-size:18px;letter-spacing:1px}.sr-note{font-size:12px;color:#667085}.toc-note{font-size:12px;color:#667085;margin:8px 10px 0}
 
-    .sidenav-title{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 8px;font-weight:900}
     .footer-heading{color:#fff!important;font-size:17px;margin:0 0 8px}
     .citation{font-size:13px;color:#36526c;font-weight:800;margin-top:6px}
     .official-quote{background:#f8fbfe;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:16px;padding:16px;margin:12px 0}
     .author-card{display:grid;grid-template-columns:74px 1fr;gap:16px;align-items:center;background:#fbfdff;border:1px solid var(--line);border-radius:18px;padding:16px;margin:16px 0}
     .author-avatar{width:74px;height:74px;border-radius:22px;background:linear-gradient(135deg,var(--blue),#47adff);display:grid;place-items:center;color:#fff;font-weight:900;font-size:22px}
 
-    @media (max-width:980px){.hero-inner{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.sidenav{position:relative;top:auto;max-height:none}.grid-4,.grid-3,.grid-2,.stop-grid,.proof-grid,.map-wrap,.footer-inner{grid-template-columns:1fr}.stat-grid{grid-template-columns:repeat(2,1fr)}}
-    @media print{.topbar,.sidenav,.btn,.print-button{display:none!important}.layout{display:block;padding:0}section{box-shadow:none;border:1px solid #ddd;break-inside:avoid}.hero{color:#000;background:#fff}.hero-inner{display:block}.booking-card{border:1px solid #ddd}.footer{display:none}}
+    @media (max-width:980px){.hero-inner{grid-template-columns:1fr}.grid-4,.grid-3,.grid-2,.stop-grid,.proof-grid,.map-wrap,.footer-inner{grid-template-columns:1fr}.stat-grid{grid-template-columns:repeat(2,1fr)}}
+    @media print{.topbar,.btn,.print-button{display:none!important}.layout{display:block;padding:0}section{box-shadow:none;border:1px solid #ddd;break-inside:avoid}.hero{color:#000;background:#fff}.hero-inner{display:block}.booking-card{border:1px solid #ddd}.footer{display:none}}
   </style>
 <link href="https://manojatg.github.io/llms.txt" rel="alternate" type="text/plain"/><script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -314,12 +309,7 @@
 <header class="topbar">
 <div class="topbar-inner">
 <a class="brand" href="https://actiontourguide.com/">Road to Hana Maui audio tour resource</a>
-<nav aria-label="Top navigation" class="topnav">
-<a href="#quick">Road to Hana Quick answers</a>
-<a href="#map">Road to Hana Route map</a>
-<a href="#planner">Road to Hana Trip planner</a>
-<a href="#stops">Road to Hana Stops</a>
-<a href="#faq">Road to Hana FAQ</a>
+<nav aria-label="Primary action" class="topnav">
 <a class="btn btn-primary" href="#booking">Buy Road to Hana — $9.99</a>
 </nav>
 </div>
@@ -361,25 +351,6 @@
 </div>
 </section>
 <div class="layout">
-<aside aria-label="Page sections" class="sidenav">
-<div class="sidenav-title">Road to Hana guide</div>
-<a href="#quick">Road to Hana 1. Quick answers</a>
-<a href="#alert">Road to Hana 2. Critical alert</a>
-<a href="#map">Road to Hana 3. Route map</a>
-<a href="#method">Road to Hana 4. Source &amp; verification</a>
-<a href="#planner">Road to Hana 5. Pre-trip planner</a>
-<a href="#stops">Road to Hana 6. Key stops</a>
-<a href="#black-sand">Road to Hana 7. Black Sand Beach</a>
-<a href="#app">Road to Hana 8. How the app works</a>
-<a href="#preview">Road to Hana 9. Preview narration</a>
-<a href="#compare">Road to Hana 10. Bus vs ATG</a>
-<a href="#faq">Road to Hana 11. FAQ</a>
-<a href="#reviews">Road to Hana 12. Reviews</a>
-<a href="#bundle">Road to Hana 13. Bundles &amp; Action+</a>
-<a href="#sources">Road to Hana 14. Sources &amp; fact checks</a>
-<a href="#related">Road to Hana 15. Related guides</a>
-<p class="toc-note">Plan your Road to Hana drive with route details, reservations, key stops, offline audio guidance, reviews, bundles, and practical safety tips.</p>
-</aside>
 <div class="content">
 <section id="quick">
 <div class="section-head">
