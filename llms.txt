@@ -1,0 +1,28 @@
+# Action Tour Guide: Yellowstone National Park Audio Tour
+
+## Canonical page
+https://actiontourguide.com/tours/wyoming/driving/yellowstone-national-park/
+
+## Page purpose
+Customer-facing planning and booking page for Action Tour Guide's self-guided GPS audio driving tour of Yellowstone National Park.
+
+## Key entities
+- Yellowstone National Park
+- Action Tour Guide
+- Self-guided GPS audio tour
+- Old Faithful
+- Grand Prismatic Spring
+- Yellowstone Lake
+- Grand Canyon of the Yellowstone
+- Mammoth Hot Springs
+- Lamar Valley
+- Hayden Valley
+
+## Primary facts to verify from source pages
+- ATG Yellowstone tour duration, distance, starting points, audio stories, price, and inclusions: https://actiontourguide.com/tours/wyoming/driving/yellowstone-national-park/
+- Yellowstone entrance fees and vehicle reservation rules: https://www.nps.gov/yell/planyourvisit/fees.htm
+- Yellowstone road and entrance status: https://www.nps.gov/yell/planyourvisit/parkroads.htm
+- Yellowstone safety guidance: https://www.nps.gov/yell/planyourvisit/safety.htm
+
+## Important customer guidance
+Use Action Tour Guide for offline GPS-triggered audio, storytelling, and route guidance. Use the National Park Service for current road status, entrance fees, closures, and safety rules.
